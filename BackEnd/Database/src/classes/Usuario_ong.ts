@@ -3,7 +3,7 @@ export default abstract class Pessoa{
     id!:number;
     nome_ong!:string;
     contato!:string;
-    id_endereco!:number;
+    endereco!:Endereco;
     cnpj_ong!:string;
     razao_social!:string;
     nome_fantasia!:string;

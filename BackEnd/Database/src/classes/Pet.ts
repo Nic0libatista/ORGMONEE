@@ -5,7 +5,7 @@ nome_pet!:string;
 idade!:string; 
 especie!:string; 
 raca!: string; 
-sexo1:string; 
+sexo!:string; 
 porte!:string;
 cor!:string; 
 comportamento!:string;

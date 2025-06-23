@@ -1,5 +1,5 @@
 import Endereco from "./Endereco";
-export default abstract class usuario{
+export default abstract class Usuario{
     id!:number;
     nome!:string;
     contato!:string;
@@ -7,7 +7,7 @@ export default abstract class usuario{
     data_nascimento!:Date;
     tipo_usu!: string;
     senha!:string;
-    id_endereco!:number;
+    endereco!:Endereco;
     foto_usu!:string;
     preferencia!:number;
 
