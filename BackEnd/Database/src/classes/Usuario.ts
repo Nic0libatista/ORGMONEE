@@ -1,14 +1,11 @@
-import Endereco from "./Endereco";
-export default abstract class Usuario{
+import Preferencia from "./Preferencia";
+import Pessoa from "./Pessoa";
+export default class Usuario extends Pessoa{
     id!:number;
-    nome!:string;
-    contato!:string;
-    cpf_usu!:string;
-    data_nascimento!:Date;
-    tipo_usu!: string;
     senha!:string;
-    endereco!:Endereco;
-    foto_usu!:string;
-    preferencia!:number;
+    foto_usu?:string;
+    preferencia!:Preferencia;
+    criadoem!:Date;
+    atualizadoem!:Date;
 
 }

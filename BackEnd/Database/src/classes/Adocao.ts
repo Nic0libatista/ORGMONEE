@@ -1,3 +1,4 @@
+import Usuario_ong from "./Usuario_ong";
 import Pet from "./Pet";
 import Usuario from "./Usuario";
 export default class adocao{
@@ -5,4 +6,5 @@ export default class adocao{
     data_adocao!: Date;
     pet!:Pet;
     usuario!:Usuario;
+    usuario_ong!:Usuario_ong
 }

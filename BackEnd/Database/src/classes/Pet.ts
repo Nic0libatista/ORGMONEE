@@ -1,6 +1,7 @@
+import Usuario_ong from "./Usuario_ong";
 export default class Pet{
 id_pet!: number;
-id_ong!:number; 
+id_ong!:Usuario_ong; 
 nome_pet!:string; 
 idade!:string; 
 especie!:string; 
