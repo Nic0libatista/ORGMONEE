@@ -15,8 +15,6 @@ export default abstract class Pessoa{
     id!:number;
     nome!:string;
     cpf!:string;
-    email!:string;
-    telefone?:string;
     endereco!: Endereco;
     data_nascimento!:Date;
 }
