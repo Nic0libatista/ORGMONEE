@@ -1,15 +1,14 @@
-import Conexao from "./Conexao";
-import Contato from "./Contato";
 import Endereco from "./Endereco";
-export default abstract class Usuario_ong{
+export default abstract class Pessoa{
     id!:number;
-    endereco!:Endereco;
+    nome_ong!:string;
+    contato!:string;
+    id_endereco!:number;
     cnpj_ong!:string;
     razao_social!:string;
-    contato!:Contato
     nome_fantasia!:string;
     descricao!:string;
-    conexao!:Conexao;
+    conexao!:number;
     doc_comprovacao!:string;
     foto_ong!:string;
     id_pet!:number;
