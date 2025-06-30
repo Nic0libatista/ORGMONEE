@@ -1,0 +1,34 @@
+body{
+    background-color: black;
+}
+
+section{
+    width: 100%;
+    justify-content: center;
+    background-color: purple;
+}
+section div{
+    width: 80%;
+    height: 80%;
+    background-color: brown;
+}
+
+#banner{
+    display: flex;
+    justify-content: center;
+    background-color: aquamarine;
+    
+}
+
+.coluna_esq{
+    background-color: pink;
+    width: 200px;
+    height: 300px;
+
+}
+
+.coluna_dir{
+    background-color: blue;
+    width: 200px;
+    height: 300px;
+}

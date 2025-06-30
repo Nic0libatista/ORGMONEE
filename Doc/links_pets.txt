@@ -1,0 +1,22 @@
+1- https://cobasicuida.com.br/adocao
+
+2- https://www.viumeupet.com.br/adocao
+
+3- https://institutocaramelo.org/adote
+
+4-https://www.adotepetz.com.br/quero-adotar
+
+logo exemplo: https://st3.depositphotos.com/15707374/18955/v/450/depositphotos_189552894-stock-illustration-pet-cat-dog-clinic-shop.jpg
+
+
+
+
+--------------------------------------------------------------------------------------------------------------
+ pet-mysql pet123 7801:3306 database: dbpet
+
+fedora - codigos utilizados:
+
+docker run --name pet-mysql -e MYSQL_ROOT_PASSWORD=pet123 -p 3280:3306 -v dados-pet:/var/lib/mysql -d mysql:latest
+docker exec -it pet-mysql mysql -u root -p
+CREATE DATABASE dbpet;
+

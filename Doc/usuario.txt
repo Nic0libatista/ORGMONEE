@@ -1,0 +1,198 @@
+INSERT INTO usuario (
+  nome_usu, tipo_usu, senha, id_endereco, cpf_usu, data_nascimento, preferencia, foto_usu, contato
+) VALUES (
+  'Carlos Silva', 'comum', 'senha123', 1, '12345678901', '1990-04-20', 1, 'foto.jpg', 1
+);
+
+INSERT INTO pet (
+  id_ong,
+  nome_pet,
+  idade,
+  especie,
+  raca,
+  sexo,
+  porte,
+  comportamento,
+  descricao,
+  foto_pet1,
+  foto_pet2,
+  foto_pet3,
+  disponibilidade
+)
+VALUES (
+  1,                    -- ID da ONG responsável
+  'Bolinha',            -- Nome do pet
+  2,                    -- Idade em anos
+  'cachorro',           -- Espécie
+  'vira-lata',          -- Raça
+  'M',                  -- Sexo (M ou F)
+  'pequeno',            -- Porte (pequeno, médio, grande)
+  'brincalhão, calmo',  -- Comportamento
+  'Cão dócil e amoroso',-- Descrição geral
+  'foto1.jpg',
+  'foto2.jpg',
+  'foto3.jpg',
+  TRUE                  -- Está disponível para adoção
+);
+
+INSERT INTO endereco (complemento, cep, bairro, cidade, estado, logradouro, numero)
+VALUES ('Casa', '12345-678', 'Centro', 'CidadeX', 'SP', 'Rua Y', '10');
+
+INSERT INTO contato (telefone_residencial, telefone_comercial, telefone_celular, email)
+VALUES ('1122334455', '1133445566', '11999887766', 'exemplo@teste.com');
+
+
+INSERT INTO categoria (tipo_categoria, descricao) VALUES 
+('Especie', 'Tipo de animal desejado'),
+('Idade', 'Idade do pet'),
+('Porte', 'Porte/Tamanho'),
+('Temperamento', 'Temperamento/Comportamento'),
+('Convivencia', 'Convivência com crianças, idosos, outros pets'),
+('Ambiente', 'Ambiente disponível'),
+('Tempo', 'Tempo disponível para o pet'),
+('Experiencia', 'Experiência com pets'),
+('Energia', 'Nível de energia do pet');
+
+
+INSERT INTO preferencia (id_usuario, id_categoria, resposta) VALUES
+(1, 1, 'Cachorro'),
+(1, 2, 'Filhote'),
+(1, 3, 'Médio'),
+(1, 4, 'Brincalhão'),
+(1, 5, 'Crianças pequenas'),
+(1, 6, 'Casa com quintal'),
+(1, 7, 'Muito'),
+(1, 8, 'Sim'),
+(1, 9, 'Ativo');
+
+
+
+🐶 1. Tipo de animal desejado
+Qual espécie de pet você gostaria de adotar?
+_( ) Cachorro _( ) Gato ( ) Outro
+
+🔄 2. Idade do pet
+Você prefere pets de qual faixa etária?
+_( ) Filhote _( ) Jovem _( ) Adulto ( ) Idoso
+
+📏 3. Porte/tamanho
+Qual porte de animal é mais adequado para sua casa?
+_( ) Pequeno _( ) Médio ( ) Grande
+
+🌟 4. Temperamento/comportamento
+Que tipo de temperamento você prefere?
+_( ) Calmo _( ) Brincalhão _( ) Protetor ( ) Independente
+
+👨‍👩‍👧‍👦 5. Convivência
+Seu lar possui:
+
+( ) Crianças pequenas
+
+( ) Outros pets
+
+( ) Pessoas idosas
+
+🏡 6. Ambiente disponível
+O pet terá acesso a:
+_( ) Casa com quintal _( ) Apartamento ( ) Área rural
+
+🕐 7. Tempo disponível
+Quanto tempo você poderá dedicar ao pet diariamente?
+_( ) Pouco (menos de 1h) _( ) Moderado (1–3h) ( ) Muito (mais de 3h)
+
+🛠️ 8. Experiência com pets
+Você já teve um pet antes?
+_( ) Sim ( ) Não
+
+💬 9. Nível de energia do pet
+Você gostaria de um animal mais:
+_( ) Tranquilo _( ) Ativo ( ) Energético
+
+
+
+INSERT INTO usuario_ong (
+  nome_ong,
+  contato,
+  id_endereco,
+  cnpj_ong,
+  razao_social,
+  nome_fantasia,
+  descricao,
+  conexao,
+  doc_comprovacao,
+  foto_ong,
+  id_pet,
+  historico_adocao
+)
+VALUES (
+  'Associação Patas Unidas',
+  1,                            -- id de contato válido
+  1,                            -- id de endereço válido
+  '12.345.678/0001-99',         -- CNPJ
+  'Associação de Proteção Animal',
+  'Patas Unidas',
+  'ONG focada em resgate e adoção de animais abandonados.',
+  1,                            -- id de conexão válido
+  'documento.pdf',              -- documento de comprovação
+  'foto_ong.jpg',               -- foto da ONG
+  NULL,                         -- id_pet (se for opcional)
+  'Mais de 500 animais adotados desde 2010.'
+);
+
+
+INSERT INTO contato (telefone_residencial, telefone_comercial, telefone_celular, email)
+VALUES (NULL, '1133445566', '11999887766', 'ong@email.com');
+
+
+INSERT INTO endereco (complemento, cep, bairro, cidade, estado, logradouro, numero)
+VALUES ('Sala 101', '12345-678', 'Centro', 'São Paulo', 'SP', 'Av. das ONGs', '100');
+
+
+INSERT INTO conexao (rede_social1, rede_social2, rede_social3, rede_social4)
+VALUES ('facebook.com/ong', 'instagram.com/ong', NULL, NULL);
+
+
+
+INSERT INTO pet (
+  id_ong,
+  nome_pet,
+  idade,
+  especie,
+  raca,
+  sexo,
+  porte,
+  cor,
+  comportamento,
+  descricao,
+  foto_pet1,
+  foto_pet2,
+  foto_pet3,
+  disponibilidade
+)
+VALUES (
+  1,                          -- id_ong (ONG responsável pelo pet)
+  'Rex',                      -- Nome do pet
+  '2 anos',                   -- Idade
+  'Cachorro',                 -- Espécie
+  'Vira-lata',                -- Raça
+  'M',                        -- Sexo ('M' ou 'F')
+  'médio',                    -- Porte ('pequeno', 'médio', 'grande')
+  'Marrom',                   -- Cor
+  'Brincalhão',               -- Comportamento
+  'Cachorro dócil e muito amigável',  -- Descrição
+  'rex1.jpg',                 -- foto_pet1 (pode ser o caminho de uma imagem)
+  NULL,                       -- foto_pet2
+  NULL,                       -- foto_pet3
+  TRUE                        -- Disponibilidade (disponível para adoção)
+);
+
+
+SELECT *
+FROM pet
+WHERE
+    especie = (SELECT tipo_pet FROM preferencia WHERE id_usuario = 1)
+    AND idade = (SELECT idade_pet FROM preferencia WHERE id_usuario = 1)
+    AND porte = (SELECT porte FROM preferencia WHERE id_usuario = 1)
+    AND comportamento = (SELECT comportamento FROM preferencia WHERE id_usuario = 1)
+    AND disponibilidade = TRUE;
+

@@ -1,0 +1,144 @@
+ ideias de “Adote com Personalidade” + “AdotaFácil” com front-end, back-end e banco de dados, integrando tudo de forma funcional:
+
+🧩 Estrutura Geral do Projeto
+🎨 Front-End (Interface com o usuário)
+Tecnologias: HTML, CSS, JavaScript (ou React)
+
+Funcionalidades:
+
+Tela inicial com login/cadastro;
+
+Página do quiz de personalidade;
+
+Página de pets compatíveis com base no resultado do quiz + geolocalização;
+
+Página de perfil do pet com fotos e botão para contato;
+
+Painel para ONGs adicionarem/gerenciarem pets;
+
+Mapa com pets disponíveis próximos (Google Maps API).
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+⚙️ Back-End (Lógica do sistema)
+Tecnologia sugerida: Node.js + Express (ou Java Spring Boot, se preferir)
+
+Responsabilidades:
+
+Autenticação (login, cadastro, sessões);
+
+Processamento do quiz: atribui um “perfil de usuário” (ativo, caseiro, aventureiro etc.);
+
+Busca por pets com base em perfil e localização;
+
+Rotas para CRUD de pets, usuários e ONGs;
+
+Integração com API de localização (Google Maps ou OpenStreetMap).
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+🗂️ Banco de Dados
+SGBD sugerido: PostgreSQL ou MongoDB
+
+Tabelas/coleções principais:
+
+usuarios: nome, email, senha, tipo (usuário/ONG), localização;
+
+//////////////////////////// Usuario ONG //////////////////////////////////////////////////////////////////////////////////////////
+Nome da ONG
+
+Email
+
+Senha
+
+Tipo (definido como "ONG")
+
+Localização (cidade/estado ou latitude/longitude)
+
+Informações específicas para ONGs:
+CNPJ – para identificação legal da organização (no Brasil)
+
+Razão Social – nome jurídico da ONG
+
+Nome Fantasia – como a ONG é conhecida pelo público
+
+Telefone de contato
+
+Endereço completo – para facilitar a busca/localização 
+
+Descrição da ONG – missão, visão, objetivos, ou áreas de atuação
+
+Redes sociais ou site oficial
+
+Documentos de comprovação (como estatuto ou certificado de funcionamento) – opcional, mas útil para validação
+
+Logo ou imagem de perfil da ONG – para mostrar no site/app
+
+Pessoa responsável pelo cadastro – nome e cargo
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////// Uuario comun ////////////////////////////////////////////////////////////////////////////
+
+Dados essenciais:
+Nome completo
+
+Email
+
+Senha
+
+Tipo (definido como "usuário" ou "pessoa física")
+
+Localização (cidade/estado ou endereço completo, se necessário)
+
+Informações adicionais recomendadas:
+Data de nascimento – útil para saber a idade e validar a maioridade
+
+Telefone de contato
+
+Gênero (opcional)
+
+Foto de perfil (opcional)
+
+Preferências de adoção – por exemplo, tipo de pet preferido (cachorro, gato etc.)
+
+Histórico de adoções (caso o sistema armazene adoções anteriores)
+
+Quiz de personalidade (se seu sistema usar isso para sugerir pets)
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////// Usuario pet /////////////////////////////////////////////////////////////////////////////////////
+pets: 
+ong responsavel,
+nome, 
+idade, 
+espécie, 
+descrição, 
+localização, 
+perfil comportamental, 
+fotos;
+
+
+/////////////////////////////////////// Quiz ///////////////////////////////////////////////////////////////////////////////
+
+quiz_resultados: id_usuario, perfil;
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+favoritos ou interacoes: para salvar e visualizar pets marcados.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+🔗 Fluxo Resumido de Funcionamento
+Usuário se cadastra/loga → Preenche o quiz → Sistema calcula o perfil ideal.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Back-end busca pets com perfil e localização próximos do usuário.
+
+Usuário vê os pets no mapa ou em cards e pode:
+
+Ver detalhes;
+
+Salvar/favoritar;
+
+Enviar mensagem à ONG.
+
+ONGs acessam painel próprio e cadastram novos pets.
+
