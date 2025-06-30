@@ -10,7 +10,7 @@ export default class PetRepository implements CommandsPet<Pet>{
     }
     Cadastrar(obj: Pet): Promise<Pet> {
         return new Promise((resolve,reject)=>{
-            conexao.query("INSERT INTO pet(nome_pet,idade,especie,raca,sexo,porte,cor,comportamento,descricao) VALUES (?,?,?,?,?,?,?,?,?)",
+            conexao.query("INSERT INTO Pet(nome_pet,idade,especie,raca,sexo,porte,cor,comportamento,descricao) VALUES (?,?,?,?,?,?,?,?,?)",
                 [
                     obj.nome_pet,
                     obj.idade,
@@ -33,7 +33,15 @@ export default class PetRepository implements CommandsPet<Pet>{
         });
     }
     Listar(): Promise<Pet[]> {
-        throw new Error("Method not implemented.");
+        return new Promise ((resolve,reject)=>{
+            conexao.query("Select * from Pet", (erro, result)=>{
+                if (erro) {
+                    return reject(erro)
+                } else {
+                    return resolve(result as Pet[])
+                }
+            })
+        })
     }
     Apagar(id: number): Promise<string> {
         throw new Error("Method not implemented.");
