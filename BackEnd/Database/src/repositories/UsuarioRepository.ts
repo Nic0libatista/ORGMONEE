@@ -13,7 +13,7 @@ export default class UsuarioRepository implements CommandsUsuario<Usuario>{
     }
     Cadastrar(obj: Usuario): Promise<Usuario> {
         return new Promise((resolve,reject)=>{
-            conexao.query(`INSERT INTO usuario( nome_usu,contato,cpf_usu,data_nascimento,senha,id_endereco, preferencia) VALUES (?,?,?,?,?,?,?)`,
+            conexao.query(`INSERT INTO Usuario( nome_usu,contato,cpf_usu,data_nascimento,senha,id_endereco, preferencia) VALUES (?,?,?,?,?,?,?)`,
                 [
                     obj.nome_usu,
                     obj.contato,
@@ -35,7 +35,7 @@ export default class UsuarioRepository implements CommandsUsuario<Usuario>{
     }
     Listar(): Promise<Usuario[]> {
         return new Promise((resolve, reject)=>{
-            conexao.query("Select * from usuario",(erro, result)=>{
+            conexao.query("Select * from Usuario",(erro, result)=>{
                 if(erro){
                     return reject(erro)
                 } else{
