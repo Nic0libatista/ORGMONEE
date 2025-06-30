@@ -5,6 +5,52 @@ body{
     margin: 3px;
 }
 
+
+#check {
+    display: none;
+}
+
+/* Efeito "deslizar o menu" */
+/* Se check estiver "ticado", crir um estilo para ul*/
+#check:checked~ul {
+    right: 0;
+}
+
+
+nav ul {
+    list-style: none;
+    background-color: white;
+    height: 50vh;
+    position: fixed;
+    top: 65px;
+    right: -50%;
+    width: 50%;
+    transition: all 0.5s;
+}
+
+nav ul li {
+    padding: 15px 20px;
+    border-bottom: 2px solid var(--branco);
+    text-align: right;
+}
+
+nav ul li a {
+    color: var(--branco); 
+    text-decoration: none; /*remove sublinhado */
+}
+
+
+label {
+    font-size: 2em;
+   position: fixed;
+   top: 15px;
+   right: 33px;
+   color: var(--branco);
+}
+
+
+
+
 section{
     display: flex;
     width: 100%;
@@ -56,6 +102,45 @@ background-color: rgb(219, 219, 219);
 }
 
 
+.titulos{
+    margin-top: 15px;
+    text-align: center;
+    background-color:rgb(219, 219, 219);
+    font-size: 18pt;
+}
+.nav-link:hover{
+    color: black;
+    font-size: 17px;
+}
+
+#funcionamento {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* opcional: centraliza horizontalmente as cards */
+    gap: 20px; /* espaçamento entre os cards */
+  }
+
+  .card img {
+    margin: 10%;
+    width: 80%;
+  }
+
+
+
+@media (min-width:768px){
+    label {
+        display: none;
+    }
+}
+
+@media (min-width: 992px) {
+    
+
+#funcionamento {
+display: flex;
+flex-direction:row;
+}
+
 #funcionamento .funcionamentoo {
     margin-left: 15px;
     
@@ -80,13 +165,6 @@ background-color: rgb(219, 219, 219);
     margin: 5px;
 }
 
-.titulos{
-    margin-top: 22px;
-    text-align: center;
-    background-color:rgb(219, 219, 219);
-    font-size: 18pt;
-}
-.nav-link:hover{
-    color: black;
-    font-size: 17px;
+  
+
 }
