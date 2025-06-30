@@ -17,6 +17,6 @@ app.post("/api/v1/usuario/cadastro",(req,res)=>{
     us.cadastrarUsuario(req,res)
 })
 
-app.listen(5000, ()=>{
-    console.log(`Servidor Online`)
+app.listen(3000, ()=>{
+    console.log(`Servidor Online 10.26.45.39:3000`)
 })
