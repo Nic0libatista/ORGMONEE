@@ -1,9 +1,18 @@
 body{
-    background-color: black;
+    background-color: rgb(255, 255, 255);
+   
 }
+
 .nav-item {
     margin: 3px;
 }
+.menu {
+   position: fixed;
+   top:0px;
+  width: 100vw; /* opcional */
+  z-index: 999; /* garante que fique sobre outros */
+}
+
 section{
     display: flex;
     width: 100%;
@@ -97,6 +106,16 @@ padding-bottom: 80px;
 
 .empresa{
     background-color: lightgrey;
+}
+
+/* Pagina sobre */
+.sobre{
+    width: 90%;
+    margin: 5%;
+}
+
+#sobre{
+    margin-top: 30px;
 }
 
 
