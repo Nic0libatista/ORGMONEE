@@ -4,53 +4,6 @@ body{
 .nav-item {
     margin: 3px;
 }
-
-
-#check {
-    display: none;
-}
-
-/* Efeito "deslizar o menu" */
-/* Se check estiver "ticado", crir um estilo para ul*/
-#check:checked~ul {
-    right: 0;
-}
-
-
-nav ul {
-    list-style: none;
-    background-color: white;
-    height: 50vh;
-    position: fixed;
-    top: 65px;
-    right: -50%;
-    width: 50%;
-    transition: all 0.5s;
-}
-
-nav ul li {
-    padding: 15px 20px;
-    border-bottom: 2px solid var(--branco);
-    text-align: right;
-}
-
-nav ul li a {
-    color: var(--branco); 
-    text-decoration: none; /*remove sublinhado */
-}
-
-
-label {
-    font-size: 2em;
-   position: fixed;
-   top: 15px;
-   right: 33px;
-   color: var(--branco);
-}
-
-
-
-
 section{
     display: flex;
     width: 100%;
@@ -99,6 +52,7 @@ section{
 #funcionamento{
 
 background-color: rgb(219, 219, 219);
+padding-bottom: 80px;
 }
 
 
@@ -125,12 +79,30 @@ background-color: rgb(219, 219, 219);
     width: 80%;
   }
 
+  footer{
+    
+    background-color: rgb(133, 201, 139);
+    padding: 30px;
+  }
+
+  .col{
+    display:inline;
+    flex:100%;
+    width: 100%;
+  }
+
+  .col b{
+    margin-bottom: 20px;
+  }
+
+.empresa{
+    background-color: lightgrey;
+}
 
 
 @media (min-width:768px){
-    label {
-        display: none;
-    }
+
+
 }
 
 @media (min-width: 992px) {
@@ -165,6 +137,10 @@ flex-direction:row;
     margin: 5px;
 }
 
+ .col{
+    flex-direction: row;
+    flex: 2;
+  }
   
 
 }
