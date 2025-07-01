@@ -5,7 +5,30 @@ import { rejects } from "assert";
 import { conexao } from "../database/Config";
 
 export default class PetRepository implements CommandsPet<Pet>{
-    PesquisarEspecie(especie: string): Promise<Pet> {
+    PesquisarCor(cor: string): Promise<Pet[]> {
+       return new Promise((resolve, reject)=>{
+        
+       }) 
+    }
+    PesquisarRaca(raca: string): Promise<Pet[]> {
+        throw new Error("Method not implemented.");
+    }
+    PesquisarSexo(sexo: string): Promise<Pet[]> {
+        throw new Error("Method not implemented.");
+    }
+    PesquisarPorte(porte: string): Promise<Pet[]> {
+        throw new Error("Method not implemented.");
+    }
+    PesquisarComportamento(comportamento: string): Promise<Pet[]> {
+        throw new Error("Method not implemented.");
+    }
+    PesquisarIdade(idade: string): Promise<Pet[]> {
+        throw new Error("Method not implemented.");
+    }
+    PesquisarDisponibilidade(disponibilidade: string): Promise<Pet[]> {
+        throw new Error("Method not implemented.");
+    }
+    PesquisarEspecie(especie: string): Promise<Pet[]> {
         throw new Error("Method not implemented.");
     }
     Cadastrar(obj: Pet): Promise<Pet> {
