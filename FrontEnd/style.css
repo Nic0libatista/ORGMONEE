@@ -118,6 +118,18 @@ padding-bottom: 80px;
     margin-top: 30px;
 }
 
+.amarante-regular {
+    font-family: "Amarante", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .sobre h2 {
+    font-family: "Amarante", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
 
 @media (min-width:768px){
 
