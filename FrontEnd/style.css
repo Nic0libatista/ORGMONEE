@@ -88,9 +88,31 @@ padding-bottom: 80px;
     width: 80%;
   }
 
+  .animais{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+  }
+
+  .animais .card{
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+
+  .animais .card img{
+    width: 190px;
+    height:190px;
+  }
+
+   .animais .card .card-body{
+    padding-top: 2px;
+    
+  }
+
   footer{
     
-    background-color: rgb(133, 201, 139);
+    background-color: #1808C8;
     padding: 30px;
   }
 
@@ -131,7 +153,12 @@ padding-bottom: 80px;
   }
 
 
-@media (min-width:768px){
+@media (min-width:600px){
+.animais{
+    display: flex;
+    flex-direction: row;
+    margin: 15px;
+  }
 
 
 }
