@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> My Pet Friend </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/logoexemplo.jpg" type="image/x-icon">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Amarante&display=swap');
+      </style>
+</head>
+<body>
+   
+<div class="menu">
+   <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="img/logo2.png" alt="Logo" width="80" height="50" class="d-inline-block align-text-center">
+      My Pet Friend
+    </a>
+
+    <!-- Botão hamburguer -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar" aria-controls="menuNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      &#x268c;
+    </button>
+
+    <!-- Itens do menu -->
+    <div class="collapse navbar-collapse" id="menuNavbar">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="sobre.html">Sobre</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn active btn-outline-primary" aria-current="page" data-bs-toggle="modal" data-bs-target="#exampleModal1">Seja nosso parceiro</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Entrar</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</div>
+
+<!-- ///////////////////////////////// fim do menu /////////////////////////////////////-->
+
+<div class="container">
+
+    <h2 class="text-center" style="font-family: amarante; margin-top: 80px;"> Cadastre-se 🐾 </h2>
+
+<div class="cadastrar">
+    <form class="row g-3 needs-validation" novalidate>
+        <div class="col-md-4 position-relative">
+          <label for="validationTooltip01" class="form-label"> Nome completo </label>
+          <input type="text" class="form-control" id="validationTooltip01" placeholder="Nome completo" required>
+
+        </div>
+
+        <div class="col-md-2 position-relative">
+            <label for="validationTooltipUsername" class="form-label"> Cpf </label>
+            <div class="input-group has-validation">
+              <input type="text" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
+              <div class="invalid-tooltip">
+                Please choose a unique and valid username.
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-2 position-relative">
+            <label for="validationTooltip03" class="form-label"> Data de nascimento </label>
+            <input type="date" class="form-control" id="validationTooltip03" required>
+          </div>
+     
+        
+
+        <h4 class="text-center" style="font-family: amarante; margin-top: 80px;"> Contato </h2>
+
+            <div class="col-md-3 position-relative">
+                <label for="validationTooltipUsername" class="form-label"> Telefone residencial </label>
+                <div class="input-group has-validation">
+                  <span class="input-group-text" id="validationTooltipUsernamePrepend"> +55 </span>
+                  <input type="text" class="form-control" id="validationTooltipUsername" placeholder="Telefone residencial" aria-describedby="validationTooltipUsernamePrepend" required>
+                </div>
+              </div>
+
+              
+
+              <!-- telefone comercial (p ong)
+                <div class="col-md-3 position-relative">
+            <label for="validationTooltipUsername" class="form-label"> Telefone comercial </label>
+            <div class="input-group has-validation">
+              <span class="input-group-text" id="validationTooltipUsernamePrepend"> +55 </span>
+              <input type="text" class="form-control" id="validationTooltipUsername" placeholder="Telefone comercial" aria-describedby="validationTooltipUsernamePrepend" required>
+            </div>
+          </div>
+              -->
+
+        <div class="col-md-3 position-relative">
+            <label for="validationTooltipUsername" class="form-label"> Telefone celular </label>
+            <div class="input-group has-validation">
+              <span class="input-group-text" id="validationTooltipUsernamePrepend"> +55 </span>
+              <input type="text" class="form-control" id="validationTooltipUsername" placeholder="Telefone celular" aria-describedby="validationTooltipUsernamePrepend" required>
+            </div>
+          </div>
+
+          <div class="col-md-4 position-relative">
+            <label for="validationTooltipUsername" class="form-label"> Email </label>
+            <div class="input-group has-validation">
+              <input type="text" class="form-control" id="validationTooltipUsername" placeholder="Email" aria-describedby="validationTooltipUsernamePrepend" required>
+            </div>
+          </div>
+
+          
+
+
+
+
+          <h2 class="text-center" style="font-family: amarante; margin-top: 80px;"> Localidade </h2>
+
+          
+            <form class="row g-3 needs-validation" novalidate>
+              <div class="col-md-4">
+                <label for="cep" class="form-label">CEP</label>
+                <input type="text" class="form-control" id="cep" maxlength="9" required>
+              </div>
+          
+              <div class="col-md-4">
+                <label for="logradouro" class="form-label">Logradouro</label>
+                <input type="text" class="form-control" id="logradouro" required>
+              </div>
+          
+              <div class="col-md-3">
+                <label for="bairro" class="form-label">Bairro</label>
+                <input type="text" class="form-control" id="bairro" required>
+              </div>
+          
+              <div class="col-md-2">
+                <label for="cidade" class="form-label">Cidade</label>
+                <input type="text" class="form-control" id="cidade" required>
+              </div>
+          
+              <div class="col-md-2">
+                <label for="estado" class="form-label">Estado</label>
+                <input type="text" class="form-control" id="estado" required>
+              </div>
+
+        
+
+              
+
+        <div class="col-md-3 position-relative">
+          <label for="validationTooltip04" class="form-label">State</label>
+          <select class="form-select" id="validationTooltip04" required>
+            <option selected disabled value="">Choose...</option>
+            <option>...</option>
+          </select>
+          <div class="invalid-tooltip">
+            Please select a valid state.
+          </div>
+        </div>
+        <div class="col-md-3 position-relative">
+          <label for="validationTooltip05" class="form-label">Zip</label>
+          <input type="text" class="form-control" id="validationTooltip05" required>
+          <div class="invalid-tooltip">
+            Please provide a valid zip.
+          </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+      </form>
+
+</div>
+
+</div>
+
+<script>
+    document.getElementById('cep').addEventListener('blur', function () {
+      const cep = this.value.replace(/\D/g, '');
+  
+      if (cep.length === 8) {
+        fetch(`https://viacep.com.br/ws/${cep}/json/`)
+          .then(response => response.json())
+          .then(data => {
+            if (!data.erro) {
+              document.getElementById('logradouro').value = data.logradouro || '';
+              document.getElementById('bairro').value = data.bairro || '';
+              document.getElementById('cidade').value = data.localidade || '';
+              document.getElementById('estado').value = data.uf || '';
+            } else {
+              alert('CEP não encontrado.');
+            }
+          })
+          .catch(() => alert('Erro ao buscar o CEP.'));
+      } else {
+        alert('CEP inválido.');
+      }
+    });
+  </script>
+
+<script src="js/script.js"> </script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+</body>
+</html>

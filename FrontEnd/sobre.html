@@ -53,7 +53,7 @@
        <h2 class="text-center"> Sobre o My Pet Friend 🐾 </h2>
 <p>O My Pet Friend nasceu com um objetivo simples: aproximar pessoas de seus futuros melhores amigos.
 
-Aqui, você responde a um quiz rápido e intuitivo que analisa seu estilo de vida, rotina e preferências — e então, mostramos os animais que mais combinam com você. <br>
+Aqui, você responde a um quiz rápido e intuitivo que analisa seu estilo de vida, rotina e preferências e então, mostramos os animais que mais combinam com você. <br>
 <b>Nada de adotar por impulso:</b> aqui, você encontra aquele pet que realmente tem a ver com você. <br>
 
 🦴 Apenas ONGs parceiras podem cadastrar animais, garantindo que todos os pets estejam sob cuidados responsáveis, vacinados e prontos para uma nova família.
@@ -81,17 +81,44 @@ Ao se tornar parceira, sua ONG poderá:
 
 <!-- /////////////////////////// adote ////////////////////////////////-->
  <h2> Que tal adotar um amigo? </h2>
-<p>Você não precisa mudar o mundo inteiro — só o mundo de um pet. <br>
+<p>Você não precisa mudar o mundo inteiro só o mundo de um pet. <br>
 
 No My Pet Friend, você faz um quiz simples e descobre quais animais têm mais a ver com você.  <br>
 💌 Encontrou seu futuro companheiro? É só preencher o formulário de interesse e aguardar o contato da ONG responsável. <br>
 
-<b> Transforme uma vida — e a sua também. </b> <br> <br>
+<b> Transforme uma vida e a sua também. </b> <br> <br>
 <a class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Cadastre-se</a>
 </p>
 </div>
 </section>
 </div>
+
+<footer>
+
+  <div class="container text-center">
+  <div class="row align-items-end" style="color: white;">
+    <div class="col">
+      
+      <b> My Pet Friend </b>
+
+      <p> My Pet Friend é um programa criado para oferecer um lar duradouro e uma conexão
+        genuina entre tutor e animal.
+      </p>
+    </div>
+    <div class="col">
+      <b> Nos conheça! </b> <br>
+      
+      <a href="#" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" data-bs-toggle="modal" data-bs-target="#exampleModal"> Faça login </a> <br>
+      <a href="#" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" data-bs-toggle="modal" data-bs-target="#exampleModal1"> Seja uma ong parceira</a> <br>
+      <a href="sobre.html" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"> Sobre nós </a>
+      
+     
+
+    </div>
+
+  </div>
+</div>
+</footer>
 
 <div class="empresa">
   <div class="container text-center">
@@ -113,9 +140,9 @@ No My Pet Friend, você faz um quiz simples e descobre quais animais têm mais a
           <input type="password" class="form-control" id="txtpassword" placeholder="senha" required>
         </form>
       </div>
-      <div class="modal-footer">
-        <b> Não tem conta? <a href=""> cadastre-se</a></b>
-        <button type="button" class="btn btn-primary" onclick="efetuarlogin()"> Logar </button>
+      <div class="modal-footer" style="justify-content: space-between;">
+        <b data-bs-toggle="modal" > Não tem conta? <a href=""> cadastre-se</a></b>
+        <button type="button" class="btn btn-primary" onclick="efetuarlogin()"> Logar</button>
       </div>
     </div>
   </div>
@@ -132,16 +159,17 @@ No My Pet Friend, você faz um quiz simples e descobre quais animais têm mais a
       <div class="modal-body">
         <form onsubmit="return false">
           <input type="text" class="form-control"  id="txtOng" placeholder="Nome da ong" required> <br>
-          <input type="password" class="form-control" id="txtpassword" placeholder="senha" required>
+          <input type="password" class="form-control" id="txtpasswordOng" placeholder="senha" required>
         </form>
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer" style="justify-content: space-between;">
         <b> Sua ong não tem conta? <a href=""> cadastre-se</a></b>
         <button type="button" class="btn btn-primary" onclick="efetuarlogin()"> Logar </button>
       </div>
     </div>
   </div>
 </div>
+
 
 <script src="js/script.js"> </script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

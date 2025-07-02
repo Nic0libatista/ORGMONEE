@@ -1,0 +1,93 @@
+CREATE TABLE Usuario (
+    id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+    nome_usu VARCHAR(50) NOT NULL,
+    contato INT NOT NULL,
+    cpf_usu VARCHAR(15) NOT NULL UNIQUE,
+    data_nascimento DATE NOT NULL,
+    tipo_usu VARCHAR(30) NOT NULL,
+    senha VARCHAR(255) NOT NULL,
+    id_endereco INT NOT NULL,
+    foto_usu VARCHAR(255),
+    preferencia INT NOT NULL
+);
+
+CREATE TABLE Usuario_ong (
+    id_ong INT AUTO_INCREMENT PRIMARY KEY,
+    nome_ong VARCHAR(50) NOT NULL,
+    contato INT NOT NULL,
+    id_endereco INT NOT NULL,
+    cnpj_ong VARCHAR(20) NOT NULL UNIQUE,
+    razao_social VARCHAR(100),
+    nome_fantasia VARCHAR(100),
+    descricao VARCHAR(100),
+    conexao INT NOT NULL,
+    doc_comprovacao VARCHAR(255),
+    foto_ong VARCHAR(255),
+    id_pet INT NOT NULL,
+    historico_adocao INT NOT NULL
+);
+
+CREATE TABLE Pet (
+    id_pet INT AUTO_INCREMENT PRIMARY KEY,
+    id_ong INT NOT NULL,
+    nome_pet VARCHAR(50) NOT NULL,
+    idade VARCHAR(10),
+    especie VARCHAR(30),
+    raca VARCHAR(50),
+    sexo ENUM('M', 'F') DEFAULT 'M',
+    porte ENUM('pequeno', 'médio', 'grande'),
+    cor VARCHAR(30),
+    comportamento TEXT,
+    descricao TEXT,
+    foto_pet1 VARCHAR(255),
+    foto_pet2 VARCHAR(255),
+    foto_pet3 VARCHAR(255),
+    disponibilidade BOOLEAN DEFAULT TRUE
+);
+
+CREATE TABLE Adocao(
+    id_adocao INT AUTO_INCREMENT PRIMARY KEY,
+    data_adocao DATETIME DEFAULT CURRENT_TIMESTAMP() NOT NULL,
+    id_pet INT NOT NULL,
+    id_usuario INT NOT NULL
+);
+
+CREATE TABLE Contato (
+    id_contato INT AUTO_INCREMENT PRIMARY KEY,
+    telefone_residencial VARCHAR(15),
+    telefone_comercial VARCHAR(15),
+    telefone_celular VARCHAR(15),
+    email VARCHAR(100) NOT NULL UNIQUE
+);
+
+CREATE TABLE Endereco (
+    id_endereco INT AUTO_INCREMENT PRIMARY KEY,
+    complemento VARCHAR(255) NOT NULL,
+    cep VARCHAR(10) NOT NULL,
+    bairro VARCHAR(30) NOT NULL,
+    cidade VARCHAR(30) NOT NULL,
+    estado VARCHAR(2) NOT NULL,
+    logradouro VARCHAR(50) NOT NULL,
+    numero VARCHAR(5) NOT NULL
+);
+
+CREATE TABLE Conexao (
+    id_conexao INT AUTO_INCREMENT PRIMARY KEY,
+    rede_social1 VARCHAR(50),
+    rede_social2 VARCHAR(50),
+    rede_social3 VARCHAR(50),
+    rede_social4 VARCHAR(50)
+);
+
+CREATE TABLE preferencia (
+    id_preferencia INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT NOT NULL,
+    id_categoria INT NOT NULL,
+    resposta VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE categoria (
+    id_categoria INT PRIMARY KEY AUTO_INCREMENT,
+    tipo VARCHAR(30) NOT NULL,
+    descricao VARCHAR(100) NOT NULL
+);

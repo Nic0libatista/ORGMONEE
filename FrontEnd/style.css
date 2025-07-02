@@ -60,15 +60,19 @@ section{
 
 #funcionamento{
 
-background-color: rgb(219, 219, 219);
+background-color: rgb(255, 255, 255);
 padding-bottom: 80px;
+}
+
+#funcionamento .card{
+    border:2px solid black;
 }
 
 
 .titulos{
     margin-top: 15px;
     text-align: center;
-    background-color:rgb(219, 219, 219);
+    background-color:rgb(169, 220, 243);
     font-size: 18pt;
 }
 .nav-link:hover{
@@ -112,7 +116,7 @@ padding-bottom: 80px;
 
   footer{
     
-    background-color: #1808C8;
+    background-color: #4569ad;
     padding: 30px;
   }
 
