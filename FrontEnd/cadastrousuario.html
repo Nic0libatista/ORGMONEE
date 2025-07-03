@@ -64,7 +64,7 @@
         <div class="col-md-2 position-relative">
             <label for="validationTooltipUsername" class="form-label"> Cpf </label>
             <div class="input-group has-validation">
-              <input type="text" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
+              <input type="text" class="form-control" placeholder="000000000-00" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
               <div class="invalid-tooltip">
                 Please choose a unique and valid username.
               </div>
@@ -75,10 +75,8 @@
             <label for="validationTooltip03" class="form-label"> Data de nascimento </label>
             <input type="date" class="form-control" id="validationTooltip03" required>
           </div>
-     
-        
-
-        <h4 class="text-center" style="font-family: amarante; margin-top: 80px;"> Contato </h2>
+          
+         <h4 style="font-family: amarante; margin-top: 15px;"> Contato </h2>
 
             <div class="col-md-3 position-relative">
                 <label for="validationTooltipUsername" class="form-label"> Telefone residencial </label>
@@ -109,9 +107,12 @@
           </div>
 
           <div class="col-md-4 position-relative">
-            <label for="validationTooltipUsername" class="form-label"> Email </label>
+            <label for="email" class="form-label"> Email </label>
             <div class="input-group has-validation">
-              <input type="text" class="form-control" id="validationTooltipUsername" placeholder="Email" aria-describedby="validationTooltipUsernamePrepend" required>
+              <input type="email" class="form-control" id="email" placeholder="Email" aria-describedby="validationTooltipUsernamePrepend" required>
+           <div class="invalid-tooltip">
+            Por favor, insira um email válido.
+          </div>
             </div>
           </div>
 
@@ -120,7 +121,7 @@
 
 
 
-          <h2 class="text-center" style="font-family: amarante; margin-top: 80px;"> Localidade </h2>
+          <h2 style="font-family: amarante; margin-top: 15px;"> Localidade </h2>
 
           
             <form class="row g-3 needs-validation" novalidate>
@@ -149,34 +150,59 @@
                 <input type="text" class="form-control" id="estado" required>
               </div>
 
+                <div class="col-md-2">
+                <label for="numero" class="form-label">numero</label>
+                <input type="text" class="form-control" id="numero" required>
+              </div>
+
+             <div class="col-md-4">
+                <label for="complemento" class="form-label">complemento</label>
+                <input type="text" class="form-control" id="complemento" required>
+              </div>
+
+
         
-
-              
-
-        <div class="col-md-3 position-relative">
-          <label for="validationTooltip04" class="form-label">State</label>
-          <select class="form-select" id="validationTooltip04" required>
-            <option selected disabled value="">Choose...</option>
-            <option>...</option>
-          </select>
-          <div class="invalid-tooltip">
-            Please select a valid state.
-          </div>
-        </div>
-        <div class="col-md-3 position-relative">
-          <label for="validationTooltip05" class="form-label">Zip</label>
-          <input type="text" class="form-control" id="validationTooltip05" required>
-          <div class="invalid-tooltip">
-            Please provide a valid zip.
-          </div>
-        </div>
         <div class="col-12">
-          <button class="btn btn-primary" type="submit">Submit form</button>
+          <button class="btn btn-outline-success" type="submit"> Cadastrar </button>
         </div>
       </form>
 
 </div>
 
+</div>
+
+
+<footer style="margin-top: 20px;">
+
+  <div class="container text-center">
+  <div class="row align-items-end" style="color: white;">
+    <div class="col">
+      
+      <b> My Pet Friend </b>
+
+      <p> My Pet Friend é um programa criado para oferecer um lar duradouro e uma conexão
+        genuina entre tutor e animal.
+      </p>
+    </div>
+    <div class="col">
+      <b> Nos conheça! </b> <br>
+      
+      <a href="#" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" data-bs-toggle="modal" data-bs-target="#exampleModal"> Faça login </a> <br>
+      <a href="#" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" data-bs-toggle="modal" data-bs-target="#exampleModal1"> Seja uma ong parceira</a> <br>
+      <a href="sobre.html" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"> Sobre nós </a>
+      
+     
+
+    </div>
+
+  </div>
+</div>
+</footer>
+
+<div class="empresa">
+  <div class="container text-center">
+  <p id="ano">© 2025 - My Pet Friend </p>
+</div>
 </div>
 
 <script>

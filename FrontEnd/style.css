@@ -156,6 +156,23 @@ padding-bottom: 80px;
     font-style: normal;
   }
 
+/*Pagina cadastro -- formulario*/
+.formulario{
+  display: flex;
+  justify-content: center;
+  background-color: #3a5b97;
+  color: orange;
+  height: 100%;
+}
+
+.formulario div{
+  width: 100%;
+}
+
+.formulario div input:hover,textarea:hover{
+  border: black 2px solid;
+}
+
 
 @media (min-width:600px){
 .animais{

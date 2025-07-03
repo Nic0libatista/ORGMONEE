@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-br" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> My Pet Friend </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/logoexemplo.jpg" type="image/x-icon">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Amarante&display=swap');
+      </style>
+</head>
+<body>
+   
+<div class="menu">
+   <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="img/logo2.png" alt="Logo" width="80" height="50" class="d-inline-block align-text-center">
+      My Pet Friend
+    </a>
+
+    <!-- Botão hamburguer -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar" aria-controls="menuNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      &#x268c;
+    </button>
+
+    <!-- Itens do menu -->
+    <div class="collapse navbar-collapse" id="menuNavbar">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="sobre.html">Sobre</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn active btn-outline-primary" aria-current="page" data-bs-toggle="modal" data-bs-target="#exampleModal1">Seja nosso parceiro</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Entrar</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</div>
+
+<!-- ///////////////////////////////// fim do menu /////////////////////////////////////-->
+<div class="formulario">
+    <form style="margin-top: 70px;" class="row g-3 needs-validation" id="formOng" novalidate ">
+
+  <!-- Etapa 1: Informações Básicas -->
+  <div class="etapa" id="etapa-0">
+    <div class="col-md-5">
+      <label for="nome_ong" class="form-label">Nome da ONG</label>
+      <input type="text" class="form-control" id="nome_ong" required>
+    </div>
+
+    <div class="col-md-4">
+      <label for="razao_social" class="form-label">Razão Social</label>
+      <input type="text" class="form-control" id="razao_social" required>
+    </div>
+
+    <div class="col-md-4">
+      <label for="nome_fantasia" class="form-label">Nome Fantasia</label>
+      <input type="text" class="form-control" id="nome_fantasia" required>
+    </div>
+
+    <div class="col-md-3">
+      <label for="cnpj_ong" class="form-label">CNPJ</label>
+      <input type="text" class="form-control" id="cnpj_ong" required>
+    </div>
+
+    <div class="col-md-6">
+      <label for="descricao" class="form-label">Descrição</label>
+      <textarea class="form-control" id="descricao" rows="2" required></textarea>
+    </div>
+
+    <div class="col-md-6">
+      <label for="doc_comprovacao" class="form-label">Documento de comprovação</label>
+      <input class="form-control" type="file" id="doc_comprovacao" required>
+    </div>
+
+    <div class="col-md-4">
+      <label for="foto_ong" class="form-label">Foto da ONG</label>
+      <input class="form-control" type="file" id="foto_ong">
+    </div>
+  </div>
+
+  <!-- Etapa 2: Contato -->
+  <div class="etapa d-none" id="etapa-1">
+    <h4 style="font-family: amarante;">Contato</h4>
+
+    <div class="col-md-4">
+      <label for="telefone" class="form-label">Telefone</label>
+      <div class="input-group has-validation">
+        <span class="input-group-text">+55</span>
+        <input type="text" class="form-control" id="telefone" required>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" required>
+    </div>
+
+    <div class="col-md-4">
+      <label for="rede1" class="form-label">Url da rede Social 1</label>
+      <input type="url" class="form-control" id="rede1">
+    </div>
+
+    <div class="col-md-4">
+      <label for="rede2" class="form-label">Url da Rede Social 2</label>
+      <input type="url" class="form-control" id="rede2">
+    </div>
+  </div>
+
+  <!-- Etapa 3: Localidade -->
+  <div class="etapa d-none" id="etapa-2">
+    <h4 style="font-family: amarante;">Localidade</h4>
+
+    <div class="col-md-4">
+      <label for="cep" class="form-label">CEP</label>
+      <input type="text" class="form-control" id="cep" required>
+    </div>
+
+    <div class="col-md-4">
+      <label for="logradouro" class="form-label">Logradouro</label>
+      <input type="text" class="form-control" id="logradouro" required>
+    </div>
+
+    <div class="col-md-3">
+      <label for="bairro" class="form-label">Bairro</label>
+      <input type="text" class="form-control" id="bairro" required>
+    </div>
+
+    <div class="col-md-2">
+      <label for="cidade" class="form-label">Cidade</label>
+      <input type="text" class="form-control" id="cidade" required>
+    </div>
+
+    <div class="col-md-2">
+      <label for="estado" class="form-label">Estado</label>
+      <input type="text" class="form-control" id="estado" required>
+    </div>
+
+    <div class="col-md-2">
+      <label for="numero" class="form-label">Número</label>
+      <input type="text" class="form-control" id="numero" required>
+    </div>
+
+    <div class="col-md-4">
+      <label for="complemento" class="form-label">Complemento</label>
+      <input type="text" class="form-control" id="complemento">
+    </div>
+  </div>
+
+  <div class="col-12 mt-4 text-end">
+    <button class="btn btn-outline-warning" type="button" id="btnProximo">Próximo</button>
+    <button class="btn btn-success d-none" type="submit" id="btnFinalizar">Cadastrar ONG</button>
+  </div>
+</form>
+</div>
+
+
+
+
+<script>
+  const etapas = document.querySelectorAll('.etapa');
+  const btnProximo = document.getElementById('btnProximo');
+  const btnFinalizar = document.getElementById('btnFinalizar');
+  let etapaAtual = 0;
+
+  btnProximo.addEventListener('click', () => {
+    const atual = etapas[etapaAtual];
+    const inputs = atual.querySelectorAll('input, textarea');
+    let valido = true;
+
+    inputs.forEach(input => {
+      if (!input.checkValidity()) {
+        input.classList.add('is-invalid');
+        valido = false;
+      } else {
+        input.classList.remove('is-invalid');
+      }
+    });
+
+    if (!valido) return;
+
+    etapas[etapaAtual].classList.add('d-none');
+    etapaAtual++;
+
+    if (etapaAtual < etapas.length) {
+      etapas[etapaAtual].classList.remove('d-none');
+    }
+
+    if (etapaAtual === etapas.length - 1) {
+      btnProximo.classList.add('d-none');
+      btnFinalizar.classList.remove('d-none');
+    }
+  });
+
+  document.getElementById('formOng').addEventListener('submit', function (e) {
+    e.preventDefault();
+    alert('Cadastro enviado com sucesso!');
+  });
+</script>
+
+
+<script>
+    document.getElementById('cep').addEventListener('blur', function () {
+      const cep = this.value.replace(/\D/g, '');
+  
+      if (cep.length === 8) {
+        fetch(`https://viacep.com.br/ws/${cep}/json/`)
+          .then(response => response.json())
+          .then(data => {
+            if (!data.erro) {
+              document.getElementById('logradouro').value = data.logradouro || '';
+              document.getElementById('bairro').value = data.bairro || '';
+              document.getElementById('cidade').value = data.localidade || '';
+              document.getElementById('estado').value = data.uf || '';
+            } else {
+              alert('CEP não encontrado.');
+            }
+          })
+          .catch(() => alert('Erro ao buscar o CEP.'));
+      } else {
+        alert('CEP inválido.');
+      }
+    });
+  </script>
+
+<script src="js/script.js"> </script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+</body>
+</html>
