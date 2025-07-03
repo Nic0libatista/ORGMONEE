@@ -34,14 +34,9 @@
           <a class="nav-link" href="index.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="sobre.html">Sobre</a>
+          <a class="nav-link " href="sobre.html">Sobre</a>
         </li>
-        <li class="nav-item">
-          <a class="btn active btn-outline-primary" aria-current="page" data-bs-toggle="modal" data-bs-target="#exampleModal1">Seja nosso parceiro</a>
-        </li>
-        <li class="nav-item">
-          <a class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Entrar</a>
-        </li>
+      
       </ul>
     </div>
   </div>
@@ -50,53 +45,164 @@
 
 <!-- ///////////////////////////////// fim do menu /////////////////////////////////////-->
 
-<div class="quiz" style="margin-top: 110px;">
+<div class="quiz" style="margin-top: 25px;">
     <div class="container">
   <h2 class="mb-4">Qual pet combina com você?</h2>
 
   <form id="quizForm">
     <div class="question" style="display: block;">
-      <p><strong>1. Você prefere lugares...</strong></p>
+      <h3 class="mb-2"><b style="color:grey"> 🐶 Tipo de animal desejado </b></h3>
+      <p><strong>1. Qual espécie de pet você gostaria de adotar?  </strong></p>
       <div class="form-check">
         <input type="radio" name="q1" value="a" class="form-check-input" required>
-        <label class="form-check-label">Fechados e tranquilos</label>
+        <label class="form-check-label">Cachorro</label>
       </div>
       <div class="form-check">
         <input type="radio" name="q1" value="b" class="form-check-input">
-        <label class="form-check-label">Ao ar livre e agitados</label>
+        <label class="form-check-label">Gato</label>
+      </div>
+      <div class="form-check">
+        <input type="radio" name="q1" value="b" class="form-check-input">
+        <label class="form-check-label">Outro</label>
       </div>
     </div>
 
 
     <div class="question" style="display: none;">
-      <p><strong>2. Quanto tempo livre você tem por dia?</strong></p>
+      <h3 class="mb-2"><b style="color:grey"> 🔄 Idade do pet </b></h3>
+      <p><strong>2. Você prefere pets de qual faixa etária?</strong></p>
       <div class="form-check">
         <input type="radio" name="q2" value="a" class="form-check-input" required>
-        <label class="form-check-label">Pouco tempo</label>
+        <label class="form-check-label">Filhote</label>
       </div>
       <div class="form-check">
         <input type="radio" name="q2" value="b" class="form-check-input">
-        <label class="form-check-label">Muito tempo!</label>
+        <label class="form-check-label">Adulto</label>
+      </div>
+      <div class="form-check">
+        <input type="radio" name="q2" value="b" class="form-check-input">
+        <label class="form-check-label">Idoso</label>
       </div>
     </div>
 
   <div class="question" style="display: none;">
-      <p><strong>3. Você tem crianças em casa?</strong></p>
+    <h3 class="mb-2"><b style="color:grey"> 📏  Porte/tamanho </b></h3>
+      <p><strong>3. Qual porte de animal é mais adequado para sua casa?</strong></p>
       <div class="form-check">
         <input type="radio" name="q2" value="a" class="form-check-input" required>
-        <label class="form-check-label">Tenho crianças pequenas.</label>
+        <label class="form-check-label">Pequeno.</label>
       </div>
       <div class="form-check">
         <input type="radio" name="q2" value="b" class="form-check-input">
-        <label class="form-check-label">Não tenho crianças pequenas.</label>
+        <label class="form-check-label"> Médio. </label>
       </div>
       <div class="form-check">
         <input type="radio" name="q2" value="b" class="form-check-input">
-        <label class="form-check-label">Tenho apenas outros animais.</label>
+        <label class="form-check-label"> Grande.</label>
+      </div>
+    </div>
+
+    <div class="question" style="display: none;">
+      <h3 class="mb-2"><b style="color:grey"> 🌟 Temperamento/comportamento </b></h3>
+      <p><strong>4. Que tipo de temperamento você prefere?</strong></p>
+      <div class="form-check">
+        <input type="radio" name="q2" value="a" class="form-check-input" required>
+        <label class="form-check-label">Calmo.</label>
       </div>
       <div class="form-check">
         <input type="radio" name="q2" value="b" class="form-check-input">
-        <label class="form-check-label"> Tenho crianças pequenas e outros animais.</label>
+        <label class="form-check-label"> Brincalhão. </label>
+      </div>
+      <div class="form-check">
+        <input type="radio" name="q2" value="b" class="form-check-input">
+        <label class="form-check-label"> Protetor.</label>
+      </div>
+      <div class="form-check">
+        <input type="radio" name="q2" value="b" class="form-check-input">
+        <label class="form-check-label"> Independente </label>
+      </div>
+    </div>
+
+    <!--  pode selecionar varios -->
+
+    <div class="question" style="display: none;">
+      <h3 class="mb-2"><b style="color:grey"> 👨‍👩‍👧‍👦 Convivência </b></h3>
+      <p><strong>5. Seu lar possui: </strong></p>
+      <div class="form-check">
+        <input type="checkbox" name="q2" value="a" class="form-check-input" required>
+        <label class="form-check-label">Crianças pequenas.</label>
+      </div>
+      <div class="form-check">
+        <input type="checkbox" name="q2" value="b" class="form-check-input">
+        <label class="form-check-label"> Outros pets </label>
+      </div>
+      <div class="form-check">
+        <input type="checkbox" name="q2" value="b" class="form-check-input">
+        <label class="form-check-label"> Pessoas idosas.</label>
+      </div>
+    </div>
+
+    <div class="question" style="display: none;">
+      <h3 class="mb-2"><b style="color:grey"> 🏡Ambiente disponível </b></h3>
+      <p><strong>6. O pet terá acesso a:</strong></p>
+      <div class="form-check">
+        <input type="radio" name="q2" value="a" class="form-check-input" required>
+        <label class="form-check-label">Casa com quintal.</label>
+      </div>
+      <div class="form-check">
+        <input type="radio" name="q2" value="b" class="form-check-input">
+        <label class="form-check-label"> Apartamento </label>
+      </div>
+      <div class="form-check">
+        <input type="radio" name="q2" value="b" class="form-check-input">
+        <label class="form-check-label"> Área rural</label>
+      </div>
+    </div>
+
+    <div class="question" style="display: none;">
+      <h3 class="mb-2"><b style="color:grey"> 🕐 Tempo disponível </b></h3>
+      <p><strong>7. Quanto tempo você poderá dedicar ao pet diariamente?</strong></p>
+      <div class="form-check">
+        <input type="radio" name="q2" value="a" class="form-check-input" required>
+        <label class="form-check-label">Pouco (menos de 1h).</label>
+      </div>
+      <div class="form-check">
+        <input type="radio" name="q2" value="b" class="form-check-input">
+        <label class="form-check-label"> Moderado (1–3h) </label>
+      </div>
+      <div class="form-check">
+        <input type="radio" name="q2" value="b" class="form-check-input">
+        <label class="form-check-label"> Muito (mais de 3h).</label>
+      </div>
+    </div>
+
+    <div class="question" style="display: none;">
+      <h3 class="mb-2"><b style="color:grey"> 🛠️ Experiência com pets </b></h3>
+      <p><strong>8. Você já teve um pet antes?</strong></p>
+      <div class="form-check">
+        <input type="radio" name="q2" value="a" class="form-check-input" required>
+        <label class="form-check-label">Sim.</label>
+      </div>
+      <div class="form-check">
+        <input type="radio" name="q2" value="b" class="form-check-input">
+        <label class="form-check-label"> Não </label>
+      </div>
+    </div>
+
+    <div class="question" style="display: none;">
+      <h3 class="mb-2"><b style="color:grey"> ⚡ Nível de energia do pet </b></h3>
+      <p><strong>9. Você gostaria de um animal mais:</strong></p>
+      <div class="form-check">
+        <input type="radio" name="q2" value="a" class="form-check-input" required>
+        <label class="form-check-label">Tranquilo.</label>
+      </div>
+      <div class="form-check">
+        <input type="radio" name="q2" value="b" class="form-check-input">
+        <label class="form-check-label"> Ativo </label>
+      </div>
+      <div class="form-check">
+        <input type="radio" name="q2" value="b" class="form-check-input">
+        <label class="form-check-label"> Energético.</label>
       </div>
     </div>
 
@@ -116,38 +222,7 @@
 
 
 
-<footer style="margin-top: 20px;">
 
-  <div class="container text-center">
-  <div class="row align-items-end" style="color: white;">
-    <div class="col">
-      
-      <b> My Pet Friend </b>
-
-      <p> My Pet Friend é um programa criado para oferecer um lar duradouro e uma conexão
-        genuina entre tutor e animal.
-      </p>
-    </div>
-    <div class="col">
-      <b> Nos conheça! </b> <br>
-      
-      <a href="#" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" data-bs-toggle="modal" data-bs-target="#exampleModal"> Faça login </a> <br>
-      <a href="#" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" data-bs-toggle="modal" data-bs-target="#exampleModal1"> Seja uma ong parceira</a> <br>
-      <a href="sobre.html" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"> Sobre nós </a>
-      
-     
-
-    </div>
-
-  </div>
-</div>
-</footer>
-
-<div class="empresa">
-  <div class="container text-center">
-  <p id="ano">© 2025 - My Pet Friend </p>
-</div>
-</div>
 
 <script>
   const perguntas = document.querySelectorAll('.question');
