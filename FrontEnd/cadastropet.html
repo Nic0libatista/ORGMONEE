@@ -33,13 +33,7 @@
           <a class="nav-link" href="index.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="sobre.html">Sobre</a>
-        </li>
-        <li class="nav-item">
-          <a class="btn active btn-outline-primary" aria-current="page" data-bs-toggle="modal" data-bs-target="#exampleModal1">Seja nosso parceiro</a>
-        </li>
-        <li class="nav-item">
-          <a class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Entrar</a>
+          <a class="nav-link" href="sobre.html">Sobre</a>
         </li>
       </ul>
     </div>
@@ -48,129 +42,98 @@
 </div>
 
 <!-- ///////////////////////////////// fim do menu /////////////////////////////////////-->
-
 <div class="container" id="pet_cadastro">
+  <h2 class="text-center mb-4" style="font-family: amarante; margin-top: 80px;">Cadastre um pet 🐾</h2>
 
-    <h2 class="text-center" style="font-family: amarante; margin-top: 80px;"> Cadastre um pet 🐾 </h2>
+  <div class="cadastrar p-4 rounded shadow-sm" style="background-color: #f8f9fa;">
+    <form class="row g-4 needs-validation" novalidate>
 
-<div class="cadastrar">
-    <form class="row g-3 needs-validation" novalidate>
-        <div class="col-md-4 position-relative">
-          <label for="validationTooltip01" class="form-label"> Nome do pet </label>
-          <input type="text" class="form-control" id="validationTooltip01" placeholder="Nome completo" required>
+      <div class="col-md-4">
+        <label for="nomePet" class="form-label">Nome do pet</label>
+        <input type="text" class="form-control" id="nomePet" placeholder="Nome do pet" required>
+      </div>
 
-        </div>
+      <div class="col-md-3">
+        <label for="idadePet" class="form-label">Idade aproximada</label>
+        <select class="form-select" id="idadePet" required>
+          <option selected disabled>Selecione a idade aproximada</option>
+          <option value="filhote">Filhote (0 a 6 meses)</option>
+          <option value="adulto">Adulto (6 meses a 7 anos)</option>
+          <option value="idoso">Idoso (acima de 7 anos)</option>
+        </select>
+      </div>
 
-        <div class="col-md-3 position-relative">
-            <label for="validationTooltipUsername" class="form-label"> Idade aproximada </label>
-            <select class="form-select" aria-label="Selecione a idade aproximada">
-                <option selected>Selecione a idade aproximada</option>
-                <option value="filhote">Filhote (0 a 6 meses)</option>
-                <option value="adulto">Adulto (6 meses a 7 anos)</option>
-                <option value="idoso">Idoso (acima de 7 anos)</option>
-              </select>
-          </div>
-  
-          <div class="col-md-2 position-relative">
-            <label for="especieSelect" class="form-label">Espécie</label>
-            <select class="form-select" id="especieSelect" aria-label="Selecione a espécie">
-              <option selected disabled>Selecione a espécie</option>
-              <option value="cachorro">Cachorro</option>
-              <option value="gato">Gato</option>
-              <option value="coelho">Coelho</option>
-              <option value="passaro">Passaro</option>
-            </select>
-          </div>
-          
-          <div class="col-md-2 position-relative">
-            <label for="racaSelect" class="form-label">Raça</label>
-            <select class="form-select" id="racaSelect" aria-label="Selecione a raça">
-              <option selected disabled>Selecione a espécie primeiro</option>
-            </select>
-          </div>
+      <div class="col-md-2">
+        <label for="especieSelect" class="form-label">Espécie</label>
+        <select class="form-select" id="especieSelect" required>
+          <option selected disabled>Selecione a espécie</option>
+          <option value="cachorro">Cachorro</option>
+          <option value="gato">Gato</option>
+          <option value="coelho">Coelho</option>
+          <option value="passaro">Pássaro</option>
+        </select>
+      </div>
 
+      <div class="col-md-3">
+        <label for="racaSelect" class="form-label">Raça</label>
+        <select class="form-select" id="racaSelect" required>
+          <option selected disabled>Selecione a espécie primeiro</option>
+        </select>
+      </div>
 
-            
-              <div class="col-md-2 position-relative">
-                <label for="racaSelect" class="form-label">Porte </label>
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Porte </option>
-                    <option value="Pequeno">Pequeno </option>
-                    <option value="Médio">Médio</option>
-                    <option value="Grande">Grande</option>
-                  </select>
-              </div>
+      <div class="col-md-4">
+        <label for="portePet" class="form-label">Porte</label>
+        <select class="form-select" id="portePet" required>
+          <option selected disabled>Selecione o porte</option>
+          <option value="Pequeno">Pequeno</option>
+          <option value="Médio">Médio</option>
+          <option value="Grande">Grande</option>
+        </select>
+      </div>
 
-              <div class="col-md-2 position-relative">
-                <label for="validationTooltip01" class="form-label"> Cor do pet </label>
-                <input type="text" class="form-control" id="" placeholder="cor do pet" required>
+      <div class="col-md-4">
+        <label for="corPet" class="form-label">Cor do pet</label>
+        <input type="text" class="form-control" id="corPet" placeholder="Ex: Branco com manchas" required>
+      </div>
 
-              </div>
-             
-              <div class="col-md-2 position-relative">
-                <label for="validationTooltip01" class="form-label"> Comportamento </label>
-                <input type="text" class="form-control" id="" placeholder="Comportamento do pet" required>
-              </div>
+      <div class="col-md-4">
+        <label for="comportamentoPet" class="form-label">Comportamento</label>
+        <input type="text" class="form-control" id="comportamentoPet" placeholder="Ex: Calmo, brincalhão..." required>
+      </div>
 
-              <div class="col-md-2 position-relative">
-                <label for="validationTooltip01" class="form-label"> Descrição </label>
-                <input type="text" class="form-control" id="" placeholder="descrição do pet" required>
-              </div>
+      <div class="col-md-6">
+        <label for="descricaoPet" class="form-label">Descrição</label>
+        <textarea class="form-control" id="descricaoPet" rows="2" placeholder="Conte um pouco sobre o pet..." required></textarea>
+      </div>
 
-              
-              <div class="col-md-2 position-relative">
-                <label id="fotospet" class="form-label"> Fotos </label>
-                <input class="form-control" type="file" id="foto_ong" style="margin-bottom: 10px;">
-                <input class="form-control" type="file" id="foto_ong" style="margin-bottom: 10px;">
-                <input class="form-control" type="file" id="foto_ong" style="margin-bottom: 10px;">
-              </div>
-
-
-        
-        <div class="col-12">
-          <button class="btn btn-outline-success" type="submit"> Cadastrar </button>
-        </div>
-      </form>
-
-</div>
-
-</div>
-
-
-
-
-<footer style="margin-top: 20px;">
-
-  <div class="container text-center">
-  <div class="row align-items-end" style="color: white;">
-    <div class="col">
-      
-      <b> My Pet Friend </b>
-
-      <p> My Pet Friend é um programa criado para oferecer um lar duradouro e uma conexão
-        genuina entre tutor e animal.
-      </p>
-    </div>
-    <div class="col">
-      <b> Nos conheça! </b> <br>
-      
-      <a href="#" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" data-bs-toggle="modal" data-bs-target="#exampleModal"> Faça login </a> <br>
-      <a href="#" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" data-bs-toggle="modal" data-bs-target="#exampleModal1"> Seja uma ong parceira</a> <br>
-      <a href="sobre.html" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"> Sobre nós </a>
-      
-     
-
+      <div class="col-md-6">
+        <label class="form-label">Fotos do pet</label>
+        <div class="row">
+        <div class="col-md-4 mb-2 text-center">
+      <input class="form-control mb-2" type="file" id="foto_pet1" accept="image/*" onchange="previewImagem(this, 'preview1')">
+      <img id="preview1" src="" alt="Prévia da imagem 1" class="img-fluid rounded d-none" style="max-height: 130px;">
     </div>
 
+    <div class="col-md-4 mb-2 text-center">
+      <input class="form-control mb-2" type="file" id="foto_pet2" accept="image/*" onchange="previewImagem(this, 'preview2')">
+      <img id="preview2" src="" alt="Prévia da imagem 2" class="img-fluid rounded d-none" style="max-height: 130px;">
+    </div>
+
+    <div class="col-md-4 mb-2 text-center">
+      <input class="form-control mb-2" type="file" id="foto_pet3" accept="image/*" onchange="previewImagem(this, 'preview3')">
+      <img id="preview3" src="" alt="Prévia da imagem 3" class="img-fluid rounded d-none" style="max-height: 130px;">
+    </div>
+        </div>
+      </div>
+
+      <div class="col-12 text-end">
+        <button class="btn btn-success px-4" type="submit">Cadastrar</button>
+      </div>
+
+    </form>
   </div>
 </div>
-</footer>
 
-<div class="empresa">
-  <div class="container text-center">
-  <p id="ano">© 2025 - My Pet Friend </p>
-</div>
-</div>
 
 
 <script>
@@ -230,6 +193,23 @@
       }
     });
   </script>
+
+  <script>
+function previewImagem(input, previewId) {
+  const preview = document.getElementById(previewId);
+
+  if (input.files && input.files[0]) {
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+      preview.src = e.target.result;
+      preview.classList.remove('d-none');
+    };
+
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+</script>
 
 <script src="js/script.js"> </script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> My Pet Friend </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/logoexemplo.jpg" type="image/x-icon">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Amarante&display=swap');
+      </style>
+</head>
+<body>
+   
+<div class="menu">
+   <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="img/logo2.png" alt="Logo" width="80" height="50" class="d-inline-block align-text-center">
+      My Pet Friend
+    </a>
+
+    <!-- Botão hamburguer -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar" aria-controls="menuNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      &#x268c;
+    </button>
+
+    <!-- Itens do menu -->
+    <div class="collapse navbar-collapse" id="menuNavbar">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="sobre.html">Sobre</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+</div>
+
+<!-- ///////////////////////////////// fim do menu /////////////////////////////////////-->
+
+
+<!-- ////////////////////////////// começo da div animais //////////////////////////////// -->
+  <div class="titulos" style="margin-top: 80px;">
+  <b>Conheça os pets que combinam com você!</b>
+</div>
+<div class="container">
+
+<div class="animais">
+  
+  <div class="card" style="width: 15rem; ">
+  <img src="img/dogg.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"> nome do animal</h5>
+    <p class="card-text">Pequeno texto informativo sobre o animal e suas caracteristicas.</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"> Genero </li>
+    <li class="list-group-item"> raça</li>
+    <li class="list-group-item"> idade </li>
+  </ul>
+  <div class="card-body text-center">
+    <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModaladotar"> Quero adotar </button>
+  </div>
+</div>
+
+
+  <div class="card" style="width: 15rem;">
+  <img src="img/dog2.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"> nome do animal</h5>
+    <p class="card-text">Pequeno texto informativo sobre o animal e suas caracteristicas.</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"> genero </li>
+    <li class="list-group-item"> raça</li>
+    <li class="list-group-item"> idade </li>
+  </ul>
+  <div class="card-body text-center">
+   <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModaladotar"> Quero adotar </button>
+  </div>
+</div>
+
+
+  <div class="card" style="width: 15rem;">
+  <img src="img/dog3.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"> nome do animal</h5>
+    <p class="card-text">Pequeno texto informativo sobre o animal e suas caracteristicas.</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"> genero </li>
+    <li class="list-group-item"> raça</li>
+    <li class="list-group-item"> idade </li>
+  </ul>
+  <div class="card-body text-center">
+   <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModaladotar"> Quero adotar </button>
+  </div>
+</div>
+</div>
+
+</div>
+
+<!-- Modal Quero Adotar -->
+<div class="modal fade" id="exampleModaladotar" tabindex="-1" aria-labelledby="exampleModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="tituloInteresseAdocao">Formulário de Interesse na Adoção</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="row">
+
+          <!-- 🐾 Coluna de texto -->
+          <div class="col-md-8">
+            <p>🐾 <strong>Bem-vindo(a) ao nosso Formulário de Interesse.</strong></p>
+
+            <p>Ficamos muito felizes por você ter dado o primeiro passo para adotar um pet! 🐶🐱</p>
+
+            <p>
+              Queremos lembrar que o <strong>My Pet Friend</strong> apenas cede o espaço virtual para facilitar a adoção. Os pets, as entrevistas e o processo de adoção são de inteira responsabilidade das ONGs e protetores parceiros, tudo bem?
+            </p>
+
+            <p>
+              Após clicar no botão de "Tenho interesse", a ONG/protetor terá até <strong>48h para entrar em contato</strong>. E não se preocupe, estamos aqui para ajudar caso precise de qualquer suporte nesse processo.
+            </p>
+          </div>
+
+          <!-- 🐶 Coluna de imagem -->
+          <div class="col-md-4 text-center">
+            <img id="imagemPetModal" src="img/dog2.jpg" alt="Pet de interesse" class="img-fluid rounded shadow">
+            <p class="mt-2"><strong id="nomePetModal">Nome do Pet</strong></p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success">Tenho interesse</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<script src="js/script.js"> </script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+</body>
+</html>

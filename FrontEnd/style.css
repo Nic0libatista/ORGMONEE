@@ -199,8 +199,13 @@ padding-bottom: 80px;
 
 /* pagina cadastro pet /////////////*/
 
-#pet_cadastro input, .form-select {
+#pet_cadastro input, .form-select, #descricaoPet {
   border: 2px solid #4569ad;
+}
+
+/* pagina home ---- ong /////////////////*/
+#menuhomeong img{
+width: 26px;
 }
 
 @media (min-width:600px){

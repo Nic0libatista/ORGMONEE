@@ -33,14 +33,9 @@
           <a class="nav-link" href="index.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="sobre.html">Sobre</a>
+          <a class="nav-link" href="sobre.html">Sobre</a>
         </li>
-        <li class="nav-item">
-          <a class="btn active btn-outline-primary" aria-current="page" data-bs-toggle="modal" data-bs-target="#exampleModal1">Seja nosso parceiro</a>
-        </li>
-        <li class="nav-item">
-          <a class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Entrar</a>
-        </li>
+
       </ul>
     </div>
   </div>
@@ -52,158 +47,114 @@
 <div class="container">
 
     <h2 class="text-center" style="font-family: amarante; margin-top: 80px;"> Cadastre-se 🐾 </h2>
-
 <div class="cadastrar">
-    <form class="row g-3 needs-validation" novalidate>
-        <div class="col-md-4 position-relative">
-          <label for="validationTooltip01" class="form-label"> Nome completo </label>
-          <input type="text" class="form-control" id="validationTooltip01" placeholder="Nome completo" required>
+  <form class="row g-3 needs-validation" id="cadastroForm" novalidate>
 
-        </div>
-
-        <div class="col-md-2 position-relative">
-            <label for="validationTooltipUsername" class="form-label"> Cpf </label>
-            <div class="input-group has-validation">
-              <input type="text" class="form-control" placeholder="000000000-00" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
-              <div class="invalid-tooltip">
-                Please choose a unique and valid username.
-              </div>
-            </div>
-          </div>
-  
-          <div class="col-md-2 position-relative">
-            <label for="validationTooltip03" class="form-label"> Data de nascimento </label>
-            <input type="date" class="form-control" id="validationTooltip03" required>
-          </div>
-          
-         <h4 style="font-family: amarante; margin-top: 15px;"> Contato </h2>
-
-            <div class="col-md-3 position-relative">
-                <label for="validationTooltipUsername" class="form-label"> Telefone residencial </label>
-                <div class="input-group has-validation">
-                  <span class="input-group-text" id="validationTooltipUsernamePrepend"> +55 </span>
-                  <input type="text" class="form-control" id="validationTooltipUsername" placeholder="Telefone residencial" aria-describedby="validationTooltipUsernamePrepend" required>
-                </div>
-              </div>
-
-              
-
-              <!-- telefone comercial (p ong)
-                <div class="col-md-3 position-relative">
-            <label for="validationTooltipUsername" class="form-label"> Telefone comercial </label>
-            <div class="input-group has-validation">
-              <span class="input-group-text" id="validationTooltipUsernamePrepend"> +55 </span>
-              <input type="text" class="form-control" id="validationTooltipUsername" placeholder="Telefone comercial" aria-describedby="validationTooltipUsernamePrepend" required>
-            </div>
-          </div>
-              -->
-
-        <div class="col-md-3 position-relative">
-            <label for="validationTooltipUsername" class="form-label"> Telefone celular </label>
-            <div class="input-group has-validation">
-              <span class="input-group-text" id="validationTooltipUsernamePrepend"> +55 </span>
-              <input type="text" class="form-control" id="validationTooltipUsername" placeholder="Telefone celular" aria-describedby="validationTooltipUsernamePrepend" required>
-            </div>
-          </div>
-
-          <div class="col-md-4 position-relative">
-            <label for="email" class="form-label"> Email </label>
-            <div class="input-group has-validation">
-              <input type="email" class="form-control" id="email" placeholder="Email" aria-describedby="validationTooltipUsernamePrepend" required>
-           <div class="invalid-tooltip">
-            Por favor, insira um email válido.
-          </div>
-            </div>
-          </div>
-
-          
-
-
-
-
-          <h2 style="font-family: amarante; margin-top: 15px;"> Localidade </h2>
-
-          
-            <form class="row g-3 needs-validation" novalidate>
-              <div class="col-md-4">
-                <label for="cep" class="form-label">CEP</label>
-                <input type="text" class="form-control" id="cep" maxlength="9" required>
-              </div>
-          
-              <div class="col-md-4">
-                <label for="logradouro" class="form-label">Logradouro</label>
-                <input type="text" class="form-control" id="logradouro" required>
-              </div>
-          
-              <div class="col-md-3">
-                <label for="bairro" class="form-label">Bairro</label>
-                <input type="text" class="form-control" id="bairro" required>
-              </div>
-          
-              <div class="col-md-2">
-                <label for="cidade" class="form-label">Cidade</label>
-                <input type="text" class="form-control" id="cidade" required>
-              </div>
-          
-              <div class="col-md-2">
-                <label for="estado" class="form-label">Estado</label>
-                <input type="text" class="form-control" id="estado" required>
-              </div>
-
-                <div class="col-md-2">
-                <label for="numero" class="form-label">numero</label>
-                <input type="text" class="form-control" id="numero" required>
-              </div>
-
-             <div class="col-md-4">
-                <label for="complemento" class="form-label">complemento</label>
-                <input type="text" class="form-control" id="complemento" required>
-              </div>
-
-
-        
-        <div class="col-12">
-          <button class="btn btn-outline-success" type="submit"> Cadastrar </button>
-        </div>
-      </form>
-
-</div>
-
-</div>
-
-
-<footer style="margin-top: 20px;">
-
-  <div class="container text-center">
-  <div class="row align-items-end" style="color: white;">
-    <div class="col">
-      
-      <b> My Pet Friend </b>
-
-      <p> My Pet Friend é um programa criado para oferecer um lar duradouro e uma conexão
-        genuina entre tutor e animal.
-      </p>
-    </div>
-    <div class="col">
-      <b> Nos conheça! </b> <br>
-      
-      <a href="#" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" data-bs-toggle="modal" data-bs-target="#exampleModal"> Faça login </a> <br>
-      <a href="#" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" data-bs-toggle="modal" data-bs-target="#exampleModal1"> Seja uma ong parceira</a> <br>
-      <a href="sobre.html" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"> Sobre nós </a>
-      
-     
-
+    <div class="col-md-4 position-relative">
+      <label for="nomeCompleto" class="form-label">Nome completo</label>
+      <input type="text" class="form-control" id="nomeCompleto" placeholder="Nome completo" minlength="10" required>
+      <div class="invalid-tooltip">Nome completo obrigatório.</div>
     </div>
 
-  </div>
-</div>
-</footer>
+    <div class="col-md-2 position-relative">
+      <label for="cpf" class="form-label">CPF</label>
+      <div class="input-group has-validation">
+        <input type="text" class="form-control" id="cpf" placeholder="000000000-00" maxlength="12" required>
+        <div class="invalid-tooltip">CPF obrigatório.</div>
+      </div>
+    </div>
 
-<div class="empresa">
-  <div class="container text-center">
-  <p id="ano">© 2025 - My Pet Friend </p>
+    <div class="col-md-2 position-relative">
+      <label for="nascimento" class="form-label">Data de nascimento</label>
+      <input type="date" class="form-control" id="nascimento" required>
+      <div class="invalid-tooltip">Informe sua data de nascimento.</div>
+    </div>
+
+    <h4 style="font-family: amarante; margin-top: 15px;">Contato</h4>
+
+    <div class="col-md-3 position-relative">
+      <label for="telFixo" class="form-label">Telefone residencial</label>
+      <div class="input-group has-validation">
+        <span class="input-group-text">+55</span>
+        <input type="text" class="form-control" id="telFixo" placeholder="Telefone residencial" required>
+        <div class="invalid-tooltip">Informe o telefone residencial.</div>
+      </div>
+    </div>
+
+    <div class="col-md-3 position-relative">
+      <label for="telCelular" class="form-label">Telefone celular</label>
+      <div class="input-group has-validation">
+        <span class="input-group-text">+55</span>
+        <input type="text" class="form-control" id="telCelular" placeholder="Telefone celular" required>
+        <div class="invalid-tooltip">Informe o celular.</div>
+      </div>
+    </div>
+
+    <div class="col-md-4 position-relative">
+      <label for="email" class="form-label">Email</label>
+      <div class="input-group has-validation">
+        <input type="email" class="form-control" id="email" placeholder="Email" required>
+        <div class="invalid-tooltip">Por favor, insira um email válido.</div>
+      </div>
+    </div>
+
+    <h2 style="font-family: amarante; margin-top: 15px;">Localidade</h2>
+
+    <div class="col-md-4">
+      <label for="cep" class="form-label">CEP</label>
+      <input type="text" class="form-control" id="cep" maxlength="9" required>
+      <div class="invalid-tooltip">CEP obrigatório.</div>
+    </div>
+
+    <div class="col-md-4">
+      <label for="logradouro" class="form-label">Logradouro</label>
+      <input type="text" class="form-control" id="logradouro" required>
+      <div class="invalid-tooltip">Informe o logradouro.</div>
+    </div>
+
+    <div class="col-md-3">
+      <label for="bairro" class="form-label">Bairro</label>
+      <input type="text" class="form-control" id="bairro" required>
+      <div class="invalid-tooltip">Informe o bairro.</div>
+    </div>
+
+    <div class="col-md-2">
+      <label for="cidade" class="form-label">Cidade</label>
+      <input type="text" class="form-control" id="cidade" required>
+      <div class="invalid-tooltip">Informe a cidade.</div>
+    </div>
+
+    <div class="col-md-2">
+      <label for="estado" class="form-label">Estado</label>
+      <input type="text" class="form-control" id="estado" required>
+      <div class="invalid-tooltip">Informe o estado.</div>
+    </div>
+
+    <div class="col-md-2">
+      <label for="numero" class="form-label">Número</label>
+      <input type="text" class="form-control" id="numero" required>
+      <div class="invalid-tooltip">Número obrigatório.</div>
+    </div>
+
+    <div class="col-md-4">
+      <label for="complemento" class="form-label">Complemento</label>
+      <input type="text" class="form-control" id="complemento" required>
+      <div class="invalid-tooltip">Complemento obrigatório.</div>
+    </div>
+
+    <div class="col-12">
+      <button class="btn btn-outline-success" type="submit">Cadastrar</button>
+    </div>
+  </form>
 </div>
+
+
 </div>
+
+</div>
+
+
+
 
 <script>
     document.getElementById('cep').addEventListener('blur', function () {
@@ -228,6 +179,28 @@
       }
     });
   </script>
+
+  <script>
+  // Validação Bootstrap + redirecionamento após envio
+  (function () {
+    'use strict'
+
+    const form = document.getElementById('cadastroForm')
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault()
+      event.stopPropagation()
+
+      if (form.checkValidity()) {
+        alert("Bem vindo a nossa plataforma! iremos redirecionar você para o nosso quiz, mas fique tranquilo, para responde-lo leva menos de 5 minutos!")
+        // Aqui vai o destino da próxima tela
+        window.location.href = "quiz.html"
+      } else {
+        form.classList.add('was-validated')
+      }
+    }, false)
+  })()
+</script>
 
 <script src="js/script.js"> </script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
