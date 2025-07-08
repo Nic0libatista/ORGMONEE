@@ -93,6 +93,7 @@ padding-bottom: 80px;
   }
 
   .animais{
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -134,7 +135,7 @@ padding-bottom: 80px;
     background-color: lightgrey;
 }
 
-/* Pagina sobre */
+/* Pagina sobre //////////////////////////// */
 .sobre{
     width: 90%;
     margin: 5%;
@@ -206,6 +207,28 @@ padding-bottom: 80px;
 /* pagina home ---- ong /////////////////*/
 #menuhomeong img{
 width: 26px;
+}
+
+/* pagina cadastro usuario /////////// 
+.backgroundusu{
+  background: 
+   url(https://static.vecteezy.com/ti/fotos-gratis/t1/45125824-varios-racas-do-cachorros-olhadinha-fora-a-partir-de-atras-uma-de-madeira-cerca-conceito-para-animais-de-estimacao-veterinario-clinica-ou-nutricao-comida-para-caes-bandeira-com-espaco-para-texto-foto.jpg) no-repeat;
+  background-size: cover;
+  height: 87vh;
+
+}
+  */
+
+  .backgroundusu {
+    background-color: rgb(185, 185, 185);
+    height: 88vh;
+    
+  }
+
+.backgroundusu label{
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);;
 }
 
 @media (min-width:600px){

@@ -43,23 +43,23 @@
 </div>
 
 <!-- ///////////////////////////////// fim do menu /////////////////////////////////////-->
-
+<div class="backgroundusu">
 <div class="container">
 
-    <h2 class="text-center" style="font-family: amarante; margin-top: 80px;"> Cadastre-se 🐾 </h2>
-<div class="cadastrar">
+    <h2 class="text-center" style="font-family: amarante; margin-top: 77px; padding-top: 5px;"> Cadastre-se 🐾 </h2>
+<div class="cadastrarusu">
   <form class="row g-3 needs-validation" id="cadastroForm" novalidate>
 
-    <div class="col-md-4 position-relative">
+    <div class="col-md-5 position-relative">
       <label for="nomeCompleto" class="form-label">Nome completo</label>
       <input type="text" class="form-control" id="nomeCompleto" placeholder="Nome completo" minlength="10" required>
       <div class="invalid-tooltip">Nome completo obrigatório.</div>
     </div>
 
-    <div class="col-md-2 position-relative">
+    <div class="col-md-3 position-relative">
       <label for="cpf" class="form-label">CPF</label>
       <div class="input-group has-validation">
-        <input type="text" class="form-control" id="cpf" placeholder="000000000-00" maxlength="12" required>
+        <input type="text" class="form-control" id="cpf" placeholder="00.000.0000-00" maxlength="14" required>
         <div class="invalid-tooltip">CPF obrigatório.</div>
       </div>
     </div>
@@ -68,15 +68,18 @@
       <label for="nascimento" class="form-label">Data de nascimento</label>
       <input type="date" class="form-control" id="nascimento" required>
       <div class="invalid-tooltip">Informe sua data de nascimento.</div>
+      <div id="mensagemIdade" class="text-danger mt-1" style="display: none; font-size: 0.9em;">
+      Você precisa ter 18 anos ou mais para se cadastrar.
+      </div>
     </div>
 
-    <h4 style="font-family: amarante; margin-top: 15px;">Contato</h4>
+    <h2 style="font-family: amarante; margin-top: 12px;">Contato</h4>
 
     <div class="col-md-3 position-relative">
       <label for="telFixo" class="form-label">Telefone residencial</label>
       <div class="input-group has-validation">
         <span class="input-group-text">+55</span>
-        <input type="text" class="form-control" id="telFixo" placeholder="Telefone residencial" required>
+        <input type="text" class="form-control" id="telFixo" maxlength="12" placeholder="Telefone residencial" required>
         <div class="invalid-tooltip">Informe o telefone residencial.</div>
       </div>
     </div>
@@ -85,7 +88,7 @@
       <label for="telCelular" class="form-label">Telefone celular</label>
       <div class="input-group has-validation">
         <span class="input-group-text">+55</span>
-        <input type="text" class="form-control" id="telCelular" placeholder="Telefone celular" required>
+        <input type="text" class="form-control" id="telCelular" maxlength="12" placeholder="Telefone celular" required>
         <div class="invalid-tooltip">Informe o celular.</div>
       </div>
     </div>
@@ -100,9 +103,9 @@
 
     <h2 style="font-family: amarante; margin-top: 15px;">Localidade</h2>
 
-    <div class="col-md-4">
+    <div class="col-md-3">
       <label for="cep" class="form-label">CEP</label>
-      <input type="text" class="form-control" id="cep" maxlength="9" required>
+      <input type="text" class="form-control" id="cep" maxlength="9" placeholder="00000000" required>
       <div class="invalid-tooltip">CEP obrigatório.</div>
     </div>
 
@@ -117,6 +120,8 @@
       <input type="text" class="form-control" id="bairro" required>
       <div class="invalid-tooltip">Informe o bairro.</div>
     </div>
+   
+    <div class="w-100"></div>
 
     <div class="col-md-2">
       <label for="cidade" class="form-label">Cidade</label>
@@ -143,8 +148,9 @@
     </div>
 
     <div class="col-12">
-      <button class="btn btn-outline-success" type="submit">Cadastrar</button>
-    </div>
+  <button id="btnCadastrar" class="btn btn-outline-success" type="submit">Cadastrar</button>
+</div>
+
   </form>
 </div>
 
@@ -152,7 +158,81 @@
 </div>
 
 </div>
+</div>
 
+
+<!-- Modal SENHA USUARIO-->
+<div class="modal fade" id="exampleModalsenha" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+     
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modalSenhaLabel">Crie sua senha</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+
+      <div class="modal-body">
+        <form id="formSenhaUsuario" class="row g-3 needs-validation" novalidate>
+
+          <div class="col-12">
+            <label for="senhaUsuario" class="form-label">Senha</label>
+            <input type="password" class="form-control" id="senhaUsuario" placeholder="Digite sua senha" minlength="6" required>
+            <div class="invalid-feedback">
+              A senha deve ter no mínimo 6 caracteres.
+            </div>
+          </div>
+
+          <div class="col-12">
+            <label for="confirmaSenhaUsuario" class="form-label">Confirme a senha</label>
+            <input type="password" class="form-control" id="confirmaSenhaUsuario" placeholder="Confirme a senha" required>
+            <div class="invalid-feedback">
+              As senhas devem coincidir.
+            </div>
+          </div>
+
+          <div class="col-12 text-end mt-3">
+            <button type="submit" class="btn btn-success">Confirmar senha</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/script.js"> </script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+<script>
+  const campoNascimento = document.getElementById('nascimento');
+  const mensagemIdade = document.getElementById('mensagemIdade');
+
+  campoNascimento.addEventListener('blur', function () {
+    const nascimento = this.value;
+    if (!nascimento) {
+      mensagemIdade.style.display = 'none';
+      return;
+    }
+
+    const dataNascimento = new Date(nascimento);
+    const hoje = new Date();
+    let idade = hoje.getFullYear() - dataNascimento.getFullYear();
+    const mes = hoje.getMonth() - dataNascimento.getMonth();
+    const dia = hoje.getDate() - dataNascimento.getDate();
+
+    if (mes < 0 || (mes === 0 && dia < 0)) {
+      idade--;
+    }
+
+    if (idade < 18) {
+      mensagemIdade.style.display = 'block';
+      this.value = '';
+      this.focus();
+    } else {
+      mensagemIdade.style.display = 'none';
+    }
+  });
+</script>
 
 
 
@@ -179,32 +259,64 @@
       }
     });
   </script>
-
-  <script>
-  // Validação Bootstrap + redirecionamento após envio
+<script>
   (function () {
     'use strict'
 
-    const form = document.getElementById('cadastroForm')
+    const form = document.getElementById('cadastroForm');
+    const modalSenha = new bootstrap.Modal(document.getElementById('exampleModalsenha'));
 
     form.addEventListener('submit', function (event) {
-      event.preventDefault()
-      event.stopPropagation()
+      event.preventDefault();
+      event.stopPropagation();
 
       if (form.checkValidity()) {
-        alert("Bem vindo a nossa plataforma! iremos redirecionar você para o nosso quiz, mas fique tranquilo, para responde-lo leva menos de 5 minutos!")
-        // Aqui vai o destino da próxima tela
-        window.location.href = "quiz.html"
+        // Exibe o modal de senha ao validar o formulário principal
+        modalSenha.show();
+        console.log("Bootstrap Modal:", bootstrap?.Modal);
+
       } else {
-        form.classList.add('was-validated')
+        form.classList.add('was-validated');
       }
     }, false)
-  })()
+  })();
 </script>
 
-<script src="js/script.js"> </script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+<script>
+  const formSenha = document.getElementById('formSenhaUsuario');
+  const senha = document.getElementById('senhaUsuario');
+  const confirmaSenha = document.getElementById('confirmaSenhaUsuario');
+
+  formSenha.addEventListener('submit', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (senha.value.length < 6) {
+      senha.setCustomValidity("Senha curta");
+    } else {
+      senha.setCustomValidity("");
+    }
+
+    if (senha.value !== confirmaSenha.value) {
+      confirmaSenha.setCustomValidity("Senhas diferentes");
+    } else {
+      confirmaSenha.setCustomValidity("");
+    }
+
+    if (formSenha.checkValidity()) {
+      // Aqui você pode prosseguir com o envio real
+      console.log("Senha confirmada: ", senha.value);
+      alert("Senha criada com sucesso!");
+      window.location.href = "quiz.html";
+      const modal = bootstrap.Modal.getInstance(document.getElementById('exampleModalsenha'));
+      modal.hide();
+    }
+
+    formSenha.classList.add('was-validated');
+  });
+</script>
+
+
 
 </body>
 </html>
