@@ -91,3 +91,49 @@ CREATE TABLE categoria (
     tipo VARCHAR(30) NOT NULL,
     descricao VARCHAR(100) NOT NULL
 );
+
+
+// perguntas
+
+
+🐶 1. Tipo de animal desejado
+Qual espécie de pet você gostaria de adotar?
+_( ) Cachorro _( ) Gato ( ) Outro
+
+🔄 2. Idade do pet
+Você prefere pets de qual faixa etária?
+_( ) Filhote _( ) Jovem _( ) Adulto ( ) Idoso
+
+📏 3. Porte/tamanho
+Qual porte de animal é mais adequado para sua casa?
+_( ) Pequeno _( ) Médio ( ) Grande
+
+🌟 4. Temperamento/comportamento
+Que tipo de temperamento você prefere?
+_( ) Calmo _( ) Brincalhão _( ) Protetor ( ) Independente
+
+👨‍👩‍👧‍👦 5. Convivência
+Seu lar possui:
+
+( ) Crianças pequenas
+
+( ) Outros pets
+
+( ) Pessoas idosas
+
+🏡 6. Ambiente disponível
+O pet terá acesso a:
+_( ) Casa com quintal _( ) Apartamento ( ) Área rural
+
+🕐 7. Tempo disponível
+Quanto tempo você poderá dedicar ao pet diariamente?
+_( ) Pouco (menos de 1h) _( ) Moderado (1–3h) ( ) Muito (mais de 3h)
+
+🛠️ 8. Experiência com pets
+Você já teve um pet antes?
+_( ) Sim ( ) Não
+
+💬 9. Nível de energia do pet
+Você gostaria de um animal mais:
+_( ) Tranquilo _( ) Ativo ( ) Energético
+
