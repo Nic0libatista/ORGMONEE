@@ -65,11 +65,11 @@
     </div>
 
     <div class="col-md-2 position-relative">
-      <label for="nascimento" class="form-label">Data de nascimento</label>
+      <label for="nascimento" class="form-label">Data de nasc.</label>
       <input type="date" class="form-control" id="nascimento" required>
       <div class="invalid-tooltip">Informe sua data de nascimento.</div>
       <div id="mensagemIdade" class="text-danger mt-1" style="display: none; font-size: 0.9em;">
-      Você precisa ter 18 anos ou mais para se cadastrar.
+     <b> Você precisa ter 18 anos ou mais para se cadastrar. </b>
       </div>
     </div>
 
@@ -79,7 +79,7 @@
       <label for="telFixo" class="form-label">Telefone residencial</label>
       <div class="input-group has-validation">
         <span class="input-group-text">+55</span>
-        <input type="text" class="form-control" id="telFixo" maxlength="12" placeholder="Telefone residencial" required>
+        <input type="text" class="form-control" id="telFixo" maxlength="12" placeholder="Telefone residencial">
         <div class="invalid-tooltip">Informe o telefone residencial.</div>
       </div>
     </div>
@@ -148,7 +148,7 @@
     </div>
 
     <div class="col-12">
-  <button id="btnCadastrar" class="btn btn-outline-success" type="submit">Cadastrar</button>
+  <button id="btnCadastrar" class="btn btn-success" type="submit">Cadastrar</button>
 </div>
 
   </form>

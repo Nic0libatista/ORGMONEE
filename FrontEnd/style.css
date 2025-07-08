@@ -178,7 +178,7 @@ padding-bottom: 80px;
 /* ////////// pagina do quiz //////////*/
 .quiz {
  background-color: #b1c9f7;
- background-size: cover auto;
+ background-size: cover auto;   
  width: 100%;
  height: 100vh;
  text-align: center;
@@ -220,9 +220,8 @@ width: 26px;
   */
 
   .backgroundusu {
-    background-color: rgb(185, 185, 185);
-    height: 88vh;
-    
+    background-color: #6da2ca;
+    height: 1350px;
   }
 
 .backgroundusu label{
@@ -260,6 +259,12 @@ width: 26px;
 
 .form-check-input {
   margin-right: 8px;
+}
+
+/* pagina cadastro usu*/
+.backgroundusu {
+  
+  height: 88vh;
 }
 
 }
