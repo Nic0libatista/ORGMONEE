@@ -184,8 +184,11 @@ padding-bottom: 80px;
  text-align: center;
 }
 
-.question{
-  margin-top: 50%;}
+
+  .question {
+    margin: 40px auto;
+    max-width: 600px;
+  }
 
   .form-check {
     display: flex;
