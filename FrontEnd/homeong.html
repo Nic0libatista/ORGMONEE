@@ -36,7 +36,7 @@
           <a href="cadastropet.html" class="btn"><img src="img/add_icon.png" title="Cadastrar novo pet"> </a>
         </li>
         <li class="nav-item">
-          <a class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"> <img src="img/notification_icon.png" title="notificações"> </a>
+          <a class="btn" data-bs-toggle="modal" data-bs-target="#exampleModalNotification"> <img src="img/notification_icon.png" title="notificações"> </a>
         </li>
         <nav class="navbar navbar-light bg-light">
  <form class="d-flex align-items-center" role="search">
@@ -147,7 +147,75 @@
   <p id="ano">© 2025 - My Pet Friend </p>
 </div>
 </div>
+<!-- Modal NOTIFICAÇÃO -->
+<div class="modal fade" id="exampleModalNotification" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Notificações</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      
+      <div class="modal-body" style="background-color: beige;">
+        <div class="notificacao">
+          <div class="row">
+             <!-- Coluna da imagem -->
+          <div class="col-md-4 text-center" >
+            <img src="img/dog2.jpg" alt="Pet" style="width: 60px; height: 90px;">
+            <img src="img/dog3.jpg" alt="Pet" style="width: 60px; height: 90px;">
+          </div>
+          
+          <!-- Coluna de texto -->
+          <div class="col-md-8 d-flex flex-column justify-content-center">
+            <p><strong>O usuário ${nome} demonstrou interessou pelo ${pet}!</strong></p>
+            <p>Entre em contato para prosseguir com a adoção!</p>
+            <div class="d-flex gap-3 align-items-center">
+              <a href="tel:+5511984538900">
+                <img src="img/icon_telefone.png" alt="Telefone" width="32">
+              </a>
+              <a href="mailto:nicolisantosbatista@gmail.com">
+                <img src="img/icon_email.png" alt="Email" width="32">
+              </a>
+              <a href="https://wa.me/${celular}" target="_blank">
+                <img src="img/icon_whatsapp.png" alt="WhatsApp" width="32">
+              </a>
+            </div>
+          </div>
+          <hr>
+          <div class="notificacao">
+          <div class="row">
+             <!-- Coluna da imagem -->
+          <div class="col-md-4 text-center" >
+            <img src="img/dog2.jpg" alt="Pet" style="width: 60px; height: 90px;">
+            <img src="img/dog3.jpg" alt="Pet" style="width: 60px; height: 90px;">
+          </div>
+          
+          <!-- Coluna de texto -->
+          <div class="col-md-8 d-flex flex-column justify-content-center">
+            <p><strong>O usuário ${nome} demonstrou interessou pelo ${pet}!</strong></p>
+            <p>Entre em contato para prosseguir com a adoção!</p>
+            <div class="d-flex gap-3 align-items-center">
+              <a href="tel:+5511984538900">
+                <img src="img/icon_telefone.png" alt="Telefone" width="32">
+              </a>
+              <a href="mailto:nicolisantosbatista@gmail.com">
+                <img src="img/icon_email.png" alt="Email" width="32">
+              </a>
+              <a href="https://wa.me/${celular}" target="_blank">
+                <img src="img/icon_whatsapp.png" alt="WhatsApp" width="32">
+              </a>
+            </div>
+          </div>
 
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+        </div>
+</div>
 
 <!-- Modal DELETE PET -->
 <div class="modal fade" id="exampleModaldelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

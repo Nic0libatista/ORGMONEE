@@ -307,10 +307,17 @@
       // Aqui você pode prosseguir com o envio real
       console.log("Senha confirmada: ", senha.value);
       alert("Senha criada com sucesso!");
-      window.location.href = "quiz.html";
-      const modal = bootstrap.Modal.getInstance(document.getElementById('exampleModalsenha'));
-      modal.hide();
-    }
+     // Pergunta se o usuário quer fazer o quiz
+  const desejaQuiz = confirm("Deseja responder o quiz agora?");
+
+  if (desejaQuiz) {
+    window.location.href = "quiz.html";
+  } else {
+    // Fecha o modal sem redirecionar
+    const modal = bootstrap.Modal.getInstance(document.getElementById('exampleModalsenha'));
+    modal.hide();
+  }
+}
 
     formSenha.classList.add('was-validated');
   });
