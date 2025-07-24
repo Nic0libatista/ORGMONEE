@@ -158,6 +158,27 @@ padding-bottom: 80px;
   }
 
 /*Pagina cadastro -- formulario*/
+.cadastro-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #3a5b97;
+  color: white;
+}
+
+.texto-imagem {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  margin-bottom: 30px;
+  max-width: 500px; 
+  word-break: break-word; 
+}
+
+
 .formulario{
   display: flex;
   justify-content: center;
