@@ -1,13 +1,13 @@
 # My Pet friend
 
-Este projeto foi desenvolvido por um grupo de 4 estudantes do curso técnico em Informática do Senac. Desenvolvemos uma aplicação web fullstack simples e funcional para adoção de animais, baseada na personalidade do usuário.
+Este projeto foi desenvolvido por estudantes do curso técnico em Informática do Senac. Desenvolvemos uma aplicação web fullstack simples e funcional para adoção de animais, baseada na personalidade do usuário.
 Nosso objetivo é tornar o processo de adoção mais responsável, mágico e prático.
 
 
 ## Desenvolvedores do projeto
-- [Matheus Amorim] (https://github.com/Amorimo)
-- Yesenia Salas (https://github.com/Yessalas)
-- Nicoli Santos (https://github.com/Nic0libatista)
+- Matheus Amorim   (https://github.com/Amorimo)
+- Yesenia Salas    (https://github.com/Yessalas)
+- Nicoli Santos    (https://github.com/Nic0libatista)
 - Gabriela Queiroz (https://github.com/GabrielaQueirozs)
 
 
