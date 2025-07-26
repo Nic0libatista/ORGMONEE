@@ -39,7 +39,7 @@ section{
 
 .coluna_esq{
     background-color: pink;
-    width: 50%;
+    width: 100%;
     height: 100%;
     margin-top: 15px;
 }
@@ -52,18 +52,9 @@ section{
 }
 
 .coluna_dir{
-    margin-top: 15px;
-    background-color: blue;
-    width: 50%;
-    height: 100%;
+  display:none;
 }
 
-.coluna_dir img{
-  
-    width: 100%;
-    height: 100%;
-   
-}
 
 #funcionamento{
 
@@ -122,8 +113,19 @@ padding-bottom: 80px;
     
   }
 
+  .btn-roxo {
+  background-color: #6f42c1; 
+  color: white;
+  border: none;
+}
+
+.btn-roxo:hover {
+  background-color: #0d6efd;
+  color: white;
+ }
+
   footer{
-    
+    margin-top: 15px;
     background-color: #4569ad;
     padding: 30px;
   }
@@ -380,6 +382,36 @@ width: 26px;
 .backgroundusu {
   
   height: 88vh;
+}
+
+/*banner index -*/
+.coluna_esq{
+    background-color: pink;
+    width: 50%;
+    height: 100%;
+    margin-top: 15px;
+}
+
+.coluna_esq img{
+  
+    width: 100%;
+    height: 100%;
+   
+}
+
+.coluna_dir{
+  display: block;
+    margin-top: 15px;
+    background-color: blue;
+    width: 50%;
+    height: 100%;
+}
+
+.coluna_dir img{
+  
+    width: 100%;
+    height: 100%;
+   
 }
 
 }
