@@ -312,18 +312,67 @@ width: 26px;
 }
 
 /* pagina cadastro usuario /////////// 
-.backgroundusu{
-  background: 
-   url(https://static.vecteezy.com/ti/fotos-gratis/t1/45125824-varios-racas-do-cachorros-olhadinha-fora-a-partir-de-atras-uma-de-madeira-cerca-conceito-para-animais-de-estimacao-veterinario-clinica-ou-nutricao-comida-para-caes-bandeira-com-espaco-para-texto-foto.jpg) no-repeat;
-  background-size: cover;
-  height: 87vh;
-
-}
   */
+.container-cadastrousu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  min-height: auto;
+}
 
-  .backgroundusu {
-    background-color: #6da2ca;
-    height: 1350px;
+.lado-esquerdo {
+  flex: 0 0 50%;
+  background-color: #6da2c9; /* volta ao azul mais suave */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  background-image: url('./img/patinhas.png'); /* ✅ Descomente esta linha */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-bottom: 2px solid white;
+}
+.lado-esquerdo img {
+  width: 160px;
+  height: 160px;
+  /* max-width: 300px;
+  margin-top: 30px; */
+}
+.texto-imagem-usu {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 5px 3px 5px rgba(0, 0, 0, 0.6);
+  margin-bottom: 20px;
+  margin-top: 40px;
+  text-align: center;
+  max-width: 80%;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.lado-direito {
+  flex: 1;
+  background-color: #6da2ca;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.backgroundusu {
+  background-color: #6da2ca;
+  padding: 20px;
+  width: 100%;
+  max-width: 700px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  border-radius: 12px;
   }
 
 .backgroundusu label{
@@ -331,6 +380,7 @@ width: 26px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);;
 }
+
 
 /*Smartphone Landscape  (paisagem) >>>>>>>>>>>>>>>>>>>>>*/
 @media (min-width: 576px) {
@@ -418,6 +468,47 @@ width: 26px;
 
 /*Tablet Portrait (retrato) >>>>>>>>>>>>>>>>>>>>>>*/
 @media (min-width: 760px){
+   
+
+  .lado-esquerdo {
+    width: 100%;
+    padding: 50px 30px;
+    border-bottom: 2px solid white; /* continua com a linha separando as seções */
+    border-right: none;
+    background-color: #6da2c9;
+    background-image: url('./img/patinhas.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .lado-esquerdo img {
+    width: 200px;
+    height: auto;
+    margin-top: 10px;
+  }
+
+  .texto-imagem-usu {
+    font-size: 1.3rem;
+    max-width: 90%;
+    margin-top: 40px;
+  }
+
+  .lado-direito {
+     display: flex;
+  justify-content: center;
+  align-items: center;    /* centraliza verticalmente */
+  height: 100vh;          /* altura total da viewport */
+  padding: 30px;
+  box-sizing: border-box;
+  }
+
+  .backgroundusu {
+    max-width: 700px;
+    width: 100%;
+    padding: 25px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
 
 }
 
@@ -588,5 +679,68 @@ flex-direction:row;
   justify-content: flex-end;
   margin-top: 10px;
 }
+
+/* //////////////// tela cadastro usuario//////////////////q */
+
+.container-cadastrousu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.lado-esquerdo {
+  flex: 0 0 37%;
+  /* background-color: #6da2c9;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  background-image: url('./img/patinhas.png'); 
+  background-repeat: no-repeat;
+  background-position: center;
+   background-size: cover;
+   border-right: 1px solid white; */
+}
+/*  
+.lado-esquerdo img {
+  width: 300px;
+  height: 300px;
+
+}
+.texto-imagem-usu {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 5px 3px 5px rgba(0, 0, 0, 0.6);
+  margin-bottom: 20px;
+  text-align: center;
+  max-width: 80%;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.lado-direito {
+  flex: 1;
+  background-color: #6da2ca;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.backgroundusu {
+  background-color: #6da2ca;
+  padding: 20px;
+  width: 100%;
+  max-width: 700px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  border-radius: 12px;
+} */
   
 }
