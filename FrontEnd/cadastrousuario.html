@@ -52,110 +52,112 @@
   </div>
 
   <div class="lado-direito">
-  <form class="row g-3 needs-validation" id="cadastroForm" novalidate>
-    <h2 class="text-center"> Cadastre-se 🐾 </h2>
-    <div class="col-md-5 position-relative">
-      <label for="nomeCompleto" class="form-label">Nome completo</label>
-      <input type="text" class="form-control" id="nomeCompleto" placeholder="Nome completo" minlength="10" required>
-      <div class="invalid-tooltip">Nome completo obrigatório.</div>
-    </div>
 
-    <div class="col-md-3 position-relative">
-      <label for="cpf" class="form-label">CPF</label>
-      <div class="input-group has-validation">
-        <input type="text" class="form-control" id="cpf" placeholder="00.000.0000-00" maxlength="14" required>
-        <div class="invalid-tooltip">CPF obrigatório.</div>
+    <form class="row g-3 needs-validation px-0" id="cadastroForm" novalidate>
+      <h2 class="text-center">Cadastre-se 🐾</h2>
+    
+      <div class="col-md-4 position-relative">
+        <label for="nomeCompleto" class="form-label">Nome completo</label>
+        <input type="text" class="form-control" id="nomeCompleto" placeholder="Nome completo" minlength="10" required>
+        <div class="invalid-tooltip">Nome completo obrigatório.</div>
       </div>
-    </div>
-
-    <div class="col-md-2 position-relative">
-      <label for="nascimento" class="form-label">Data de nasc.</label>
-      <input type="date" class="form-control" id="nascimento" required>
-      <div class="invalid-tooltip">Informe sua data de nascimento.</div>
-      <div id="mensagemIdade" class="text-danger mt-1" style="display: none; font-size: 0.9em;">
-     <b> Você precisa ter 18 anos ou mais para se cadastrar. </b>
+    
+      <div class="col-md-3 position-relative">
+        <label for="cpf" class="form-label">CPF</label>
+        <div class="input-group has-validation">
+          <input type="text" class="form-control" id="cpf" placeholder="00.000.0000-00" maxlength="14" required>
+          <div class="invalid-tooltip">CPF obrigatório.</div>
+        </div>
       </div>
-    </div>
-
-    <h2 style="font-family: amarante; margin-top: 12px;">Contato</h4>
-
-    <div class="col-md-3 position-relative">
-      <label for="telFixo" class="form-label">Telefone residencial</label>
-      <div class="input-group has-validation">
-        <span class="input-group-text">+55</span>
-        <input type="text" class="form-control" id="telFixo" maxlength="12" placeholder="Telefone residencial">
-        <div class="invalid-tooltip">Informe o telefone residencial.</div>
+    
+      <div class="col-md-3 position-relative">
+        <label for="nascimento" class="form-label">Data de nasc.</label>
+        <input type="date" class="form-control" id="nascimento" required>
+        <div class="invalid-tooltip">Informe sua data de nascimento.</div>
+        <div id="mensagemIdade" class="text-danger mt-1" style="display: none; font-size: 0.9em;">
+          <b>Você precisa ter 18 anos ou mais para se cadastrar.</b>
+        </div>
       </div>
-    </div>
-
-    <div class="col-md-3 position-relative">
-      <label for="telCelular" class="form-label">Telefone celular</label>
-      <div class="input-group has-validation">
-        <span class="input-group-text">+55</span>
-        <input type="text" class="form-control" id="telCelular" maxlength="12" placeholder="Telefone celular" required>
-        <div class="invalid-tooltip">Informe o celular.</div>
+    
+      <h2 style="font-family: amarante; margin-top: 12px;">Contato</h2>
+    
+      <div class="col-md-3 position-relative">
+        <label for="telFixo" class="form-label">Telefone residencial</label>
+        <div class="input-group has-validation">
+          <span class="input-group-text">+55</span>
+          <input type="text" class="form-control" id="telFixo" maxlength="12" placeholder="Telefone residencial">
+          <div class="invalid-tooltip">Informe o telefone residencial.</div>
+        </div>
       </div>
-    </div>
-
-    <div class="col-md-4 position-relative">
-      <label for="email" class="form-label">Email</label>
-      <div class="input-group has-validation">
-        <input type="email" class="form-control" id="email" placeholder="Email" required>
-        <div class="invalid-tooltip">Por favor, insira um email válido.</div>
+    
+      <div class="col-md-3 position-relative">
+        <label for="telCelular" class="form-label">Telefone celular</label>
+        <div class="input-group has-validation">
+          <span class="input-group-text">+55</span>
+          <input type="text" class="form-control" id="telCelular" maxlength="12" placeholder="Telefone celular" required>
+          <div class="invalid-tooltip">Informe o celular.</div>
+        </div>
       </div>
-    </div>
-
-    <h2 style="font-family: amarante; margin-top: 15px;">Localidade</h2>
-
-    <div class="col-md-3">
-      <label for="cep" class="form-label">CEP</label>
-      <input type="text" class="form-control" id="cep" maxlength="9" placeholder="00000000" required>
-      <div class="invalid-tooltip">CEP obrigatório.</div>
-    </div>
-
-    <div class="col-md-4">
-      <label for="logradouro" class="form-label">Logradouro</label>
-      <input type="text" class="form-control" id="logradouro" required>
-      <div class="invalid-tooltip">Informe o logradouro.</div>
-    </div>
-
-    <div class="col-md-3">
-      <label for="bairro" class="form-label">Bairro</label>
-      <input type="text" class="form-control" id="bairro" required>
-      <div class="invalid-tooltip">Informe o bairro.</div>
-    </div>
-   
-    <div class="w-100"></div>
-
-    <div class="col-md-2">
-      <label for="cidade" class="form-label">Cidade</label>
-      <input type="text" class="form-control" id="cidade" required>
-      <div class="invalid-tooltip">Informe a cidade.</div>
-    </div>
-
-    <div class="col-md-2">
-      <label for="estado" class="form-label">Estado</label>
-      <input type="text" class="form-control" id="estado" required>
-      <div class="invalid-tooltip">Informe o estado.</div>
-    </div>
-
-    <div class="col-md-2">
-      <label for="numero" class="form-label">Número</label>
-      <input type="text" class="form-control" id="numero" required>
-      <div class="invalid-tooltip">Número obrigatório.</div>
-    </div>
-
-    <div class="col-md-4">
-      <label for="complemento" class="form-label">Complemento</label>
-      <input type="text" class="form-control" id="complemento" required>
-      <div class="invalid-tooltip">Complemento obrigatório.</div>
-    </div>
-
-    <div class="col-12">
-  <button id="btnCadastrar" class="btn btn-success" type="submit">Cadastrar</button>
-</div>
-
-  </form>
+    
+      <div class="col-md-4 position-relative">
+        <label for="email" class="form-label">Email</label>
+        <div class="input-group has-validation">
+          <input type="email" class="form-control" id="email" placeholder="Email" required>
+          <div class="invalid-tooltip">Por favor, insira um email válido.</div>
+        </div>
+      </div>
+    
+      <h2 style="font-family: amarante; margin-top: 15px;">Localidade</h2>
+    
+      <div class="col-md-3">
+        <label for="cep" class="form-label">CEP</label>
+        <input type="text" class="form-control" id="cep" maxlength="9" placeholder="00000000" required>
+        <div class="invalid-tooltip">CEP obrigatório.</div>
+      </div>
+    
+      <div class="col-md-4">
+        <label for="logradouro" class="form-label">Logradouro</label>
+        <input type="text" class="form-control" id="logradouro" required>
+        <div class="invalid-tooltip">Informe o logradouro.</div>
+      </div>
+    
+      <div class="col-md-3">
+        <label for="bairro" class="form-label">Bairro</label>
+        <input type="text" class="form-control" id="bairro" required>
+        <div class="invalid-tooltip">Informe o bairro.</div>
+      </div>
+    
+      <div class="w-100"></div>
+    
+      <div class="col-md-2">
+        <label for="cidade" class="form-label">Cidade</label>
+        <input type="text" class="form-control" id="cidade" required>
+        <div class="invalid-tooltip">Informe a cidade.</div>
+      </div>
+    
+      <div class="col-md-2">
+        <label for="estado" class="form-label">Estado</label>
+        <input type="text" class="form-control" id="estado" required>
+        <div class="invalid-tooltip">Informe o estado.</div>
+      </div>
+    
+      <div class="col-md-2">
+        <label for="numero" class="form-label">Número</label>
+        <input type="text" class="form-control" id="numero" required>
+        <div class="invalid-tooltip">Número obrigatório.</div>
+      </div>
+    
+      <div class="col-md-4">
+        <label for="complemento" class="form-label">Complemento</label>
+        <input type="text" class="form-control" id="complemento" required>
+        <div class="invalid-tooltip">Complemento obrigatório.</div>
+      </div>
+    
+      <div class="col-12">
+        <button id="btnCadastrar" class="btn btn-success" type="submit">Cadastrar</button>
+      </div>
+    </form>
+    
 
 </div>
 

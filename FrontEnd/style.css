@@ -346,31 +346,31 @@ width: 26px;
 
 /* pagina cadastro usuario /////////// 
   */
-.container-cadastrousu {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
-  width: 100%;
-  min-height: auto;
-}
+  .container-cadastrousu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    height: auto;
+  }
 
-.lado-esquerdo {
-  flex: 0 0 50%;
-  background-color: #6da2c9; /* volta ao azul mais suave */
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 20px;
-  text-align: center;
-  background-image: url('./img/patinhas.png'); /* ✅ Descomente esta linha */
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  border-bottom: 2px solid white;
-}
+  .lado-esquerdo {
+    background-color: #6da2c9;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+    background-image: url('./img/patinhas.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-bottom: 2px solid white;
+    flex: none;
+  }
 .lado-esquerdo img {
   width: 160px;
   height: 160px;
@@ -391,12 +391,12 @@ width: 26px;
 }
 
 .lado-direito {
-  flex: 1;
   background-color: #6da2ca;
   padding: 30px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
+  flex: 1;
 }
 
 
@@ -508,24 +508,31 @@ width: 26px;
 
 
 /* cadastrar usuario */
-.backgroundusu{
-  height: auto;
- }
+
 }
 /*Tablet Portrait (retrato) >>>>>>>>>>>>>>>>>>>>>>*/
 @media (min-width: 760px){
    
 
+  .container-cadastrousu {
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
   .lado-esquerdo {
     width: 100%;
     padding: 50px 30px;
-    border-bottom: 2px solid white; /* continua com a linha separando as seções */
+    border-bottom: 2px solid white;
     border-right: none;
     background-color: #6da2c9;
     background-image: url('./img/patinhas.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   .lado-esquerdo img {
@@ -538,23 +545,25 @@ width: 26px;
     font-size: 1.3rem;
     max-width: 90%;
     margin-top: 40px;
+    text-align: center;
+    color: white;
   }
-
   .lado-direito {
-     display: flex;
-  justify-content: center;
-  align-items: center;    /* centraliza verticalmente */
-  height: 100vh;          /* altura total da viewport */
-  padding: 30px;
-  box-sizing: border-box;
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+    justify-content: center; /* Centraliza o form */
+    align-items: flex-start;
+    padding: 0; /* Remove todo o padding */
+    box-sizing: border-box;
   }
 
-  .backgroundusu {
+  .lado-direito form {
     max-width: 700px;
     width: 100%;
-    padding: 75px;
+    margin: 0 auto;
+    padding: 0;
   }
-
   /* ////////// pagina do quiz //////////*/
 
 .quiz {
@@ -807,25 +816,36 @@ flex-direction:row;
 
 /* //////////////// tela cadastro usuario//////////////////*/
 .container-cadastrousu {
-    display: flex;
-    flex-direction: row;
-    min-height: 100vh;
-  }
+  display: flex;
+  flex-direction: row; /* lado a lado */
+  min-height: 100vh;   /* altura total da tela */
+  width: 100%;
+}
 
- .lado-esquerdo{
-  flex: 0 0 40%;
- }
- 
- .lado-direito {
-    height: 100vh; /* ou auto, dependendo do efeito desejado */
-    display: flex;
-    justify-content: flex-start; /* tira o alinhamento central */
-    align-items: flex-start;     /* alinha topo */
-    padding-top: 20px;           /* ajuste fino */
-    box-sizing: border-box;
-  }
+.lado-esquerdo {
+  flex: 0 0 40%; /* ocupa 40% da largura */
+  border-right: 2px solid white;
+  border-bottom: none;
+  padding: 50px 30px;
+  justify-content: center;
+  align-items: center;
+}
 
-  .lado-direito form {
+.lado-direito {
+  flex: 1; /* ocupa o resto (60%) */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* alinha topo */
+  padding: 40px;
+  background-color: #6da2ca;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
 
-  }
+.lado-direito form {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
 }
