@@ -371,8 +371,8 @@ width: 26px;
   padding: 20px;
   width: 100%;
   max-width: 700px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  border-radius: 12px;
+  margin-top: 0;
+  
   }
 
 .backgroundusu label{
@@ -464,8 +464,12 @@ width: 26px;
    
 }
 
-}
 
+/* cadastrar usuario */
+.backgroundusu{
+  height: auto;
+ }
+}
 /*Tablet Portrait (retrato) >>>>>>>>>>>>>>>>>>>>>>*/
 @media (min-width: 760px){
    
@@ -506,8 +510,7 @@ width: 26px;
   .backgroundusu {
     max-width: 700px;
     width: 100%;
-    padding: 25px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    padding: 75px;
   }
 
 }
@@ -681,66 +684,72 @@ flex-direction:row;
 }
 
 /* //////////////// tela cadastro usuario//////////////////q */
-
 .container-cadastrousu {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: stretch;
-  width: 100%;
-  min-height: 100vh;
-}
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    margin-top: 60px; /* se tiver navbar fixa */
+  }
 
-.lado-esquerdo {
-  flex: 0 0 37%;
-  /* background-color: #6da2c9;
-  color: white;
+  .lado-esquerdo, .lado-direito {
+    flex: 1;
+    height: 100%;
+  }
+
+  .lado-esquerdo {
+    flex: 0 0 40%;
+    background-color: #6da2c9;
+    background-image: url('./img/patinhas.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 30px;
+    text-align: center;
+    border-right: 2px solid white;
+  }
+
+  .lado-esquerdo img {
+    width: 300px;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .texto-imagem-usu {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 5px 3px 5px rgba(0, 0, 0, 0.6);
+    max-width: 80%;
+    line-height: 1.5;
+  }
+
+  .lado-direito {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: center;
-  padding: 40px 20px;
-  text-align: center;
-  background-image: url('./img/patinhas.png'); 
-  background-repeat: no-repeat;
-  background-position: center;
-   background-size: cover;
-   border-right: 1px solid white; */
-}
-/*  
-.lado-esquerdo img {
-  width: 300px;
-  height: 300px;
-
-}
-.texto-imagem-usu {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: white;
-  text-shadow: 5px 3px 5px rgba(0, 0, 0, 0.6);
-  margin-bottom: 20px;
-  text-align: center;
-  max-width: 80%;
-  line-height: 1.5;
-  word-break: break-word;
-}
-
-.lado-direito {
-  flex: 1;
+  padding: 40px;
   background-color: #6da2ca;
-  padding: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.backgroundusu {
-  background-color: #6da2ca;
-  padding: 20px;
-  width: 100%;
-  max-width: 700px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  border-radius: 12px;
-} */
+  .backgroundusu {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    background-color: #6da2ca;
+   
+    padding: 30px;
+  }
+
+  .backgroundusu label {
+    color: white;
+    font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  }
   
 }
