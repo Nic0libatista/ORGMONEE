@@ -190,45 +190,59 @@
 
     </div>
   </div>
-</div>
-
-<!-- Modal NOTIFICAÇÃO -->
+</div><!-- Modal de Notificações Empilhadas -->
 <div class="modal fade" id="exampleModalNotification" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-    <div class="modal-content">
-      
-      <div class="modal-header">
+  <div class="modal-dialog position-fixed top-0 end-0 m-4" style="z-index: 1055; max-width: 350px;">
+    <div class="modal-content shadow-lg rounded-4 overflow-hidden">
+
+      <div class="modal-header bg-primary text-white">
         <h5 class="modal-title" id="exampleModalLabel">Notificações</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
       </div>
-      
-      <div class="modal-body" style="background-color: beige;">
-        <div class="notificacao">
-          <div class="row">
-             <!-- Coluna da imagem -->
-          <div class="col-md-4 text-center" >
-            <img src="img/icon_pessoateste.png" alt="usuario" style="width: 60px; height: 90px;">
-            <img src="img/dog3.jpg" alt="Pet" style="width: 60px; height: 90px;">
-          </div>
-          
-          <!-- Coluna de texto -->
-          <div class="col-md-8 d-flex flex-column justify-content-center">
-            <p><strong>O usuário ${nome} demonstrou interesse pelo ${pet}!</strong></p>
-            <p>Entre em contato para prosseguir com a adoção!</p>
-            <div class="d-flex gap-3 align-items-center">
-              <a href="tel:+5511984538900">
-                <img src="img/icon_telefone.png" alt="Telefone" width="32">
-              </a>
-              <a href="mailto:nicolisantosbatista@gmail.com">
-                <img src="img/icon_email.png" alt="Email" width="32">
-              </a>
-              <a href="https://wa.me/5511984538900" target="_blank">
-                <img src="img/icon_whatsapp.png" alt="WhatsApp" width="32">
-              </a>
+
+      <!-- Corpo com rolagem para múltiplas notificações -->
+      <div class="modal-body bg-light" style="max-height: 70vh; overflow-y: auto;">
+
+        <!-- NOTIFICAÇÃO (exemplo) -->
+        <div class="notificacao p-3 mb-3 bg-white rounded-3 shadow-sm border border-secondary-subtle">
+          <div class="d-flex gap-3 align-items-center">
+            
+            <!-- Imagens -->
+            <div class="text-center">
+              <img src="img/icon_pessoateste.png" alt="Usuário" class="rounded" style="height: 60px;">
+              <img src="img/dog3.jpg" alt="Pet" class="rounded mt-1" style="height: 60px;">
             </div>
+
+            <!-- Texto e ícones -->
+            <div class="flex-grow-1">
+              <p class="mb-1"><strong><span class="text-primary">${nome}</span> quer adotar <span class="text-success">${pet}</span></strong></p>
+              <p class="mb-2 small">Entre em contato para seguir com a adoção:</p>
+              <div class="d-flex gap-2">
+                <a href="tel:+5511984538900" title="Telefone">
+                  <img src="img/icon_telefone.png" alt="Telefone" width="24">
+                </a>
+                <a href="mailto:nicolisantosbatista@gmail.com" title="Email">
+                  <img src="img/icon_email.png" alt="Email" width="24">
+                </a>
+                <a href="https://wa.me/5511984538900" target="_blank" title="WhatsApp">
+                  <img src="img/icon_whatsapp.png" alt="WhatsApp" width="24">
+                </a>
+              </div>
+            </div>
+
           </div>
         </div>
+        <!-- Fim de uma notificação -->
+         
+
+        <!-- Aqui o backend insere dinamicamente outras notificações -->
+
+      </div>
+    </div>
+  </div>
 </div>
+
+
 
 <script src="js/script.js"> </script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

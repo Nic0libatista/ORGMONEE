@@ -274,19 +274,35 @@ padding-bottom: 80px;
 
 
 
-/* ////////// pagina do quiz //////////*/
+/* ////////// pagina do quiz //////////
 .quiz {
  background-color: #b1c9f7;
  background-size: cover auto;   
  width: 100%;
  height: 100vh;
  text-align: center;
-}
+} */
+
+/* ////////// pagina do quiz //////////*/
+.quiz {
+  background-color: aquamarine;
+  background: url(img/quiz_celular.png) no-repeat center;
+  background-size: 100% auto;
+  background-position: center 30px;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+ }
+ 
 
 
   .question {
-    margin: 40px auto;
+   margin-top: 180px;
     max-width: 600px;
+  }
+
+  .btnquiz{
+    margin-top: 110px;
   }
 
   .form-check {
@@ -301,6 +317,23 @@ padding-bottom: 80px;
   }
 
 /* pagina cadastro pet /////////////*/
+
+.petback{
+  background-color: aquamarine;
+  background: url(img/patinhascelular.png) no-repeat center;
+  background-size: cover auto;
+  background-position: center ;
+  width: 100%;
+  height: 1200px;
+  text-align: center;
+}
+
+.petback label{
+  font-weight: bold;
+  color: #042b64;
+  font-size: 22px;
+}
+
 
 #pet_cadastro input, .form-select, #descricaoPet {
   border: 2px solid #4569ad;
@@ -391,7 +424,7 @@ width: 26px;
     gap: 10px !important;
     padding-top: 60px;
   }
-/* ////////// pagina do quiz //////////*/
+/* ////////// pagina do quiz //////////
 .quiz {
  
  background-size:cover;
@@ -403,6 +436,28 @@ width: 26px;
   margin-top: 40%;
   font-size: 26px;
 }
+*/
+
+/* ////////// pagina do quiz //////////*/
+.quiz {
+  background-color: aquamarine;
+  background: url(img/quizNovoTablet.png) no-repeat center;
+  background-size: 100% auto;
+  background-position: center 60px;
+  width: 100%;
+  height: 480px;
+  text-align: center;
+ }
+ 
+  .question {
+   margin-top: 180px;
+    max-width: 600px;
+  }
+
+  .btnquiz{
+    margin-top: 110px;
+  }
+
 
 .form-check {
   display: flex;
@@ -500,6 +555,32 @@ width: 26px;
     padding: 75px;
   }
 
+  /* ////////// pagina do quiz //////////*/
+
+.quiz {
+  background-color: aquamarine;
+  background: url(img/quiz_celular.png) no-repeat center;
+  background-size: 100% auto;
+  background-position: center 10px;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+ }
+
+ 
+  .question {
+    margin: 0 auto;
+    text-align: center;
+     margin-top: 380px;
+    max-width: 600px;
+    font-size: larger;
+    font-size: 25px;
+  }
+
+  .btnquiz{
+    margin-top: 110px;
+  }
+
 }
 
 /*Tablet Landscape (paisagem) >>>>>>>>>>>>>>>>>>>>>*/
@@ -543,20 +624,32 @@ flex-direction:row;
 
 /* ////////////// cadastro ong /////////////q */
 
-  
-/* ////////// pagina do quiz //////////*/
-.quiz {
- background-color: aquamarine;
- background: url(img/background_quizz.png) no-repeat center;
- background-size: 100% auto;
- width: 100%;
- height: 100vh;
- text-align: center;
-}
+    /* ////////// pagina do quiz //////////*/
 
-.question{
-  margin-top: 18%;
-}
+.quiz {
+  background-color: aquamarine;
+  background: url(img/quizNovoTablet.png) no-repeat center;
+  background-size: 100% auto;
+  background-position: center 45px;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+ }
+
+ 
+  .question {
+    margin: 0 auto;
+    text-align: center;
+     margin-top: 280px;
+    max-width: 600px;
+    font-size: larger;
+    font-size: 25px;
+  }
+
+  .btnquiz{
+    margin-top: 110px;
+  }
+
 
 }
 
@@ -670,7 +763,49 @@ flex-direction:row;
   margin-top: 10px;
 }
 
-/* //////////////// tela cadastro usuario//////////////////q */
+/* tela quiz /////////////////////*/
+/* ////////// pagina do quiz //////////
+.quiz {
+  background-color: aquamarine;
+  background: url(img/background_quizz.png) no-repeat center;
+  background-size: 100% auto;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+ }
+ 
+ .question{
+   margin-top: 18%;
+ }
+*/
+   /* ////////// pagina do quiz //////////*/
+
+.quiz {
+  background-color: aquamarine;
+  background: url(img/quiz_NOVO_pc.png) no-repeat center;
+  background-size: 100% auto;
+  background-position: center 50px;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+ }
+
+ 
+  .question {
+    margin: 0 auto;
+    text-align: center;
+     margin-top: 300px;
+    max-width: 600px;
+    font-size: larger;
+    font-size: 25px;
+  }
+
+  .btnquiz{
+    margin-top: 110px;
+  }
+
+
+/* //////////////// tela cadastro usuario//////////////////*/
 .container-cadastrousu {
     display: flex;
     flex-direction: row;
