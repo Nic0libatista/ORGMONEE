@@ -366,20 +366,7 @@ width: 26px;
   align-items: center;
 }
 
-.backgroundusu {
-  background-color: #6da2ca;
-  padding: 20px;
-  width: 100%;
-  max-width: 700px;
-  margin-top: 0;
-  
-  }
 
-.backgroundusu label{
-  color: white;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);;
-}
 
 
 /*Smartphone Landscape  (paisagem) >>>>>>>>>>>>>>>>>>>>>*/
@@ -687,69 +674,23 @@ flex-direction:row;
 .container-cadastrousu {
     display: flex;
     flex-direction: row;
-    width: 100%;
-    height: 100%;
-    margin-top: 60px; /* se tiver navbar fixa */
+    min-height: 100vh;
   }
 
-  .lado-esquerdo, .lado-direito {
-    flex: 1;
-    height: 100%;
-  }
-
-  .lado-esquerdo {
-    flex: 0 0 40%;
-    background-color: #6da2c9;
-    background-image: url('./img/patinhas.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+ .lado-esquerdo{
+  flex: 0 0 40%;
+ }
+ 
+ .lado-direito {
+    height: 100vh; /* ou auto, dependendo do efeito desejado */
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 30px;
-    text-align: center;
-    border-right: 2px solid white;
+    justify-content: flex-start; /* tira o alinhamento central */
+    align-items: flex-start;     /* alinha topo */
+    padding-top: 20px;           /* ajuste fino */
+    box-sizing: border-box;
   }
 
-  .lado-esquerdo img {
-    width: 300px;
-    height: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
+  .lado-direito form {
 
-  .texto-imagem-usu {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
-    text-shadow: 5px 3px 5px rgba(0, 0, 0, 0.6);
-    max-width: 80%;
-    line-height: 1.5;
   }
-
-  .lado-direito {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
-  background-color: #6da2ca;
-}
-
-  .backgroundusu {
-    width: 100%;
-    max-width: 100%;
-    height: 100%;
-    background-color: #6da2ca;
-   
-    padding: 30px;
-  }
-
-  .backgroundusu label {
-    color: white;
-    font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-  }
-  
 }
