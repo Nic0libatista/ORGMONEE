@@ -28,7 +28,7 @@ function carregar_animais(){
         dados.map((pets)=>{
             saida +=`<div class="animaiss">              
                 <div class="card" style="width: 15rem; ">
-                <img src="{pets.foto1}" class="card-img-top" alt="...">
+                <img src="${pets.foto1}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title"> ${pets.nome_pet}</h5>
                     <p class="card-text"> ${pets.descricao} </p>
@@ -86,8 +86,8 @@ function adotar_animais(){
 
           <!-- 🐶 Coluna de imagem -->
           <div class="col-md-4 text-center">
-            <img id="imagemPetModal" src="img/${img_pet}.jpg" alt="Pet de interesse" class="img-fluid rounded shadow">
-            <p class="mt-2"><strong id="nomePetModal">${nome_pet}</strong></p>
+            <img id="imagemPetModal" src="img/${interesse.img_pet}.jpg" alt="Pet de interesse" class="img-fluid rounded shadow">
+            <p class="mt-2"><strong id="nomePetModal">${interesse.nome_pet}</strong></p>
           </div>
 
         </div>
@@ -112,6 +112,7 @@ function notificacao_adocao(){
     const notificacoes = document.getElementById("notificacao")
     let saida ="";
     fetch("http://127.0.0.1:5000/api/v1/pet/listar")
+    fetch("http://127.0.0.1:5000/api/v1/usuario/listar")
     .then((res)=>res.json())
     .then((dados)=>{
         dados.map((pets)=>{ `
@@ -124,16 +125,16 @@ function notificacao_adocao(){
           
           <!-- Coluna de texto -->
           <div class="col-md-8 d-flex flex-column justify-content-center">
-            <p><strong>O usuário ${nome} demonstrou interessou pelo ${pet}!</strong></p>
+            <p><strong>O usuário ${pets.nome_usu} Demonstrou interessou pelo ${pets.nome_pet}!</strong></p>
             <p>Entre em contato para prosseguir com a adoção!</p>
             <div class="d-flex gap-3 align-items-center">
-              <a href="tel:+55${telefone_residencial}">
+              <a href="tel:+55${pets.telefone_residencial}">
                 <img src="img/icon_telefone.png" alt="Telefone" width="32">
               </a>
-              <a href="mailto:${email}">
+              <a href="mailto:${pets.email}">
                 <img src="img/icon_email.png" alt="Email" width="32">
               </a>
-              <a href="https://wa.me/${celular}" target="_blank">
+              <a href="https://wa.me/${pets.telefone_celular}" target="_blank">
                 <img src="img/icon_whatsapp.png" alt="WhatsApp" width="32">
               </a>
             </div>
