@@ -1,8 +1,11 @@
+import Adocao from "./Adocao";
 import Conexao from "./Conexao";
 import Contato from "./Contato";
 import Endereco from "./Endereco";
-export default abstract class Usuario_ong{
+export default class Usuario_ong{
     id!:number;
+    nome_ong!:string;
+    senha!:string;
     endereco!:Endereco;
     cnpj_ong!:string;
     razao_social!:string;
@@ -13,6 +16,6 @@ export default abstract class Usuario_ong{
     doc_comprovacao!:string;
     foto_ong!:string;
     id_pet!:number;
-    historico_adocao!:string;
+    adocao!:Adocao;
 
 }

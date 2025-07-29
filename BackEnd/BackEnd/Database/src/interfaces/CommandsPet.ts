@@ -9,7 +9,7 @@ export default interface CommandsPet <T> extends Commands <T>{
     PesquisarComportamento(comportamento:string): Promise<T[]>;
     PesquisarIdade(idade:string): Promise<T[]>;
     PesquisarDisponibilidade(disponibilidade:string): Promise<T[]>;
-
+    
     
 
 }
