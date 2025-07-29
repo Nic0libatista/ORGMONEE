@@ -173,18 +173,25 @@
             <input type="email" class="form-control" id="emailUsuario" placeholder="${email}" disabled>
           </div>
 
-
-          <button class="btn btn-outline-dark w-100" data-bs-toggle="modal" data-bs-target="#modalAlterarSenha">
-            Alterar senha
-          </button>
-
-            <a href="quiz.html" class="btn btn-outline-secondary w-100 mt-2"> Refazer quiz </a>
+          <div class="mb-3">
+            <label for="telefoneUsuario" class="form-label">Telefone</label>
+            <div class="input-group">
+              <span class="input-group-text">+55</span>
+              <input maxlength="12" type="tel" class="form-control" id="telefoneUsuario" placeholder="${telefone}">
+            </div>
           </div>
+          
+        
+
+
+            <a href="quiz.html" class="btn btn-outline-dark w-100 mt-2"> Refazer quiz </a>
          
-          <button type="submit" class="btn btn-primary w-100">Salvar alterações</button>
+         
+          <button type="submit" class="btn btn-primary w-100" style="margin-top: 8px;">Salvar alterações</button>
           <button type="button" class="btn btn-danger w-100 mt-2" onclick="confirmarExclusao()">Excluir conta</button>
 
         </form>
+      </div>
       </div>
     </div>
   </div>
