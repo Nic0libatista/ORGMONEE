@@ -36,7 +36,7 @@
           <a class="nav-link" href="sobre.html">Sobre</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="homeusu.html"><img src="img/icon_user.png" title="sua conta" style="width: 30px;"></a>
+          <a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModalConfigUsu"><img src="img/icon_user.png" title="sua conta" style="width: 30px;"></a>
         </li>
 
       </ul>
@@ -154,7 +154,51 @@
   </div>
 </div>
 
+<div class="modal fade" id="exampleModalConfigUsu" tabindex="-1" aria-labelledby="configContaLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-header">
+        <h5 class="modal-title" id="configContaLabel">Configurações da Conta</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="nomeUsuario" class="form-label">Nome completo</label>
+            <input type="text" class="form-control" id="nomeUsuario" placeholder="${nomeusu}" disabled>
+          </div>
 
+          <div class="mb-3">
+            <label for="emailUsuario" class="form-label">Email</label>
+            <input type="email" class="form-control" id="emailUsuario" placeholder="${email}" disabled>
+          </div>
+
+
+          <button class="btn btn-outline-dark w-100" data-bs-toggle="modal" data-bs-target="#modalAlterarSenha">
+            Alterar senha
+          </button>
+
+            <a href="quiz.html" class="btn btn-outline-secondary w-100 mt-2"> Refazer quiz </a>
+          </div>
+         
+          <button type="submit" class="btn btn-primary w-100">Salvar alterações</button>
+          <button type="button" class="btn btn-danger w-100 mt-2" onclick="confirmarExclusao()">Excluir conta</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+  function confirmarExclusao() {
+    if (confirm("Tem certeza que deseja excluir sua conta? Esta ação é irreversível.")) {
+      window.location.href = "index.html"; 
+    }
+  }
+</script>
 
 <script src="js/script.js"> </script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
