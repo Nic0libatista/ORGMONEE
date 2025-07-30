@@ -10,7 +10,7 @@ export default class UsuarioRepository implements CommandsUsuario<Usuario>{
        return new Promise((resolve, reject)=>{
         conexao.query(`SELECT * from Usuario WHERE nome_usu=?`,
             [
-                Usuario
+                usuario
             ],
             (erro, result:any)=>{
                 if (erro) {
