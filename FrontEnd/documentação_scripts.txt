@@ -1,0 +1,143 @@
+home ong 
+
+(linha 60 - lista os animais cadastrados pela ong)
+            <!-- Começo de um animal da ong (OBS: necessario criar script p deletar pet ao clicar no botão)-->
+        <div class="animais" id="animais_ong">
+        
+        <div class="card" style="width: 15rem; ">
+        <img src="img/dogg.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title"> {nome do animal}</h5>
+            <p class="card-text">{Pequeno texto informativo sobre o animal e suas caracteristicas.}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"> Genero  </li>
+            <li class="list-group-item"> raça</li>
+            <li class="list-group-item"> idade </li>
+        </ul>
+        <div class="card-body text-center">
+            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModaldelete"> Deletar pet </button>
+        </div>
+        </div>
+
+        <!-- fim de um animal - ong-->
+
+        <!-- ////////////////////////////// fim da div animais //////////////////////////////// -->
+
+        </div>
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+(linha 206 - notificações)
+        <!-- NOTIFICAÇÃO (exemplo) -->
+            <div class="notificacao p-3 mb-3 bg-white rounded-3 shadow-sm border border-secondary-subtle">
+            <div class="d-flex gap-3 align-items-center">
+                
+                <!-- Imagens -->
+                <div class="text-center">
+                <img src="{foto do usuario interessado}" alt="Usuário" class="rounded" style="height: 60px;">
+                <img src="{foto do animal}" alt="Pet" class="rounded mt-1" style="height: 60px;">
+                </div>
+
+                <!-- Texto e ícones -->
+                <div class="flex-grow-1">
+                <p class="mb-1"><strong><span class="text-primary">${nome}</span> quer adotar <span class="text-success">${pet}</span></strong></p>
+                <p class="mb-2 small">Entre em contato para seguir com a adoção:</p>
+                <div class="d-flex gap-2">
+                    <a href="tel:+55{telefone}" title="Telefone">
+                    <img src="img/icon_telefone.png" alt="Telefone" width="24">
+                    </a>
+                    <a href="mailto:{email}" title="Email">
+                    <img src="img/icon_email.png" alt="Email" width="24">
+                    </a>
+                    <a href="https://wa.me/55{celular}" target="_blank" title="WhatsApp">
+                    <img src="img/icon_whatsapp.png" alt="WhatsApp" width="24">
+                    </a>
+                </div>
+                </div>
+
+            </div>
+            </div>
+            <!-- Fim de uma notificação -->
+
+----------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+HOME USUARIO 
+
+
+    (linha 122 - formulario de interesse do usuario pelo pet (obs: ao clicar no botão a ong deverá receber uma notificação))
+        <div class="row forminteresse">
+
+          <!-- 🐾 Coluna de texto -->
+          <div class="col-md-8">
+            <p>🐾 <strong>Bem-vindo(a) ao nosso Formulário de Interesse.</strong></p>
+
+            <p>Ficamos muito felizes por você ter dado o primeiro passo para adotar um pet! 🐶🐱</p>
+
+            <p>
+              Queremos lembrar que o <strong>My Pet Friend</strong> apenas cede o espaço virtual para facilitar a adoção. Os pets, as entrevistas e o processo de adoção são de inteira responsabilidade das ONGs e protetores parceiros, tudo bem?
+            </p>
+
+            <p>
+              Após clicar no botão de "Tenho interesse", a ONG/protetor terá até <strong>48h para entrar em contato</strong>. E não se preocupe, estamos aqui para ajudar caso precise de qualquer suporte nesse processo.
+            </p>
+          </div>
+
+          <!-- 🐶 Coluna de imagem -->
+          <div class="col-md-4 text-center">
+            <img id="imagemPetModal" src="img/dog2.jpg" alt="Pet de interesse" class="img-fluid rounded shadow">
+            <p class="mt-2"><strong id="nomePetModal">Nome do Pet</strong></p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success">Tenho interesse</button>
+      </div>
+
+----------------------------------------------------------------------------------------------------------------------------------
+    (linha 51 -- animais q combinem com a personalidade do usuario (obs: repare q os animais da ong tem o id animais_ong))
+            <div class="animais">
+            
+            <div class="card" style="width: 15rem; ">
+            <img src="img/dogg.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"> {nome do animal}</h5>
+                <p class="card-text">{Pequeno texto informativo sobre o animal e suas caracteristicas.}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"> Genero </li>
+                <li class="list-group-item"> raça</li>
+                <li class="list-group-item"> idade </li>
+            </ul>
+            <div class="card-body text-center">
+                <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModaladotar"> Quero adotar </button>
+            </div>
+            </div>
+
+            <!-- fim da div animais -->
+            </div>
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+    (linha 191 - função p excluir conta do usuario)
+        <button type="button" class="btn btn-danger w-100 mt-2" onclick="confirmarExclusao()">Excluir conta</button>
+        (script linha 202 deve ser melhorado: <script>
+                                                function confirmarExclusao() {
+                                                    if (confirm("Tem certeza que deseja excluir sua conta? Esta ação é irreversível.")) {
+                                                    window.location.href = "index.html"; 
+                                                    }
+                                                }
+                                                </script>)
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+INDEX.HTML
+   (mostrar alguns animais na tela de começo)
+    
