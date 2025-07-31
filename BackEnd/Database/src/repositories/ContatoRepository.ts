@@ -8,10 +8,11 @@ import { error } from "console";
 export default class ContatoRepository implements Commands<Contato>{
     Cadastrar(obj: Contato): Promise<Contato> {
         return new Promise((resolve,reject)=>{
-            conexao.query("INSERT INTO Contato(telefone_comercial, telefone_residencial, telefone_celular, email) VALUES (?,?,?)",[
+            conexao.query("INSERT INTO Contato(telefone_comercial, telefone_residencial, telefone_celular, email) VALUES (?,?,?,?)",[
                 obj.telefone_celular,
                 obj.telefone_comercial,
-                obj.telefone_residencial
+                obj.telefone_residencial,
+                obj.email
             ],
         (erro, end:any)=>{
             if (erro) {

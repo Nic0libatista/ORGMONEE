@@ -5,5 +5,7 @@ cep!:number;
 bairro!:string;
 logradouro!:string;
 numero!:string;
+cidade!:string;
+estado!:string;
 }
 
