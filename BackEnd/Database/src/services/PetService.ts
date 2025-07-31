@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 import Pet from "../classes/Pet";
-import Usuario_ong from "../classes/Usuario_ong";
 import PetRepository from "../repositories/PetRepository";
 
 export default class PetService{
