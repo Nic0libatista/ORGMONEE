@@ -121,7 +121,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
       </div>
 
-      <div class="modal-body">
+      <div class="modal-body" id="adotar_interesse">
         <div class="row forminteresse">
 
           <!-- 🐾 Coluna de texto -->
@@ -142,12 +142,12 @@
           <!-- 🐶 Coluna de imagem -->
           <div class="col-md-4 text-center">
             <img id="imagemPetModal" src="img/dog2.jpg" alt="Pet de interesse" class="img-fluid rounded shadow">
-            <p class="mt-2"><strong id="nomePetModal">Nome do Pet</strong></p>
+            <p class="mt-4"><strong id="nomePetModal">Nome do Pet</strong></p>
           </div>
 
         </div>
       </div>
-
+    
       <div class="modal-footer justify-content-between">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
         <button type="button" class="btn btn-success">Tenho interesse</button>
@@ -219,8 +219,7 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    carregar_animais();
-    
+    adotar_animais();
   });
 </script>
 
