@@ -17,6 +17,40 @@
   })
 })()
 
+//mostrar animais cadastrados pela ong
+function carregar_animais_ong() {
+  const animaiss_ongg = document.getElementById("animais_ong");
+  const idOng = localStorage.getItem("id_ong");
+  let saida = ""
+  
+  fetch("http://10.26.45.39:3000/api/v1/pet/listar?ong=${idOng}")
+    .then(res => res.json())
+    .then(dados => {
+      dados.forEach(pets => {
+        saida += `<div class="animaiss">              
+          <div class="card" style="width: 15rem;">
+            <img src="${pets.foto_pet1}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">${pets.nome_pet}</h5>
+              <p class="card-text">${pets.descricao}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Gênero: ${pets.sexo}</li>
+              <li class="list-group-item">Raça: ${pets.raca}</li>
+              <li class="list-group-item">Idade: ${pets.idade}</li>
+            </ul>
+             <div class="card-body text-center">
+            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModaldelete"> Deletar pet </button>
+        </div>
+        </div>` })
+        animaiss_ongg.innerHTML = saida
+      })
+      .catch(erro => console.error(erro))
+  }
+  
+
+
+
 //mostrar animais (tela homeusu)
 function carregar_animais() {
   const animaisss = document.getElementById("animais")
@@ -53,6 +87,7 @@ function carregar_animais() {
     .then(() => adotar_animais())
     .catch(erro => console.error(erro))
 }
+
 
 // interesse de adoção do usuario 
 function adotar_animais(pet) {
