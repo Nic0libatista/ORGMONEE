@@ -287,3 +287,91 @@ function notificacao_adocao() {
         });
     }
       
+
+
+    // Cadastro do Usuário ###################################################################################
+
+    async function efetuarCadastroCompleto() {
+      // Captura os dados do formulário
+      const nome = document.getElementById("nomeCompleto").value;
+      const cpf = document.getElementById("cpf").value;
+      const nascimento = document.getElementById("nascimento").value;
+      const email = document.getElementById("email").value;
+      const senha = document.getElementById("senhaUsuario").value;
+  
+      const telefoneRes = document.getElementById("telFixo").value;
+      const telefoneCel = document.getElementById("telCelular").value;
+  
+      const cep = document.getElementById("cep").value;
+      const logradouro = document.getElementById("logradouro").value;
+      const bairro = document.getElementById("bairro").value;
+      const cidade = document.getElementById("cidade").value;
+      const estado = document.getElementById("estado").value;
+      const numero = document.getElementById("numero").value;
+      const complemento = document.getElementById("complemento").value;
+  
+      try {
+          // 1. Cadastra o usuário
+          const resUsuario = await fetch("http://10.26.45.39:3000/api/v1/usuario/cadastro", {
+              method: "POST",
+              headers: {
+                  "accept": "application/json",
+                  "content-type": "application/json"
+              },
+              body: JSON.stringify({
+                  nome_completo: nome,
+                  cpf: cpf,
+                  nascimento: nascimento,
+                  email: email,
+                  senha: senha // ← se a senha for salva na mesma tabela
+              })
+          });
+  
+          const dadosUsuario = await resUsuario.json();
+          if (!resUsuario.ok) throw new Error(dadosUsuario.message || "Erro ao cadastrar usuário");
+  
+          const idUsuario = dadosUsuario.id || dadosUsuario.insertId;
+  
+          // 2. Cadastra o contato
+          await fetch("http://10.26.45.39:3000/api/v1/contato/cadastro", {
+              method: "POST",
+              headers: {
+                  "accept": "application/json",
+                  "content-type": "application/json"
+              },
+              body: JSON.stringify({
+                  id_usuario: idUsuario,
+                  telefone_residencial: telefoneRes || null, // opcional
+                  telefone_celular: telefoneCel,
+                  email: email
+              })
+          });
+  
+          // 3. Cadastra o endereço
+          await fetch("http://10.26.45.39:3000/api/v1/endereco/cadastro", {
+              method: "POST",
+              headers: {
+                  "accept": "application/json",
+                  "content-type": "application/json"
+              },
+              body: JSON.stringify({
+                  id_usuario: idUsuario,
+                  cep: cep,
+                  logradouro: logradouro,
+                  bairro: bairro,
+                  cidade: cidade,
+                  estado: estado,
+                  numero: numero,
+                  complemento: complemento || null
+              })
+          });
+  
+          alert("Cadastro realizado com sucesso!");
+          document.getElementById("cadastroForm").reset();
+  
+      } catch (erro) {
+          console.error("Erro no cadastro:", erro);
+          alert("Erro ao cadastrar. Verifique os dados e tente novamente.");
+      }
+  }
+  
