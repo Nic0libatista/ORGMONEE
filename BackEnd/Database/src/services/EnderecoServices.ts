@@ -14,6 +14,8 @@ export default class EnderecoService{
         endco.bairro = req.body.bairro;
         endco.logradouro = req.body.logradouro;
         endco.numero = req.body.numero;
+        endco.cidade = req.body.cidade;
+        endco.estado = req.body.estado;
 
 
         try {

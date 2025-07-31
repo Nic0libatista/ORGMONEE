@@ -6,12 +6,14 @@ import { conexao } from "../database/Config";
 export default class EnderecoRepository implements Commands<Endereco>{
     Cadastrar(obj: Endereco): Promise<Endereco> {
         return new Promise((resolve,reject)=>{
-            conexao.query("INSERT INTO Endereco(complemento, cep, bairro, logradouro, numero) VALUES (?,?,?,?,?)",[
-                obj.bairro,
-                obj.cep,
+            conexao.query("INSERT INTO Endereco(complemento, cep, bairro, logradouro, numero, cidade, estado) VALUES (?,?,?,?,?,?,?)",[
                 obj.complemento,
+                obj.cep,
+                obj.bairro,
                 obj.logradouro,
-                obj.numero
+                obj.numero,
+                obj.cidade,
+                obj.estado
             ],
             (erro, end:any)=>{
                 if (erro) {
