@@ -36,7 +36,7 @@
           <a class="nav-link" href="sobre.html">Sobre</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModalConfigUsu"><img src="img/icon_user.png" title="sua conta" style="width: 30px;"></a>
+          <a class="nav-link" class="usuario" data-bs-toggle="modal" data-bs-target="#exampleModalConfigUsu"><img src="img/icon_user.png" title="sua conta" style="width: 30px;"></a>
         </li>
 
       </ul>
@@ -53,8 +53,8 @@
 </div>
 <div class="container">
 
-<div class="animais">
-  
+<div class="animais" id="animais">
+  <!--
   <div class="card" style="width: 15rem; ">
   <img src="img/dogg.jpg" class="card-img-top" alt="...">
   <div class="card-body">
@@ -106,7 +106,7 @@
    <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModaladotar"> Quero adotar </button>
   </div>
 </div>
-</div>
+</div> -->
 
 <!-- fim da div animais -->
 </div>
@@ -121,7 +121,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
       </div>
 
-      <div class="modal-body">
+      <div class="modal-body" id="adotar_interesse">
         <div class="row forminteresse">
 
           <!-- 🐾 Coluna de texto -->
@@ -142,12 +142,12 @@
           <!-- 🐶 Coluna de imagem -->
           <div class="col-md-4 text-center">
             <img id="imagemPetModal" src="img/dog2.jpg" alt="Pet de interesse" class="img-fluid rounded shadow">
-            <p class="mt-2"><strong id="nomePetModal">Nome do Pet</strong></p>
+            <p class="mt-4"><strong id="nomePetModal">Nome do Pet</strong></p>
           </div>
 
         </div>
       </div>
-
+    
       <div class="modal-footer justify-content-between">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
         <button type="button" class="btn btn-success">Tenho interesse</button>
@@ -209,6 +209,21 @@
     }
   }
 </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    carregar_animais();
+    
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    adotar_animais();
+  });
+</script>
+
+
 
 <script src="js/script.js"> </script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

@@ -399,6 +399,11 @@ width: 26px;
   flex: 1;
 }
 
+/* Pagina home usuario -- modal de interesse */
+#imagemPetModal{
+  height: 270px;
+}
+
 
 
 

@@ -17,49 +17,159 @@
   })
 })()
 
-//mostrar animais (tela index terá isso)
+//mostrar animais (tela homeusu)
+function carregar_animais() {
+  const animaisss = document.getElementById("animais")
+  let saida = ""
 
-function carregar_animais(){
-    const animaisss = document.getElementById("animais")
-    let saida ="";
-    fetch("http://127.0.0.1:5000/api/v1/pet/listar")
-    .then((res)=>res.json())
-    .then((dados)=>{
-        dados.map((pets)=>{
-            saida +=`<div class="animaiss">              
-                <div class="card" style="width: 15rem; ">
-                <img src="${pets.foto1}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title"> ${pets.nome_pet}</h5>
-                    <p class="card-text"> ${pets.descricao} </p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"> Genero ${pets.sexo}</li>
-                    <li class="list-group-item"> raça ${pets.raca}</li>
-                    <li class="list-group-item"> idade ${pets.idade} </li>
-                </ul>
-                <div class="card-body text-center">
-                    <button type="button" class="btn btn-outline-success"> Quero adotar </button>
-                </div>
-                </div>
-                </div>`
-        })
-        animaisss.innerHTML=saida;
+  fetch("http://10.26.45.39:3000/api/v1/pet/listar")
+    .then(res => res.json())
+    .then(dados => {
+      dados.forEach(pets => {
+        saida += `<div class="animaiss">              
+          <div class="card" style="width: 15rem;">
+            <img src="${pets.foto_pet1}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">${pets.nome_pet}</h5>
+              <p class="card-text">${pets.descricao}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Gênero: ${pets.sexo}</li>
+              <li class="list-group-item">Raça: ${pets.raca}</li>
+              <li class="list-group-item">Idade: ${pets.idade}</li>
+            </ul>
+            <div class="card-body text-center">
+             
+              <button class="btn btn-outline-success" onclick='adotar_animais(${JSON.stringify(pets)})'>
+                Quero Adotar
+              </button>
+
+            </div>
+          </div>
+        </div>`
+      })
+      animaisss.innerHTML = saida
     })
-    carregar_animais();
+    .then(() => adotar_animais())
+    .catch(erro => console.error(erro))
 }
+
+// interesse de adoção do usuario 
+function adotar_animais(pet) {
+  // Atualiza imagem
+  document.getElementById('imagemPetModal').src = pet.foto_pet1 || 'img/default.jpg';
+
+  // Atualiza nome
+  document.getElementById('nomePetModal').textContent = pet.nome_pet || 'Nome do Pet';
+
+  // Abre o modal
+  const modal = new bootstrap.Modal(document.getElementById('exampleModaladotar'));
+  modal.show();
+}
+
+
+/*
+// Interesse de adoção do usuário
+function adotar_animais() {
+  const interesse_adocao = document.getElementById("adotar_interesse")
+  let saida = ""
+
+  fetch("http://10.26.45.39:3000/api/v1/pet/listar")
+    .then(res => res.json())
+    .then(dados => {
+      dados.forEach(interesse => {
+        saida += `
+         <div class="row forminteresse">
+
+          <!-- 🐾 Coluna de texto -->
+          <div class="col-md-8">
+            <p>🐾 <strong>Bem-vindo(a) ao nosso Formulário de Interesse.</strong></p>
+
+            <p>Ficamos muito felizes por você ter dado o primeiro passo para adotar um pet! 🐶🐱</p>
+
+            <p>
+              Queremos lembrar que o <strong>My Pet Friend</strong> apenas cede o espaço virtual para facilitar a adoção. Os pets, as entrevistas e o processo de adoção são de inteira responsabilidade das ONGs e protetores parceiros, tudo bem?
+            </p>
+
+            <p>
+              Após clicar no botão de "Tenho interesse", a ONG/protetor terá até <strong>48h para entrar em contato</strong>. E não se preocupe, estamos aqui para ajudar caso precise de qualquer suporte nesse processo.
+            </p>
+          </div>
+
+          <!-- 🐶 Coluna de imagem -->
+          <div class="col-md-4 text-center">
+           <img src="${interesse.foto_pet1}" alt="Pet de interesse" class="img-fluid rounded shadow">
+                    <p class="mt-2"><strong>${interesse.nome_pet}</strong></p>
+                  </div>
+
+        </div>
+      </div>
+        `
+      })
+      interesse_adocao.innerHTML = saida
+    })
+    .catch(erro => console.error("Erro ao carregar pets para adoção:", erro));
+}
+
+
+ Interesse de adoção do usuário
+function adotar_animais() {
+  const interesse_adoção = document.getElementById("exampleModaladotar")
+  let saida = ""
+
+  fetch("http://10.26.45.39:3000/api/v1/pet/listar")
+    .then(res => res.json())
+    .then(dados => {
+      dados.forEach(interesse => {
+        saida += `
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Formulário de Interesse na Adoção</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-8">
+                    <p>🐾 <strong>Bem-vindo(a) ao nosso Formulário de Interesse.</strong></p>
+                    <p>Ficamos muito felizes por você ter dado o primeiro passo para adotar um pet! 🐶🐱</p>
+                    <p>Queremos lembrar que o <strong>My Pet Friend</strong> apenas cede o espaço virtual para facilitar a adoção...</p>
+                    <p>Após clicar em "Tenho interesse", a ONG terá até <strong>48h</strong> para entrar em contato.</p>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <img src="img/${interesse.img_pet}.jpg" alt="Pet de interesse" class="img-fluid rounded shadow">
+                    <p class="mt-2"><strong>${interesse.nome_pet}</strong></p>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success">Tenho interesse</button>
+              </div>
+            </div>
+          </div>
+        `
+      })
+      interesse_adoção.innerHTML = saida
+    })
+    .then(() => notificacao_adocao())
+    .catch(erro => console.error(erro))
+}
+
+
+/*
 
 // interesse de adoção do usuario
 
 function adotar_animais(){
     const interesse_adoção = document.getElementById("exampleModaladotar")
     let saida ="";
-    fetch("http://127.0.0.1:5000/api/v1/pet/listar")
+    fetch("http://10.26.45.39:3000/api/v1/pet/listar")
     .then((res)=>res.json())
     .then((dados)=>{
         dados.map((interesse)=>{ `
            <div class="modal-dialog modal-lg">
-    <div class="modal-content">
+      <div class="modal-content">
 
       <div class="modal-header">
         <h5 class="modal-title" id="tituloInteresseAdocao">Formulário de Interesse na Adoção</h5>
@@ -98,21 +208,20 @@ function adotar_animais(){
         <button type="button" class="btn btn-success">Tenho interesse</button>
       </div>
 
-    </div>
-  </div>
+      </div>
+      </div>
           `})
       interesse_adoção.innerHTML=saida;
       })
-      adotar_animais();
+      notificacao_adocao();
     }
 
-    // para ongs
-
+    
+// para ongs
 function notificacao_adocao(){
     const notificacoes = document.getElementById("notificacao")
     let saida ="";
-    fetch("http://10.26.45.39:3000/api/v1/pet/listar")
-    fetch("http://127.0.0.1:5000/api/v1/usuario/listar")
+    fetch("http://127.0.0.1:5000/api/v1/pet/listar")
     .then((res)=>res.json())
     .then((dados)=>{
         dados.map((pets)=>{ `
@@ -147,49 +256,47 @@ function notificacao_adocao(){
     }
 
 
+    let usuario_logado="usuario_logado"
 
-
+    if(window.localStorage.getItem(usuario_logado)){
+        let us = window.localStorage.getItem(usuario_logado)
+        us = JSON.parse(us)
     
-let usuario_logado="usuario_logado"
-
-if(window.localStorage.getItem(usuario_logado)){
-    let us = window.localStorage.getItem(usuario_logado)
-    us = JSON.parse(us)
-
-    let img_usuario = `<img src=${us.payload.foto_usu} class= "img_usuario">`
+        let img_usuario = `<img src=${us.payload.foto_usu} class= "img_usuario">`
+        
+        let nome_us = us.payload.nome_usu
     
-    let nome_us = us.payload.nome_usu
-
-    document.getElementsByClassName("usuario")[0].style.padding="15px"
+        document.getElementsByClassName("usuario")[0].style.padding="15px"
+        
+        document.getElementsByClassName("usuario")[0].innerHTML= img_usuario+nome_us
+    }
     
-    document.getElementsByClassName("usuario")[0].innerHTML= img_usuario+nome_us
-}
-
-function efetuarlogin(){
-    const usuario = document.getElementById("txtusuario")
-    const senha = document.getElementById("txtpassword")
-
-    fetch("http://127.0.0.1:5000/api/v1/usuario/login",{
-        method:"POST",
-        headers:{
-            "accept":"application/json",
-            "content-type":"application/json"
-        },
-        body:JSON.stringify({
-            usuario:usuario.value,
-            senha:senha.value
+    function efetuarlogin(){
+        const usuario = document.getElementById("txtusuario")
+        const senha = document.getElementById("txtpassword")
+    
+        fetch("http://10.26.45.39:3000/api/v1/usuario/login",{
+            method:"POST",
+            headers:{
+                "accept":"application/json",
+                "content-type":"application/json"
+            },
+            body:JSON.stringify({
+                usuario:usuario.value,
+                senha:senha.value
+            })
         })
-    })
-    .then((rs)=>rs.json())
-    .then((dados)=>{
-        window.localStorage.setItem(usuario_logado,JSON.stringify(dados))
-        // Limpar o Formulário
-        usuario.value = ""
-        senha.value = ""
-
-        // Atualizar a tela
-        window.location.reload()
-
-    })
-    .catch((erro)=>console.error(erro))
-}
+        .then((rs)=>rs.json())
+        .then((dados)=>{
+            window.localStorage.setItem(usuario_logado,JSON.stringify(dados))
+            // Limpar o Formulário
+            usuario.value = ""
+            senha.value = ""
+    
+            // Atualizar a tela
+            window.location.reload()
+    
+        })
+        .catch((erro)=>console.error(erro))
+    }
+        */
