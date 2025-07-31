@@ -111,7 +111,7 @@ function adotar_animais(){
 function notificacao_adocao(){
     const notificacoes = document.getElementById("notificacao")
     let saida ="";
-    fetch("http://127.0.0.1:5000/api/v1/pet/listar")
+    fetch("http://10.26.45.39:3000/api/v1/pet/listar")
     fetch("http://127.0.0.1:5000/api/v1/usuario/listar")
     .then((res)=>res.json())
     .then((dados)=>{
@@ -147,3 +147,49 @@ function notificacao_adocao(){
     }
 
 
+
+
+    
+let usuario_logado="usuario_logado"
+
+if(window.localStorage.getItem(usuario_logado)){
+    let us = window.localStorage.getItem(usuario_logado)
+    us = JSON.parse(us)
+
+    let img_usuario = `<img src=${us.payload.foto_usu} class= "img_usuario">`
+    
+    let nome_us = us.payload.nome_usu
+
+    document.getElementsByClassName("usuario")[0].style.padding="15px"
+    
+    document.getElementsByClassName("usuario")[0].innerHTML= img_usuario+nome_us
+}
+
+function efetuarlogin(){
+    const usuario = document.getElementById("txtusuario")
+    const senha = document.getElementById("txtpassword")
+
+    fetch("http://127.0.0.1:5000/api/v1/usuario/login",{
+        method:"POST",
+        headers:{
+            "accept":"application/json",
+            "content-type":"application/json"
+        },
+        body:JSON.stringify({
+            usuario:usuario.value,
+            senha:senha.value
+        })
+    })
+    .then((rs)=>rs.json())
+    .then((dados)=>{
+        window.localStorage.setItem(usuario_logado,JSON.stringify(dados))
+        // Limpar o Formulário
+        usuario.value = ""
+        senha.value = ""
+
+        // Atualizar a tela
+        window.location.reload()
+
+    })
+    .catch((erro)=>console.error(erro))
+}
