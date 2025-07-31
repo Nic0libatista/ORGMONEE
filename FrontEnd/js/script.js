@@ -50,6 +50,52 @@ function carregar_animais() {
     .catch(erro => console.error(erro))
 }
 
+
+// Interesse de adoção do usuário
+function adotar_animais() {
+  const interesse_adoção = document.getElementById("exampleModaladotar")
+  let saida = ""
+
+  fetch("http://10.26.45.39:3000/api/v1/pet/listar")
+    .then(res => res.json())
+    .then(dados => {
+      dados.forEach(interesse => {
+        saida += `
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Formulário de Interesse na Adoção</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-8">
+                    <p>🐾 <strong>Bem-vindo(a) ao nosso Formulário de Interesse.</strong></p>
+                    <p>Ficamos muito felizes por você ter dado o primeiro passo para adotar um pet! 🐶🐱</p>
+                    <p>Queremos lembrar que o <strong>My Pet Friend</strong> apenas cede o espaço virtual para facilitar a adoção...</p>
+                    <p>Após clicar em "Tenho interesse", a ONG terá até <strong>48h</strong> para entrar em contato.</p>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <img src="img/${interesse.img_pet}.jpg" alt="Pet de interesse" class="img-fluid rounded shadow">
+                    <p class="mt-2"><strong>${interesse.nome_pet}</strong></p>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success">Tenho interesse</button>
+              </div>
+            </div>
+          </div>
+        `
+      })
+      interesse_adoção.innerHTML = saida
+    })
+    .then(() => notificacao_adocao())
+    .catch(erro => console.error(erro))
+}
+
+
 /*
 function carregar_animais(){
     const animaisss = document.getElementById("animais")
