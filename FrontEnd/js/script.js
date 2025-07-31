@@ -17,8 +17,39 @@
   })
 })()
 
-//mostrar animais (tela index terá isso)
+//mostrar animais (tela homeusu)
+function carregar_animais() {
+  const animaisss = document.getElementById("animais")
+  let saida = ""
 
+  fetch("http://10.26.45.39:3000/api/v1/pet/listar")
+    .then(res => res.json())
+    .then(dados => {
+      dados.forEach(pets => {
+        saida += `<div class="animaiss">              
+          <div class="card" style="width: 15rem;">
+            <img src="${pets.foto1}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">${pets.nome_pet}</h5>
+              <p class="card-text">${pets.descricao}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Gênero: ${pets.sexo}</li>
+              <li class="list-group-item">Raça: ${pets.raca}</li>
+              <li class="list-group-item">Idade: ${pets.idade}</li>
+            </ul>
+            <div class="card-body text-center">
+              <button type="button" class="btn btn-outline-success">Quero adotar</button>
+            </div>
+          </div>
+        </div>`
+      })
+      animaisss.innerHTML = saida
+    })
+    .then(() => adotar_animais())
+    .catch(erro => console.error(erro))
+}
+/*
 function carregar_animais(){
     const animaisss = document.getElementById("animais")
     let saida ="";
@@ -48,7 +79,7 @@ function carregar_animais(){
     })
     adotar_animais();
 }
-
+*/
 // interesse de adoção do usuario
 
 function adotar_animais(){
@@ -112,7 +143,6 @@ function notificacao_adocao(){
     const notificacoes = document.getElementById("notificacao")
     let saida ="";
     fetch("http://127.0.0.1:5000/api/v1/pet/listar")
-    fetch("http://127.0.0.1:5000/api/v1/usuario/listar")
     .then((res)=>res.json())
     .then((dados)=>{
         dados.map((pets)=>{ `
