@@ -49,6 +49,7 @@ function carregar_animais() {
     .then(() => adotar_animais())
     .catch(erro => console.error(erro))
 }
+
 /*
 function carregar_animais(){
     const animaisss = document.getElementById("animais")
