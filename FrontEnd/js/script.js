@@ -28,7 +28,7 @@ function carregar_animais() {
       dados.forEach(pets => {
         saida += `<div class="animaiss">              
           <div class="card" style="width: 15rem;">
-            <img src="${pets.foto1}" class="card-img-top" alt="...">
+            <img src="${pets.foto_pet1}" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">${pets.nome_pet}</h5>
               <p class="card-text">${pets.descricao}</p>
@@ -39,7 +39,11 @@ function carregar_animais() {
               <li class="list-group-item">Idade: ${pets.idade}</li>
             </ul>
             <div class="card-body text-center">
-              <button type="button" class="btn btn-outline-success">Quero adotar</button>
+             
+              <button class="btn btn-outline-success" onclick='adotar_animais(${JSON.stringify(pets)})'>
+                Quero Adotar
+              </button>
+
             </div>
           </div>
         </div>`
@@ -50,8 +54,65 @@ function carregar_animais() {
     .catch(erro => console.error(erro))
 }
 
+// interesse de adoção do usuario 
+function adotar_animais(pet) {
+  // Atualiza imagem
+  document.getElementById('imagemPetModal').src = pet.foto_pet1 || 'img/default.jpg';
 
+  // Atualiza nome
+  document.getElementById('nomePetModal').textContent = pet.nome_pet || 'Nome do Pet';
+
+  // Abre o modal
+  const modal = new bootstrap.Modal(document.getElementById('exampleModaladotar'));
+  modal.show();
+}
+
+
+/*
 // Interesse de adoção do usuário
+function adotar_animais() {
+  const interesse_adocao = document.getElementById("adotar_interesse")
+  let saida = ""
+
+  fetch("http://10.26.45.39:3000/api/v1/pet/listar")
+    .then(res => res.json())
+    .then(dados => {
+      dados.forEach(interesse => {
+        saida += `
+         <div class="row forminteresse">
+
+          <!-- 🐾 Coluna de texto -->
+          <div class="col-md-8">
+            <p>🐾 <strong>Bem-vindo(a) ao nosso Formulário de Interesse.</strong></p>
+
+            <p>Ficamos muito felizes por você ter dado o primeiro passo para adotar um pet! 🐶🐱</p>
+
+            <p>
+              Queremos lembrar que o <strong>My Pet Friend</strong> apenas cede o espaço virtual para facilitar a adoção. Os pets, as entrevistas e o processo de adoção são de inteira responsabilidade das ONGs e protetores parceiros, tudo bem?
+            </p>
+
+            <p>
+              Após clicar no botão de "Tenho interesse", a ONG/protetor terá até <strong>48h para entrar em contato</strong>. E não se preocupe, estamos aqui para ajudar caso precise de qualquer suporte nesse processo.
+            </p>
+          </div>
+
+          <!-- 🐶 Coluna de imagem -->
+          <div class="col-md-4 text-center">
+           <img src="${interesse.foto_pet1}" alt="Pet de interesse" class="img-fluid rounded shadow">
+                    <p class="mt-2"><strong>${interesse.nome_pet}</strong></p>
+                  </div>
+
+        </div>
+      </div>
+        `
+      })
+      interesse_adocao.innerHTML = saida
+    })
+    .catch(erro => console.error("Erro ao carregar pets para adoção:", erro));
+}
+
+
+ Interesse de adoção do usuário
 function adotar_animais() {
   const interesse_adoção = document.getElementById("exampleModaladotar")
   let saida = ""
@@ -97,37 +158,6 @@ function adotar_animais() {
 
 
 /*
-function carregar_animais(){
-    const animaisss = document.getElementById("animais")
-    let saida ="";
-    fetch("http://10.26.45.39:3000/api/v1/pet/listar")
-    .then((res)=>res.json())
-    .then((dados)=>{
-        dados.map((pets)=>{
-            saida +=`<div class="animaiss">              
-                <div class="card" style="width: 15rem; ">
-                <img src="${pets.foto1}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title"> ${pets.nome_pet}</h5>
-                    <p class="card-text"> ${pets.descricao} </p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"> Genero ${pets.sexo}</li>
-                    <li class="list-group-item"> raça ${pets.raca}</li>
-                    <li class="list-group-item"> idade ${pets.idade} </li>
-                </ul>
-                <div class="card-body text-center">
-                    <button type="button" class="btn btn-outline-success"> Quero adotar </button>
-                </div>
-                </div>
-                </div>`
-        })
-        animaisss.innerHTML=saida;
-    })
-    adotar_animais();
-}
-
-
 
 // interesse de adoção do usuario
 
