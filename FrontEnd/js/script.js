@@ -80,7 +80,9 @@ function carregar_animais(){
     })
     adotar_animais();
 }
-*/
+
+
+
 // interesse de adoção do usuario
 
 function adotar_animais(){
@@ -221,3 +223,4 @@ function notificacao_adocao(){
         })
         .catch((erro)=>console.error(erro))
     }
+        */
