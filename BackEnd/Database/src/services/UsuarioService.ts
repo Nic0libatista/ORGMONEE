@@ -18,10 +18,10 @@ export default class UsuarioService{
         us.nome_usu = req.body.nome_usu;
         us.senha = (await this.criptografarSenha(req.body.senha)).toString();
         us.foto_usu = req.body.foto_usu;
-        us.contato = req.body.contato;
         us.cpf_usu = req.body.cpf_usu;
         us.data_nascimento = req.body.data_nascimento;
         us.endereco = req.body.endereco;
+        us.contato = req.body.contato;
         us.preferencia = req.body.preferencia;
 
         try{

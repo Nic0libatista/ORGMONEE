@@ -293,10 +293,11 @@ function notificacao_adocao() {
 
    
     async function efetuarCadastroCompleto() {
+      // Captura os dados do formulário
       const nome = document.getElementById("nomeCompleto").value;
       const cpf = document.getElementById("cpf").value;
       const nascimento = document.getElementById("nascimento").value;
-      const email = document.getElementById("email").value;
+      const email = document.getElementById("email").value; // pode remover se o backend não usa
       const senha = document.getElementById("senhaUsuario").value;
     
       const telefoneRes = document.getElementById("telFixo").value;
@@ -310,30 +311,10 @@ function notificacao_adocao() {
       const numero = document.getElementById("numero").value;
       const complemento = document.getElementById("complemento").value;
     
+      const fotoUsuario = document.getElementById("foto_Usuario").files[0]; // opcional
+    
       try {
-        // 1. Cadastra o endereço
-        const resEndereco = await fetch("http://10.26.45.39:3000/api/v1/endereco/cadastro", {
-          method: "POST",
-          headers: {
-            "accept": "application/json",
-            "content-type": "application/json"
-          },
-          body: JSON.stringify({
-            cep,
-            logradouro,
-            bairro,
-            cidade,
-            estado,
-            numero,
-            complemento: complemento || null
-          })
-        });
-    
-        const dadosEndereco = await resEndereco.json();
-        if (!resEndereco.ok) throw new Error(dadosEndereco.message || "Erro ao cadastrar endereço");
-        const id_endereco = dadosEndereco.id || dadosEndereco.insertId;
-    
-        // 2. Cadastra o contato
+        // 1. Cadastra o contato
         const resContato = await fetch("http://10.26.45.39:3000/api/v1/contato/cadastro", {
           method: "POST",
           headers: {
@@ -348,28 +329,61 @@ function notificacao_adocao() {
         });
     
         const dadosContato = await resContato.json();
+        console.log("Resposta do contato:", dadosContato);
         if (!resContato.ok) throw new Error(dadosContato.message || "Erro ao cadastrar contato");
-        const id_contato = dadosContato.id || dadosContato.insertId;
     
-        // 3. Cadastra o usuário com os dois IDs
-        const resUsuario = await fetch("http://10.26.45.39:3000/api/v1/usuario/cadastro", {
+        const idContato = dadosContato.id || dadosContato.insertId;
+    
+        // 2. Cadastra o endereço
+        const resEndereco = await fetch("http://10.26.45.39:3000/api/v1/endereco/cadastro", {
           method: "POST",
           headers: {
             "accept": "application/json",
             "content-type": "application/json"
           },
           body: JSON.stringify({
-            nome_completo: nome,
-            cpf,
-            nascimento,
-            email,
-            senha,
-            id_endereco,
-            id_contato
+            cep: cep,
+            logradouro: logradouro,
+            bairro: bairro,
+            cidade: cidade,
+            estado: estado,
+            numero: numero,
+            complemento: complemento || null
           })
         });
     
+        const dadosEndereco = await resEndereco.json();
+        console.log("Resposta do endereço:", dadosEndereco);
+        if (!resEndereco.ok) throw new Error(dadosEndereco.message || "Erro ao cadastrar endereço");
+    
+        const idEndereco = dadosEndereco.id || dadosEndereco.insertId;
+    
+        // 3. Cadastra o usuário
+        const usuario = {
+          nome_usu: nome,
+          cpf_usu: cpf,
+          data_nascimento: nascimento,
+          senha: senha,
+          contato: idContato,
+          endereco: idEndereco,
+          foto_usu: fotoUsuario ? fotoUsuario.name : null, // ou use lógica de upload se necessário
+          tipo_usu: "comum",
+          preferencia: 37 // ou outra lógica real do sistema
+        };
+    
+        console.log("Dados do usuário antes do envio:", usuario);
+    
+        const resUsuario = await fetch("http://10.26.45.39:3000/api/v1/usuario/cadastro", {
+          method: "POST",
+          headers: {
+            "accept": "application/json",
+            "content-type": "application/json"
+          },
+          body: JSON.stringify(usuario)
+        });
+    
         const dadosUsuario = await resUsuario.json();
+        console.log("Resposta do usuário:", dadosUsuario);
         if (!resUsuario.ok) throw new Error(dadosUsuario.message || "Erro ao cadastrar usuário");
     
         alert("Cadastro realizado com sucesso!");
@@ -381,7 +395,3 @@ function notificacao_adocao() {
       }
     }
     
-
-
-  
-  
