@@ -85,11 +85,18 @@ padding-bottom: 80px;
     gap: 20px; /* espaçamento entre os cards */
   }
 
-  .card img {
-    margin: 10%;
-    width: 80%;
-  }
 
+  .card img {
+    margin: 5%;
+    width: 90%;
+    height: 180px;}
+
+    #animais{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
   .animais{
     
     display: flex;
@@ -403,6 +410,20 @@ width: 26px;
 #imagemPetModal{
   height: 270px;
 }
+
+
+/* animais */
+#caixaanimais  {
+  display: flex;
+  
+}
+
+#animais_ong .card {
+  flex: 0 0 calc(25% - 1rem); /* 4 por linha com um pequeno espaço */
+  margin-bottom: 1.5rem;
+  min-width: 220px;
+}
+
 
 
 
@@ -894,4 +915,17 @@ flex-direction:row;
   width: 100%;
   height: 90vh;
 }
+
+.card img {
+  margin: 0%;
+  width: 230px;
+  height: 180px;}
+
+  #animais{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+   
+  }
+
 }

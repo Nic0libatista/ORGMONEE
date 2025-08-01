@@ -27,66 +27,119 @@ function carregar_animais_ong() {
     .then(res => res.json())
     .then(dados => {
       dados.forEach(pets => {
-        saida += `<div class="animaiss">              
-          <div class="card" style="width: 15rem;">
-            <img src="${pets.foto_pet1}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">${pets.nome_pet}</h5>
-              <p class="card-text">${pets.descricao}</p>
+        saida += `    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 d-flex justify-content-center">
+            <div class="card" style="width: 15rem;">
+              <img src="${pets.foto_pet1}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">${pets.nome_pet}</h5>
+                <p class="card-text">${pets.descricao}</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Gênero: ${pets.sexo}</li>
+                <li class="list-group-item">Raça: ${pets.raca}</li>
+                <li class="list-group-item">Idade: ${pets.idade}</li>
+              </ul>
+              <div class="card-body text-center">
+                <button class="btn btn-outline-success" onclick='adotar_animais(${JSON.stringify(pets)})'>
+                  Quero Adotar
+                </button>
+              </div>
             </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Gênero: ${pets.sexo}</li>
-              <li class="list-group-item">Raça: ${pets.raca}</li>
-              <li class="list-group-item">Idade: ${pets.idade}</li>
-            </ul>
-             <div class="card-body text-center">
-            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModaldelete"> Deletar pet </button>
-        </div>
-        </div>` })
-        animaiss_ongg.innerHTML = saida
-      })
+          </div>`;
+      });
+
+      container.innerHTML = `<div class="row">${saida}</div>`;
+    })
       .catch(erro => console.error(erro))
   }
   
 
 
-
-//mostrar animais (tela homeusu)
-function carregar_animais() {
-  const animaisss = document.getElementById("animais")
-  let saida = ""
+//mostrar animais index 
+function carregar_animais_index() {
+  const container = document.getElementById("animais");
+  container.innerHTML = '';
 
   fetch("http://10.26.45.39:3000/api/v1/pet/listar")
     .then(res => res.json())
     .then(dados => {
-      dados.forEach(pets => {
-        saida += `<div class="animaiss">              
-          <div class="card" style="width: 15rem;">
-            <img src="${pets.foto_pet1}" class="card-img-top" alt="...">
+      // Inverte a lista para pegar os mais recentes primeiro
+      const dadosInvertidos = dados.reverse();
+      // Pega os 4 primeiros da lista invertida (ou menos, se houver menos de 4)
+      const ultimosQuatro = dadosInvertidos.slice(0, 4);
+
+      ultimosQuatro.forEach(pet => {
+        const card = document.createElement('div');
+        card.className = 'card';
+
+        card.innerHTML = `
+          <img src="${pet.foto_pet1}" class="card-img-top mt-3" alt="Foto de ${pet.nome_pet}" style="width:190px; height:170px; object-fit:cover; margin: 2% auto;">
+          <div class="card-body text-center">
+            <h5 class="card-title">${pet.nome_pet}</h5>
+            <p class="card-text">${pet.descricao}</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Gênero: ${pet.sexo}</li>
+            <li class="list-group-item">Raça: ${pet.raca}</li>
+            <li class="list-group-item">Idade: ${pet.idade}</li>
+          </ul>
+        `;
+
+        container.appendChild(card);
+      });
+    })
+    .catch(err => console.error('Erro ao carregar animais:', err));
+}
+
+
+
+
+//mostrar animais (tela homeusu)
+function carregar_animais() {
+  const container = document.getElementById("animais");
+  container.innerHTML = ''; // limpa o conteúdo anterior
+
+  fetch("http://10.26.45.39:3000/api/v1/pet/listar")
+    .then(res => res.json())
+    .then(dados => {
+      let row;
+
+      dados.forEach((pet, index) => {
+        if (index % 4 === 0) {
+          row = document.createElement('div');
+          row.className = 'row mb-4 justify-content-center';
+          container.appendChild(row);
+        }
+
+        const col = document.createElement('div');
+        col.className = 'col-md-3 d-flex';
+
+        col.innerHTML = `
+          <div class="card w-100 h-100">
+            <img src="${pet.foto_pet1}" class="card-img-top id="imagemPet" alt="Foto de ${pet.nome_pet}">
             <div class="card-body">
-              <h5 class="card-title">${pets.nome_pet}</h5>
-              <p class="card-text">${pets.descricao}</p>
+              <h5 class="card-title">${pet.nome_pet}</h5>
+              <p class="card-text">${pet.descricao}</p>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">Gênero: ${pets.sexo}</li>
-              <li class="list-group-item">Raça: ${pets.raca}</li>
-              <li class="list-group-item">Idade: ${pets.idade}</li>
+              <li class="list-group-item">Gênero: ${pet.sexo}</li>
+              <li class="list-group-item">Raça: ${pet.raca}</li>
+              <li class="list-group-item">Idade: ${pet.idade}</li>
             </ul>
             <div class="card-body text-center">
-             
-              <button class="btn btn-outline-success" onclick='adotar_animais(${JSON.stringify(pets)})'>
+              <button class="btn btn-outline-success" onclick='adotar_animais(${JSON.stringify(pet)})'>
                 Quero Adotar
               </button>
-
             </div>
           </div>
-        </div>`
-      })
-      animaisss.innerHTML = saida
+        `;
+
+        row.appendChild(col);
+      });
     })
-    .then(() => adotar_animais())
-    .catch(erro => console.error(erro))
+    .catch(erro => console.error('Erro ao carregar animais:', erro));
 }
+
 
 
 // interesse de adoção do usuario 
