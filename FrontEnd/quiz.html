@@ -127,87 +127,23 @@
     </div>
   </div>
 
-  <div class="question" style="display: none;">
-    <h3 class="mb-2"><b style="color:grey"> 👨‍👩‍👧‍👦 Convivência </b></h3>
-    <p><strong>5. Seu lar possui:</strong></p>
-    <div class="form-check">
-      <input type="checkbox" name="q5" value="a" class="form-check-input">
-      <label class="form-check-label">Crianças pequenas</label>
-    </div>
-    <div class="form-check">
-      <input type="checkbox" name="q5" value="b" class="form-check-input">
-      <label class="form-check-label">Outros pets</label>
-    </div>
-    <div class="form-check">
-      <input type="checkbox" name="q5" value="c" class="form-check-input">
-      <label class="form-check-label">Pessoas idosas</label>
-    </div>
-    <div class="form-check">
-      <input type="checkbox" name="q5" value="d" class="form-check-input">
-      <label class="form-check-label">Não possuo nenhum das alternativas acima </label>
-    </div>
-  </div>
+ 
 
-  <div class="question" style="display: none;">
-    <h3 class="mb-2"><b style="color:grey"> 🏡 Ambiente disponível </b></h3>
-    <p><strong>6. O pet terá acesso a:</strong></p>
-    <div class="form-check">
-      <input type="radio" name="q6" value="a" class="form-check-input" required>
-      <label class="form-check-label">Casa com quintal</label>
-    </div>
-    <div class="form-check">
-      <input type="radio" name="q6" value="b" class="form-check-input">
-      <label class="form-check-label">Apartamento</label>
-    </div>
-    <div class="form-check">
-      <input type="radio" name="q6" value="c" class="form-check-input">
-      <label class="form-check-label">Área rural</label>
-    </div>
-  </div>
 
-  <div class="question" style="display: none;">
-    <h3 class="mb-2"><b style="color:grey"> 🕐 Tempo disponível </b></h3>
-    <p><strong>7. Quanto tempo você poderá dedicar ao pet diariamente?</strong></p>
-    <div class="form-check">
-      <input type="radio" name="q7" value="a" class="form-check-input" required>
-      <label class="form-check-label">Pouco (menos de 1h)</label>
-    </div>
-    <div class="form-check">
-      <input type="radio" name="q7" value="b" class="form-check-input">
-      <label class="form-check-label">Moderado (1–3h)</label>
-    </div>
-    <div class="form-check">
-      <input type="radio" name="q7" value="c" class="form-check-input">
-      <label class="form-check-label">Muito (mais de 3h)</label>
-    </div>
-  </div>
-
-  <div class="question" style="display: none;">
-    <h3 class="mb-2"><b style="color:grey"> 🛠️ Experiência com pets </b></h3>
-    <p><strong>8. Você já teve um pet antes?</strong></p>
-    <div class="form-check">
-      <input type="radio" name="q8" value="a" class="form-check-input" required>
-      <label class="form-check-label">Sim</label>
-    </div>
-    <div class="form-check">
-      <input type="radio" name="q8" value="b" class="form-check-input">
-      <label class="form-check-label">Não</label>
-    </div>
-  </div>
 
   <div class="question" style="display: none;">
     <h3 class="mb-2"><b style="color:grey"> ⚡ Nível de energia do pet </b></h3>
     <p><strong>9. Você gostaria de um animal mais:</strong></p>
     <div class="form-check">
-      <input type="radio" name="q9" value="a" class="form-check-input" required>
+      <input type="radio" name="q5" value="a" class="form-check-input" required>
       <label class="form-check-label">Tranquilo</label>
     </div>
     <div class="form-check">
-      <input type="radio" name="q9" value="b" class="form-check-input">
+      <input type="radio" name="q5" value="b" class="form-check-input">
       <label class="form-check-label">Ativo</label>
     </div>
     <div class="form-check">
-      <input type="radio" name="q9" value="c" class="form-check-input">
+      <input type="radio" name="q5" value="c" class="form-check-input">
       <label class="form-check-label">Energético</label>
     </div>
   </div>
@@ -236,9 +172,10 @@
   const submitBtn = document.getElementById('submitBtn');
   let atual = 0;
 
+  // Botão de próxima pergunta
   nextBtn.addEventListener('click', () => {
     const atualPergunta = perguntas[atual];
-    const selecionado = atualPergunta.querySelector('input:checked');
+    const selecionado = atualPergunta.querySelector('input[type="radio"]:checked') || atualPergunta.querySelector('input[type="checkbox"]:checked');
     if (!selecionado) {
       alert('Escolha uma opção antes de continuar.');
       return;
@@ -257,24 +194,19 @@
     }
   });
 
-  document.getElementById('quizForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-    // Aqui você coleta as respostas e decide o pet ideal
-    const respostas = Array.from(new FormData(this).entries());
-    console.log(respostas); // ou use como quiser
+  document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("submitBtn");
 
-    document.getElementById('quizForm').style.display = 'none';
-    document.getElementById('resultado').innerHTML = `
-      <div class="alert alert-info">
-        👑 Seu pet ideal será exibido aqui com base nas respostas.
-      </div>`;
-
-      document.getElementById('quizForm').addEventListener('submit', function (e) {
-  e.preventDefault();
-  window.location.href = 'homeusu.html';
-});
+  btn.addEventListener("click", () => {
+    // Redirecionar para a home
+    window.location.href = "homeusu.html";
   });
+});
+
+
 </script>
+
+
 
 <script src="js/script.js"> </script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

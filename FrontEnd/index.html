@@ -110,25 +110,78 @@
 
 <div class="container">
 
-   <b style="font-family: amarante; font-size: 32px; color:#3378ad;">Conheça nossos pets</b>
-    
-<div class="d-flex justify-content-center flex-wrap gap-3 animais">
-  <div id="animais">
-    
-  </div>
-  <div id="animais">
-    
-  </div>
-  <div id="animais">
-    
+  <div class="text-center">
+    <b style="font-family: amarante; font-size: 32px; color:#3378ad;">
+      Conheça nossos pets
+    </b>
   </div>
   
+   <div id="animais" class="d-flex justify-content-center flex-wrap gap-3 mt-5"></div>
 
+    
+  <!-- <div class="row d-flex flex-wrap gap-3 justify-content-center" id="animais_ong">
 
+  <div class="animais" id="animais">
+    
+    <div class="card" style="width: 15rem; ">
+    <img src="img/dogg.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title"> nome do animal</h5>
+      <p class="card-text">Pequeno texto informativo sobre o animal e suas caracteristicas.</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"> Genero </li>
+      <li class="list-group-item"> raça</li>
+      <li class="list-group-item"> idade </li>
+    </ul>
+    <div class="card-body text-center">
+      <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModaladotar"> Quero adotar </button>
+    </div>
+  </div>
+  
+  
+  
+  
+    <div class="card" style="width: 15rem;">
+    <img src="img/dog2.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title"> nome do animal</h5>
+      <p class="card-text">Pequeno texto informativo sobre o animal e suas caracteristicas.</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"> genero </li>
+      <li class="list-group-item"> raça</li>
+      <li class="list-group-item"> idade </li>
+    </ul>
+    <div class="card-body text-center">
+     <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModaladotar"> Quero adotar </button>
+    </div>
+  </div>
+  
+  
+    <div class="card" style="width: 15rem;">
+    <img src="img/dog3.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title"> nome do animal</h5>
+      <p class="card-text">Pequeno texto informativo sobre o animal e suas caracteristicas.</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"> genero </li>
+      <li class="list-group-item"> raça</li>
+      <li class="list-group-item"> idade </li>
+    </ul>
+    <div class="card-body text-center">
+     <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModaladotar"> Quero adotar </button>
+    </div>
+  </div>
+  </div> -->
+  
+  <!-- fim da div animais -->
+  </div>
 </div>
 <!-- ////////////////////////////// fim da div animais //////////////////////////////// -->
 <div class="d-flex justify-content-center">
-  <button type="button" class="btn btn-roxo" data-bs-toggle="modal" data-bs-target="#exampleModal"> Faça login para ver mais </button>
+  <button type="button" class="btn btn-roxo" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-top: 20px;"> Faça login para ver mais </button>
 </div>
 
 </div>
@@ -206,6 +259,14 @@
     </div>
   </div>
 </div>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    carregar_animais_index();
+    
+  });
+</script>
 
 <script src="js/script.js"> </script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

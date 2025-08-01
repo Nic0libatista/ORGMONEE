@@ -40,18 +40,18 @@ Diferencial: contamos com um quiz interativo que ajuda o usuário a descobrir qu
 ## Capturas 
  Página inicial
 
- ![alt text](captela_inicia.PNG)
+ ![Tela Inicial](https://github.com/Nic0libatista/ORGMONEE/blob/main/Doc/captela_inicia.PNG?raw=true)
 
 
- Cadastro Usuário
+ ## Cadastro Usuário
 
- ![alt text](captela_cadastrousu.PNG)
+ ![Tela Cadastro](https://github.com/Nic0libatista/ORGMONEE/blob/main/Doc/captela_cadastrousu.PNG?raw=true)
 
-Cadastro ONG
+## Cadastro ONG
 
-![alt text](cadastroong.PNG)
+![Cadastro ONG](https://github.com/Nic0libatista/ORGMONEE/blob/main/Doc/cadastroong.PNG?raw=true)
 
-Sobre Nós 
+## Sobre Nós 
 
-![alt text](sobrenos.PNG)
+![Sobre nós](https://github.com/Nic0libatista/ORGMONEE/blob/main/Doc/sobrenos.PNG?raw=true)
 
