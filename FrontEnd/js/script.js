@@ -398,7 +398,7 @@ function notificacao_adocao() {
         
         document.getElementsByClassName("usuario")[0].innerHTML= img_usuario+nome_us
     }
-    */
+   
     function efetuarlogin() {
       const usuario = document.getElementById("txtusuario");
       const senha = document.getElementById("txtpassword");
@@ -429,7 +429,49 @@ function notificacao_adocao() {
           alert("Erro no login: " + erro.message);
         });
     }
+       */
+
+    
+    function efetuarlogin() {
+      const usuario = document.getElementById("txtUsuario")
+      const senha = document.getElementById("txtpassword")    
       
+
+      if (!usuario || !senha) {
+        alert("Campos não encontrados");
+        return;
+      }
+    
+      const dados = {
+        usuario: usuario.value,
+        senha: senha.value
+      };
+    
+      fetch("http://10.26.45.39:3000/api/v1/usuario/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(dados)
+      })
+      .then(res => res.json())
+      .then(response => {
+        console.log(response)
+        if (response) {
+          // Exemplo: guardar id e redirecionar
+          localStorage.setItem("id_usuario", response.payload.id);
+          localStorage.setItem("nome_usu", response.payload.nome_usu);
+          return window.location.href = "homeusu.html"; // ou qualquer página pós-login
+        } else {
+          alert("Usuário ou senha incorretos");
+        }
+      })
+      .catch(error => {
+        console.error("Erro ao tentar logar:", error);
+        alert("Erro ao tentar fazer login. Tente novamente mais tarde.");
+      });
+    }
+    
 
 
     // Cadastro do Usuário ###################################################################################
