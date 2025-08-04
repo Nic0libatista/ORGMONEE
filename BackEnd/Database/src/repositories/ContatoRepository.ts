@@ -18,7 +18,7 @@ export default class ContatoRepository implements Commands<Contato>{
             if (erro) {
                 return reject(erro)
             } else {
-                return resolve(obj)
+                return resolve(end)
             }
         })
         });

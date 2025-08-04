@@ -19,7 +19,7 @@ export default class EnderecoRepository implements Commands<Endereco>{
                 if (erro) {
                     return reject(erro)
                 } else {
-                    return resolve(obj)
+                    return resolve(end)
                 }
             })
         });

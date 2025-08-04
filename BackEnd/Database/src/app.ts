@@ -22,7 +22,7 @@ app.get("/api/v1/usuario/listar", (req, res) => {
 });
 
 app.post("/api/v1/usuario/cadastro", (req, res) => {
-  us.cadastrarUsuario(req, res);
+  us.cadastrarUsuarioCompleto(req, res);
 });
 
 app.post("/api/v1/usuario/login", (req, res) => {
