@@ -67,5 +67,53 @@ export default class UsuarioRepository implements CommandsUsuario<Usuario>{
     PesquisarId(id: number): Promise<Usuario> {
         throw new Error("Method not implemented.");
     }
+
+    CadastrarUsuario(obj: any): Promise<any> {
+        return new Promise((resolve, reject) => {
+            // 1. Inserir Endereco
+            conexao.query(
+                "INSERT INTO Endereco(complemento, cep, bairro, logradouro, numero, cidade, estado) VALUES (?, ?, ?, ?, ?, ?, ?)",
+                [obj.complemento, obj.cep, obj.bairro, obj.logradouro, obj.numero, obj.cidade, obj.estado],
+                (erroEndereco, resEndereco: any) => {
+                    if (erroEndereco) return reject(erroEndereco);
+    
+                    const id_endereco = resEndereco.insertId;
+    
+                    // 2. Inserir Contato
+                    conexao.query(
+                        "INSERT INTO Contato(telefone_comercial, telefone_residencial, telefone_celular, email) VALUES (?, ?, ?, ?)",
+                        [obj.telefone_comercial, obj.telefone_residencial, obj.telefone_celular, obj.email],
+                        (erroContato, resContato: any) => {
+                            if (erroContato) return reject(erroContato);
+    
+                            const id_contato = resContato.insertId;
+    
+                            // 3. Inserir Usuário com os IDs obtidos
+                            conexao.query(
+                                "INSERT INTO Usuario(nome_usu, cpf_usu, data_nascimento, senha, id_endereco, contato, preferencia, tipo_usu, foto_usu) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                                [
+                                    obj.nome_usu,
+                                    obj.cpf_usu,
+                                    obj.data_nascimento,
+                                    obj.senha,
+                                    id_endereco,
+                                    id_contato,
+                                    obj.preferencia,
+                                    "comum", // tipo_usu fixo
+                                    obj.foto_usu || null
+                                ],
+                                (erroUsuario, resUsuario: any) => {
+                                    if (erroUsuario) return reject(erroUsuario);
+    
+                                    resolve(resUsuario);
+                                }
+                            );
+                        }
+                    );
+                }
+            );
+        });
+    }
+    
     
 }

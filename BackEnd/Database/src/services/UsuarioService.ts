@@ -13,6 +13,66 @@ export default class UsuarioService{
         return rs
     }
 
+
+    async cadastrarUsuarioCompleto(req:Request, res:Response){
+        
+        let nome_usu = req.body.nome_usu;
+        let senha = (await this.criptografarSenha(req.body.senha)).toString();
+        let foto_usu = req.body.foto_usu;
+        let cpf_usu = req.body.cpf_usu;
+        let data_nascimento = req.body.data_nascimento;
+        let endereco = req.body.endereco;
+        let contato = req.body.contato;
+        let preferencia = req.body.preferencia;
+        let complemento = req.body.complemento;
+        let cep = req.body.cep;
+        let bairro = req.body.bairro;
+        let logradouro = req.body.logradouro;
+        let numero = req.body.numero;
+        let cidade = req.body.cidade;
+        let estado = req.body.estado;
+        let telefone_celular = req.body.telefone_celular;
+        let telefone_comercial = req.body.telefone_comercial;
+        let telefone_residencial = req.body.telefone_residencial;
+        let email = req.body.email;
+
+
+        let obj = {
+            nome_usu,
+            senha,
+            foto_usu,
+            cpf_usu,
+            data_nascimento,
+            endereco,
+            contato,
+            preferencia,
+            complemento,
+            cep,
+            bairro,
+            logradouro,
+            numero,
+            cidade,
+            estado,
+            telefone_celular,
+            telefone_comercial,
+            telefone_residencial,
+            email
+        }
+
+
+        try{
+            const rs = await this.usuarioRepo.CadastrarUsuario(obj)
+            return res.status(201).json(rs)
+        }
+        catch(erro){
+            return res.status(500).json(erro)
+        }
+    }
+
+
+
+
+
     async cadastrarUsuario(req:Request, res:Response){
         let us = new Usuario()
         us.nome_usu = req.body.nome_usu;
@@ -72,4 +132,6 @@ export default class UsuarioService{
             res.status(500).json({msg:`Erro ao tentar logar ${error}`});
         }
     }
+
+    
 }

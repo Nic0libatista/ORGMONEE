@@ -440,11 +440,12 @@ function notificacao_adocao() {
       const nome = document.getElementById("nomeCompleto").value;
       const cpf = document.getElementById("cpf").value;
       const nascimento = document.getElementById("nascimento").value;
-      const email = document.getElementById("email").value; // pode remover se o backend não usa
       const senha = document.getElementById("senhaUsuario").value;
     
       const telefoneRes = document.getElementById("telFixo").value;
       const telefoneCel = document.getElementById("telCelular").value;
+      const telefoneCom = null; 
+      const email = document.getElementById("email").value;
     
       const cep = document.getElementById("cep").value;
       const logradouro = document.getElementById("logradouro").value;
@@ -454,80 +455,48 @@ function notificacao_adocao() {
       const numero = document.getElementById("numero").value;
       const complemento = document.getElementById("complemento").value;
     
-      const fotoUsuario = document.getElementById("foto_Usuario").files[0]; // opcional
+      const fotoUsuario = document.getElementById("foto_Usuario").files[0];
     
       try {
-        // 1. Cadastra o contato
-        const resContato = await fetch("http://10.26.45.39:3000/api/v1/contato/cadastro", {
-          method: "POST",
-          headers: {
-            "accept": "application/json",
-            "content-type": "application/json"
-          },
-          body: JSON.stringify({
-            telefone_residencial: telefoneRes || null,
-            telefone_celular: telefoneCel,
-            email: email
-          })
-        });
-    
-        const dadosContato = await resContato.json();
-        console.log("Resposta do contato:", dadosContato);
-        if (!resContato.ok) throw new Error(dadosContato.message || "Erro ao cadastrar contato");
-    
-        const idContato = dadosContato.id || dadosContato.insertId;
-    
-        // 2. Cadastra o endereço
-        const resEndereco = await fetch("http://10.26.45.39:3000/api/v1/endereco/cadastro", {
-          method: "POST",
-          headers: {
-            "accept": "application/json",
-            "content-type": "application/json"
-          },
-          body: JSON.stringify({
-            cep: cep,
-            logradouro: logradouro,
-            bairro: bairro,
-            cidade: cidade,
-            estado: estado,
-            numero: numero,
-            complemento: complemento || null
-          })
-        });
-    
-        const dadosEndereco = await resEndereco.json();
-        console.log("Resposta do endereço:", dadosEndereco);
-        if (!resEndereco.ok) throw new Error(dadosEndereco.message || "Erro ao cadastrar endereço");
-    
-        const idEndereco = dadosEndereco.id || dadosEndereco.insertId;
-    
-        // 3. Cadastra o usuário
-        const usuario = {
+        const usuarioCompleto = {
           nome_usu: nome,
           cpf_usu: cpf,
           data_nascimento: nascimento,
           senha: senha,
-          contato: idContato,
-          endereco: idEndereco,
-          foto_usu: fotoUsuario ? fotoUsuario.name : null, // ou use lógica de upload se necessário
-          tipo_usu: "comum",
-          preferencia: 37 // ou outra lógica real do sistema
+          foto_usu: fotoUsuario ? fotoUsuario.name : null,
+          preferencia: 37, // ou outro valor real
+    
+          // Endereço
+          cep: cep,
+          logradouro: logradouro,
+          bairro: bairro,
+          cidade: cidade,
+          estado: estado,
+          numero: numero,
+          complemento: complemento || null,
+    
+          // Contato
+          telefone_celular: telefoneCel,
+          telefone_residencial: telefoneRes || null,
+          telefone_comercial: telefoneCom,
+          email: email
         };
     
-        console.log("Dados do usuário antes do envio:", usuario);
+        console.log("Enviando tudo no corpo:", usuarioCompleto);
     
-        const resUsuario = await fetch("http://10.26.45.39:3000/api/v1/usuario/cadastro", {
+        const res = await fetch("http://10.26.45.39:3000/api/v1/usuario/cadastro", {
           method: "POST",
           headers: {
             "accept": "application/json",
             "content-type": "application/json"
           },
-          body: JSON.stringify(usuario)
+          body: JSON.stringify(usuarioCompleto)
         });
     
-        const dadosUsuario = await resUsuario.json();
-        console.log("Resposta do usuário:", dadosUsuario);
-        if (!resUsuario.ok) throw new Error(dadosUsuario.message || "Erro ao cadastrar usuário");
+        const dados = await res.json();
+        console.log("Resposta do backend:", dados);
+    
+        if (!res.ok) throw new Error(dados.message || "Erro ao cadastrar");
     
         alert("Cadastro realizado com sucesso!");
         document.getElementById("cadastroForm").reset();
@@ -537,4 +506,5 @@ function notificacao_adocao() {
         alert("Erro ao cadastrar. Verifique os dados e tente novamente.");
       }
     }
+    
     
