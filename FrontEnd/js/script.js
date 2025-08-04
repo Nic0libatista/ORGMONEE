@@ -21,13 +21,15 @@
 function carregar_animais_ong() {
   const animaiss_ongg = document.getElementById("animais_ong");
   const idOng = localStorage.getItem("id_ong");
-  let saida = ""
-  
-  fetch("http://10.26.45.39:3000/api/v1/pet/listar?ong=${idOng}")
+  let saida = "";
+
+  // Use crase no fetch
+  fetch(`http://10.26.45.39:3000/api/v1/pet/listar?ong=${idOng}`)
     .then(res => res.json())
     .then(dados => {
       dados.forEach(pets => {
-        saida += `    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 d-flex justify-content-center">
+        saida += `
+          <div class="col-lg-3 col-md-4 col-sm-6 mb-4 d-flex justify-content-center">
             <div class="card" style="width: 15rem;">
               <img src="${pets.foto_pet1}" class="card-img-top" alt="...">
               <div class="card-body">
@@ -48,10 +50,11 @@ function carregar_animais_ong() {
           </div>`;
       });
 
-      container.innerHTML = `<div class="row">${saida}</div>`;
+      animaiss_ongg.innerHTML = `<div class="row">${saida}</div>`;
     })
-      .catch(erro => console.error(erro))
-  }
+    .catch(erro => console.error("Erro ao carregar animais da ONG:", erro));
+}
+
   
 
 
@@ -73,7 +76,7 @@ function carregar_animais_index() {
         card.className = 'card';
 
         card.innerHTML = `
-          <img src="${pet.foto_pet1}" class="card-img-top mt-3" alt="Foto de ${pet.nome_pet}" style="width:190px; height:170px; object-fit:cover; margin: 2% auto;">
+          <img src="${pet.foto_pet1}" class="card-img-top mt-3" alt="Foto de ${pet.nome_pet}" style="width:190px; height:170px; object-fit:cover; margin:auto;">
           <div class="card-body text-center">
             <h5 class="card-title">${pet.nome_pet}</h5>
             <p class="card-text">${pet.descricao}</p>
@@ -115,24 +118,25 @@ function carregar_animais() {
         col.className = 'col-md-3 d-flex';
 
         col.innerHTML = `
-          <div class="card w-100 h-100">
-            <img src="${pet.foto_pet1}" class="card-img-top id="imagemPet" alt="Foto de ${pet.nome_pet}">
-            <div class="card-body">
-              <h5 class="card-title">${pet.nome_pet}</h5>
-              <p class="card-text">${pet.descricao}</p>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Gênero: ${pet.sexo}</li>
-              <li class="list-group-item">Raça: ${pet.raca}</li>
-              <li class="list-group-item">Idade: ${pet.idade}</li>
-            </ul>
-            <div class="card-body text-center">
-              <button class="btn btn-outline-success" onclick='adotar_animais(${JSON.stringify(pet)})'>
-                Quero Adotar
-              </button>
-            </div>
+        <div class="card w-100 h-100">
+          <img src="${pet.foto_pet1}" style="width:190px; height:170px; object-fit: cover; margin: auto;" class="card-img-top" alt="Foto de ${pet.nome_pet}">
+          <div class="card-body">
+            <h5 class="card-title">${pet.nome_pet}</h5>
+            <p class="card-text">${pet.descricao}</p>
           </div>
-        `;
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Gênero: ${pet.sexo}</li>
+            <li class="list-group-item">Raça: ${pet.raca}</li>
+            <li class="list-group-item">Idade: ${pet.idade}</li>
+          </ul>
+          <div class="card-body text-center">
+            <button class="btn btn-outline-success" onclick='adotar_animais(${JSON.stringify(pet)})'>
+              Quero Adotar
+            </button>
+          </div>
+        </div>
+      `;
+      
 
         row.appendChild(col);
       });
@@ -153,10 +157,61 @@ function adotar_animais(pet) {
   // Abre o modal
   const modal = new bootstrap.Modal(document.getElementById('exampleModaladotar'));
   modal.show();
+
+  
 }
 
 
+
+
 /*
+//notificação para ong 
+// Simulação dos dados do usuário
+const usuario = {
+  nome: "Nicoli Santos",
+  telefone: "5511984538900",
+  email: "nicolisantosbatista@gmail.com",
+  foto: "img/icon_pessoateste.png"
+};
+
+function notificacaoparaong() {
+  const notificacoesContainer = document.querySelector('#exampleModalNotification .modal-body');
+
+  const novaNotificacao = document.createElement('div');
+  novaNotificacao.className = 'notificacao p-3 mb-3 bg-white rounded-3 shadow-sm border border-secondary-subtle';
+  novaNotificacao.innerHTML = `
+    <div class="d-flex gap-3 align-items-center">
+      <div class="text-center">
+        <img src="${usuario.foto}" alt="Usuário" class="rounded" style="height: 60px;">
+        <img src="${pet.foto_pet1}" alt="Pet" class="rounded mt-1" style="height: 60px;">
+      </div>
+      <div class="flex-grow-1">
+        <p class="mb-1"><strong><span class="text-primary">${usuario.nome}</span> quer adotar <span class="text-success">${pet.nome_pet}</span></strong></p>
+        <p class="mb-2 small">Entre em contato para seguir com a adoção:</p>
+        <div class="d-flex gap-2">
+          <a href="tel:+${usuario.telefone}" title="Telefone">
+            <img src="img/icon_telefone.png" alt="Telefone" width="24">
+          </a>
+          <a href="mailto:${usuario.email}" title="Email">
+            <img src="img/icon_email.png" alt="Email" width="24">
+          </a>
+          <a href="https://wa.me/${usuario.telefone}" target="_blank" title="WhatsApp">
+            <img src="img/icon_whatsapp.png" alt="WhatsApp" width="24">
+          </a>
+        </div>
+      </div>
+    </div>
+  `;
+
+  notificacoesContainer.prepend(novaNotificacao); // Coloca a nova no topo
+
+  // Mostrar o modal de notificação
+  const modal = new bootstrap.Modal(document.getElementById('exampleModalNotification'));
+  modal.show();
+}
+
+
+
 // Interesse de adoção do usuário
 function adotar_animais() {
   const interesse_adocao = document.getElementById("adotar_interesse")
