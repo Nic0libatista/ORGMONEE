@@ -381,7 +381,6 @@ function notificacao_adocao() {
 
    
     async function efetuarCadastroCompleto() {
-      // Captura os dados do formulário
       const nome = document.getElementById("nomeCompleto").value;
       const cpf = document.getElementById("cpf").value;
       const nascimento = document.getElementById("nascimento").value;
@@ -389,7 +388,7 @@ function notificacao_adocao() {
     
       const telefoneRes = document.getElementById("telFixo").value;
       const telefoneCel = document.getElementById("telCelular").value;
-      const telefoneCom = null; 
+      const telefoneCom = null;
       const email = document.getElementById("email").value;
     
       const cep = document.getElementById("cep").value;
@@ -409,22 +408,20 @@ function notificacao_adocao() {
           data_nascimento: nascimento,
           senha: senha,
           foto_usu: fotoUsuario ? fotoUsuario.name : null,
-          preferencia: 37, // ou outro valor real
+          preferencia: 37,
     
-          // Endereço
-          cep: cep,
-          logradouro: logradouro,
-          bairro: bairro,
-          cidade: cidade,
-          estado: estado,
-          numero: numero,
+          cep,
+          logradouro,
+          bairro,
+          cidade,
+          estado,
+          numero,
           complemento: complemento || null,
     
-          // Contato
           telefone_celular: telefoneCel,
           telefone_residencial: telefoneRes || null,
           telefone_comercial: telefoneCom,
-          email: email
+          email
         };
     
         console.log("Enviando tudo no corpo:", usuarioCompleto);
@@ -432,7 +429,7 @@ function notificacao_adocao() {
         const res = await fetch("http://10.26.45.39:3000/api/v1/usuario/cadastro", {
           method: "POST",
           headers: {
-            "accept": "application/json",
+            accept: "application/json",
             "content-type": "application/json"
           },
           body: JSON.stringify(usuarioCompleto)
@@ -443,9 +440,16 @@ function notificacao_adocao() {
     
         if (!res.ok) throw new Error(dados.message || "Erro ao cadastrar");
     
+        const insertId = dados.insertId || dados.id;
+        if (insertId) {
+          localStorage.setItem("id_usuario_cadastrado", insertId);
+          console.log("ID do usuário salvo no localStorage:", insertId);
+        } else {
+          console.warn("ID de usuário não retornado pelo backend.");
+        }
+    
         alert("Cadastro realizado com sucesso!");
         document.getElementById("cadastroForm").reset();
-    
       } catch (erro) {
         console.error("Erro no cadastro:", erro);
         alert("Erro ao cadastrar. Verifique os dados e tente novamente.");
