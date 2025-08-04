@@ -117,7 +117,7 @@ export default class UsuarioService{
                     return res.status(401).json({msg:`Usuário ou senha inválidos`});
                 }
                 let usuario={
-                    id:rs[0].id,
+                    id:rs[0].id_usuario,
                     nome_usu:rs[0].nome_usu,
                     fotousuario:rs[0].fotousuario,
                 }
