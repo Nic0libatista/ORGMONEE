@@ -55,3 +55,6 @@ Diferencial: contamos com um quiz interativo que ajuda o usuário a descobrir qu
 
 ![Sobre nós](https://github.com/Nic0libatista/ORGMONEE/blob/main/Doc/sobrenos.PNG?raw=true)
 
+## Tela Adoção
+
+![Tela adoção](https://github.com/Nic0libatista/MyPetFriend/blob/main/Doc/telaAnimais.jpeg)
