@@ -29,13 +29,11 @@ Diferencial: contamos com um quiz interativo que ajuda o usuário a descobrir qu
 
 ## Funcionalidades
 
-- **Cadastro de usuários com nome, e-mail, telefone e senha  etc**
+- **Cadastro de usuários com nome, e-mail, telefone e senha criptografada etc**
 - **Cadastro de ONGs com nome, e-mail, telefone, CNPJ, Endereço etc**
 - **Quiz para o seu pet ideal**
 - **Ongs recebem notificações quando o usuário deseja adotar um pet**
-- 
-
-
+  
 
 ## Capturas 
  Página inicial
@@ -58,3 +56,8 @@ Diferencial: contamos com um quiz interativo que ajuda o usuário a descobrir qu
 ## Tela Adoção
 
 ![Tela adoção](https://github.com/Nic0libatista/MyPetFriend/blob/main/Doc/telaAnimais.jpeg)
+
+
+## Observações
+
+Atualmente, o servidor do projeto está desligado, então algumas funcionalidades que dependem do backend não estão disponíveis. A aplicação foi desenvolvida como um sistema fullstack, e o codigo do backend, das tabelas e do frontend estão incluídos neste repositório.
