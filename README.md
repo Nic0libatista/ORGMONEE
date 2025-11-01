@@ -6,8 +6,8 @@ Nosso objetivo é tornar o processo de adoção mais responsável, mágico e pr�
 
 ## Desenvolvedores do projeto
 - Matheus Amorim   (https://github.com/Amorimo)
-- Yesenia Salas    (https://github.com/Yessalas)
 - Nicoli Santos    (https://github.com/Nic0libatista)
+- Yesenia Salas    (https://github.com/Yessalas)
 - Gabriela Queiroz (https://github.com/GabrielaQueirozs)
 
 
@@ -23,7 +23,7 @@ Nosso objetivo é tornar o processo de adoção mais responsável, mágico e pr�
 
 Nosso projeto é uma plataforma dedicada à adoção de pets, conectando pessoas que desejam adotar com ONGs e protetores que estão em busca de lares responsáveis para seus animais.
 
-ONGs podem se cadastrar no sistema para registrar seus dados e futuramente cadastrar os pets disponíveis.
+ONGs podem se cadastrar no sistema para registrar seus dados e assim cadastrar os pets disponíveis.
 
 Diferencial: contamos com um quiz interativo que ajuda o usuário a descobrir qual tipo de pet mais combina com seu estilo de vida, tornando o processo de adoção mais consciente e assertivo.
 
